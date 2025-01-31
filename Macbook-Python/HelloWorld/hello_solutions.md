@@ -1,4 +1,10 @@
 ### Solutions
+5. **Combining Strings**
+    - Write a program that combines two strings and prints the result. For example, combine "Hello" and "World" to print "Hello World".
+    ```python
+    part1 = "Hello"
+    part2 = "World"
+    print(part1 + " " + part2)
 
 6. **Printing Quotes**
         ```python
