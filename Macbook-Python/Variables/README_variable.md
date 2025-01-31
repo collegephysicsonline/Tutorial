@@ -319,3 +319,151 @@ print(file_path)
 ```
 
 By following these guidelines, you can avoid common syntax errors when working with strings in Python, ensuring your code runs smoothly and efficiently.
+
+## Number Data Types
+
+In Python, number data types are used to store numeric values. The two most commonly used number data types are integers and floats.
+
+### Integers
+
+Integers are whole numbers without a decimal point. They can be positive, negative, or zero.
+
+#### Characteristics of Integers:
+- **Whole Numbers**: Integers do not have a fractional part.
+- **Unlimited Precision**: Python integers can be arbitrarily large.
+- **Type**: The type of an integer is `int`.
+
+#### Examples:
+```python
+positive_integer = 42
+negative_integer = -7
+zero = 0
+```
+
+### Floats
+
+Floats are numbers that have a decimal point. They are used to represent real numbers.
+
+#### Characteristics of Floats:
+- **Decimal Numbers**: Floats have a fractional part.
+- **Precision**: Floats have limited precision due to their representation in memory.
+- **Type**: The type of a float is `float`.
+
+#### Examples:
+```python
+positive_float = 3.14
+negative_float = -0.001
+zero_float = 0.0
+```
+
+### Common Errors with Number Data Types
+
+New programmers often encounter errors when working with number data types. Here are some common pitfalls and how to avoid them:
+
+| Error Type          | Description                                                                 | Example                                                                 | Solution                                                                 |
+|---------------------|-----------------------------------------------------------------------------|-------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| **TypeError**       | Occurs when performing operations on incompatible types.                    | `result = "3" + 4`                                                      | Ensure both operands are of the same type: `result = int("3") + 4`       |
+| **ValueError**      | Raised when a function receives an argument of the correct type but inappropriate value. | `number = int("abc")`                                                   | Validate input before conversion: `if input_str.isdigit(): number = int(input_str)` |
+| **OverflowError**   | Raised when the result of an arithmetic operation is too large to be expressed within the range of the number data type. | `large_number = 10 ** 1000`                                             | Use appropriate data types or libraries that handle large numbers.       |
+| **ZeroDivisionError** | Occurs when attempting to divide by zero.                                  | `result = 10 / 0`                                                       | Check the divisor before division: `if divisor != 0: result = 10 / divisor` |
+| **Floating Point Precision** | Issues arise due to the limited precision of floating-point numbers. | `result = 0.1 + 0.2` (may not equal 0.3 exactly)                        | Use the `decimal` module for precise decimal arithmetic.                 |
+
+By understanding the characteristics and common errors associated with number data types, you can write more robust and error-free Python code.
+### Example Code Using Number Data Types
+
+Let's look at some examples of how to use number data types in Python.
+
+#### Example 1: Basic Arithmetic Operations
+```python
+# Integers
+a = 10
+b = 3
+
+# Addition
+sum_result = a + b
+print(f"Sum: {sum_result}")  # Output: Sum: 13
+
+# Subtraction
+sub_result = a - b
+print(f"Difference: {sub_result}")  # Output: Difference: 7
+
+# Multiplication
+mul_result = a * b
+print(f"Product: {mul_result}")  # Output: Product: 30
+
+# Division
+div_result = a / b
+print(f"Quotient: {div_result}")  # Output: Quotient: 3.3333333333333335
+
+# Floor Division
+floor_div_result = a // b
+print(f"Floor Division: {floor_div_result}")  # Output: Floor Division: 3
+
+# Modulus
+mod_result = a % b
+print(f"Remainder: {mod_result}")  # Output: Remainder: 1
+
+# Exponentiation
+exp_result = a ** b
+print(f"Exponentiation: {exp_result}")  # Output: Exponentiation: 1000
+```
+
+#### Example 2: Working with Floats
+```python
+# Floats
+x = 5.75
+y = 2.5
+
+# Addition
+sum_result = x + y
+print(f"Sum: {sum_result}")  # Output: Sum: 8.25
+
+# Subtraction
+sub_result = x - y
+print(f"Difference: {sub_result}")  # Output: Difference: 3.25
+
+# Multiplication
+mul_result = x * y
+print(f"Product: {mul_result}")  # Output: Product: 14.375
+
+# Division
+div_result = x / y
+print(f"Quotient: {div_result}")  # Output: Quotient: 2.3
+
+# Floor Division
+floor_div_result = x // y
+print(f"Floor Division: {floor_div_result}")  # Output: Floor Division: 2.0
+
+# Modulus
+mod_result = x % y
+print(f"Remainder: {mod_result}")  # Output: Remainder: 0.75
+
+# Exponentiation
+exp_result = x ** y
+print(f"Exponentiation: {exp_result}")  # Output: Exponentiation: 55.90169943749474
+```
+
+#### Example 3: Converting Between Data Types
+```python
+# Converting float to int
+float_number = 9.99
+int_number = int(float_number)
+print(f"Converted to int: {int_number}")  # Output: Converted to int: 9
+
+# Converting int to float
+int_number = 7
+float_number = float(int_number)
+print(f"Converted to float: {float_number}")  # Output: Converted to float: 7.0
+
+# Converting string to int
+str_number = "123"
+int_number = int(str_number)
+print(f"Converted to int: {int_number}")  # Output: Converted to int: 123
+
+# Converting string to float
+str_number = "456.78"
+float_number = float(str_number)
+print(f"Converted to float: {float_number}")  # Output: Converted to float: 456.78
+```
+
+These examples demonstrate basic arithmetic operations with integers and floats, as well as how to convert between different data types. Understanding these operations and conversions is essential for working with numeric data in Python.
