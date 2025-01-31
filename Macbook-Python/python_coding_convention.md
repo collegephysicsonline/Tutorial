@@ -66,3 +66,62 @@
     - Example: `with open('file.txt', 'r') as file:`
 
 By following these best practices, you can write clean, maintainable, and efficient code that is easy for others to read and understand.
+
+## Example: Good vs Bad Code
+
+### Bad Code Example
+
+```python
+import os
+
+def foo():
+ x = 10
+ y = 20
+ if x > 5:
+    y += x
+ return y
+
+print(foo())
+```
+
+### Issues with the Bad Code
+
+1. **Inconsistent Indentation**: Mix of spaces and tabs.
+2. **Poor Naming Conventions**: Function and variable names are not descriptive.
+3. **Lack of Error Handling**: No error handling mechanisms.
+4. **No Documentation**: No comments or docstrings to explain the code.
+
+### Good Code Example
+
+```python
+import os
+
+def calculate_sum(value1: int, value2: int) -> int:
+        """
+        Calculate the sum of two integers if the first integer is greater than 5.
+
+        Args:
+                value1 (int): The first integer.
+                value2 (int): The second integer.
+
+        Returns:
+                int: The sum of the two integers if value1 > 5, otherwise value2.
+        """
+        if value1 > 5:
+                value2 += value1
+        return value2
+
+if __name__ == "__main__":
+        result = calculate_sum(10, 20)
+        print(f"The result is: {result}")
+```
+
+### Improvements in the Good Code
+
+1. **Consistent Indentation**: Uses 4 spaces per indentation level.
+2. **Descriptive Naming**: Function and variable names are meaningful and descriptive.
+3. **Error Handling**: Although not needed in this simple example, the structure allows for easy addition of error handling.
+4. **Documentation**: Includes a docstring to explain the function's purpose, arguments, and return value.
+5. **Code Readability**: Clear and concise code with proper formatting and comments.
+
+By comparing these examples, it is evident that following best practices leads to more readable, maintainable, and error-free code.
