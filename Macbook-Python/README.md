@@ -11,6 +11,26 @@ Welcome to the Python Tutorial. This guide will help you get started with Python
     cd ~/Tutorial/Macbook-Python
     ```
 
+    2. **Install Python**
+        If you don't have Python installed, download and install it from the official website:
+        - [Download Python](https://www.python.org/downloads/)
+        ```bash
+        brew install python
+        ```
+
+    3. **Install Visual Studio Code**
+        Download and install Visual Studio Code (VS Code) for a powerful and lightweight code editor:
+        - [Download VS Code](https://code.visualstudio.com/Download)
+        ```bash
+        brew install --cask visual-studio-code
+        ```
+
+        After installing, you can open VS Code from the terminal:
+        ```bash
+        code .
+        ```
+
+
 2. **Set Up a Virtual Environment**
     Create a virtual environment to manage your project dependencies:
     ```bash
