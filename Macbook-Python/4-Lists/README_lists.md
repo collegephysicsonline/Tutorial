@@ -195,3 +195,18 @@ print(velocities)  # Output: [7.5, 15.4]
 Imagine you are conducting an experiment to measure the acceleration of an object. You record the velocities at different time intervals and store them in a list. As you process the data, you might need to add new measurements or remove erroneous ones. Using the methods described above, you can efficiently manage your data.
 
 By mastering these list operations, you can handle experimental data more effectively, making your analysis in physics more robust and organized.
+
+## Removing Elements from a List: Summary Table
+
+In Python, there are several ways to remove elements from a list. The table below summarizes different methods to remove elements, using a list of velocity measurements as an example.
+
+| Method                  | Description                                      | Example Code                                                                 | Resulting List                |
+|-------------------------|--------------------------------------------------|-----------------------------------------------------------------------------|-------------------------------|
+| `del` statement         | Removes element at a specific index              | ```python<br>velocities = [5.0, 7.5, 10.2, 15.4, 20.1]<br>del velocities[2]```| `[5.0, 7.5, 15.4, 20.1]`      |
+| `pop()` method          | Removes and returns element at a specific index  | ```python<br>velocities = [5.0, 7.5, 10.2, 15.4, 20.1]<br>velocities.pop(2)```| `[5.0, 7.5, 15.4, 20.1]`      |
+| `pop()` method (default)| Removes and returns the last element             | ```python<br>velocities = [5.0, 7.5, 10.2, 15.4, 20.1]<br>velocities.pop()``` | `[5.0, 7.5, 10.2, 15.4]`      |
+| `remove()` method       | Removes the first occurrence of a value          | ```python<br>velocities = [5.0, 7.5, 10.2, 15.4, 20.1]<br>velocities.remove(10.2)``` | `[5.0, 7.5, 15.4, 20.1]`      |
+| Slice assignment        | Removes a range of elements                      | ```python<br>velocities = [5.0, 7.5, 10.2, 15.4, 20.1]<br>velocities[1:3] = []``` | `[5.0, 15.4, 20.1]`           |
+| List comprehension      | Removes elements based on a condition            | ```python<br>velocities = [5.0, 7.5, 10.2, 15.4, 20.1]<br>velocities = [v for v in velocities if v != 10.2]``` | `[5.0, 7.5, 15.4, 20.1]`      |
+
+By using these methods, you can effectively manage and manipulate your lists in Python, ensuring your data is accurate and well-organized.
