@@ -1,6 +1,8 @@
 # Explanation of hello.py Code
 
-This is a simple Python script that prints "Hello, World!" to the console.
+Before diving into more advanced concepts of the Python programming language, let's first ensure that Python is installed correctly and that we can work with Visual Studio Code (VS Code). To do this, we'll start with a simple and well-known program called "Hello, World!". This basic script will help you take your first step in this Python learning journey.
+
+This is a simple Python script that prints "Hello, World!" to the console.ß
 
 ```python
 # The print() function is a built-in function in Python that outputs text to the console.
