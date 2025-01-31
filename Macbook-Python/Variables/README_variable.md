@@ -77,3 +77,45 @@ print(f"Name: {full_name}, Age: {age}, Employee: {is_employee}")
 ```
 
 By following these conventions and guidelines, you can write Python code that is clean, readable, and easy to understand. This not only helps you as a developer but also makes it easier for others to collaborate on your code.
+
+## Avoiding Name Errors When Using Variables
+
+A `NameError` in Python occurs when you try to use a variable that has not been defined. This can happen if you misspell the variable name or forget to initialize it before using it.
+
+### Example of a NameError:
+```python
+print(message)
+```
+If you run this code without defining `message` first, Python will raise a `NameError` because it doesn't know what `message` refers to.
+
+### How to Avoid NameErrors:
+1. **Initialize Variables**: Always initialize your variables before using them.
+    ```python
+    message = "Hello, world!"
+    print(message)
+    ```
+
+2. **Check for Typos**: Ensure that you spell variable names correctly and consistently.
+    ```python
+    user_name = "Alice"
+    print(user_name)  # Correct
+    print(username)   # NameError: name 'username' is not defined
+    ```
+
+3. **Use Descriptive Names**: Using descriptive names can help you remember what each variable is for, reducing the likelihood of errors.
+    ```python
+    total_price = 100
+    print(total_price)
+    ```
+
+4. **Scope Awareness**: Be aware of the scope of your variables. Variables defined inside a function are not accessible outside of it.
+    ```python
+    def greet():
+         message = "Hello"
+         print(message)
+
+    greet()
+    print(message)  # NameError: name 'message' is not defined
+    ```
+
+By following these practices, you can minimize the chances of encountering `NameError` in your Python programs.
