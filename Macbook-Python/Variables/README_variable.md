@@ -484,7 +484,7 @@ These examples demonstrate basic arithmetic operations with integers and floats,
 > 
 > *The Zen of Python continues to guide the development of the language, ensuring that Python remains true to its original goals of simplicity, readability, and elegance. Guido van Rossum, often referred to as Python's "Benevolent Dictator For Life" (BDFL), has played a crucial role in shaping the language and its community, fostering a culture of collaboration and innovation.*
 
-
+>
 *## Timeline of Python's Growth*
 
 *1989: Guido van Rossum begins working on Python as a hobby project during the Christmas holidays.*
@@ -512,4 +512,5 @@ These examples demonstrate basic arithmetic operations with integers and floats,
 *2023: Python continues to grow in popularity, being widely used in web development, data science, artificial intelligence, scientific computing, and more.*
 
 *Python's journey from a hobby project to one of the most popular programming languages in the world is a testament to its simplicity, readability, and versatility. The language's community-driven development and adherence to "The Zen of Python" principles have ensured its continued success and relevance in the ever-evolving world of technology.*
+>
 
