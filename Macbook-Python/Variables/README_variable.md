@@ -484,33 +484,19 @@ These examples demonstrate basic arithmetic operations with integers and floats,
 > 
 > *The Zen of Python continues to guide the development of the language, ensuring that Python remains true to its original goals of simplicity, readability, and elegance. Guido van Rossum, often referred to as Python's "Benevolent Dictator For Life" (BDFL), has played a crucial role in shaping the language and its community, fostering a culture of collaboration and innovation.*
 
->
-*## Timeline of Python's Growth*
+| Year  | Event                                                                                                           |
+|-------|-----------------------------------------------------------------------------------------------------------------|
+| 1980s | [Guido van Rossum](https://en.wikipedia.org/wiki/Guido_van_Rossum) begins working on Python as a successor to the ABC language. |
+| 1991  | Python 0.9.0 is released, featuring classes with inheritance, exception handling, functions, and the core datatypes of str, list, dict, and others. |
+| 1994  | Python 1.0 is released, introducing new features like lambda, map, filter, and reduce.                          |
+| 2000  | Python 2.0 is released, adding list comprehensions, garbage collection, and the `zip()` function. The Python Software Foundation (PSF) is also formed. |
+| 2008  | Python 3.0 is released, a major revision of the language that is not backward-compatible with Python 2.x. It introduces many changes to improve code readability and consistency. |
+| 2010  | Python 2.7 is released, the last major version of the Python 2.x series, with support planned until 2020.       |
+| 2015  | Python 3.5 is released, introducing new features like type hints, the `async` and `await` keywords, and the `@` matrix multiplication operator. |
+| 2020  | Python 2.7 reaches its end of life, and Python 3.x becomes the only supported version.                          |
+| 2021  | Python 3.9 is released, adding new syntax features like the `|` operator for dictionaries and the `str.removeprefix()` and `str.removesuffix()` methods. |
+| 2022  | Python 3.10 is released, introducing pattern matching with the `match` and `case` statements, and other improvements. |
+| 2023  | Python 3.11 is released, focusing on performance improvements and new features like exception groups and fine-grained error locations. |
 
-*1989: Guido van Rossum begins working on Python as a hobby project during the Christmas holidays.*
-
-*1991: Python 0.9.0 is released, featuring classes, exception handling, functions, and the core data types: str, list, dict, etc.*
-
-*1994: Python 1.0 is released, introducing new features like lambda, map, filter, and reduce.*
-
-*2000: Python 2.0 is released, adding list comprehensions, garbage collection, and support for Unicode.*
-
-*2001: The Python Software Foundation (PSF) is formed to manage the development and promotion of Python.*
-
-*2008: Python 3.0 is released, a major revision that is not backward-compatible with Python 2.x. It introduces many improvements, including better Unicode support and a more consistent standard library.*
-
-*2010: Python 2.7 is released, the last major version of the Python 2.x series, with long-term support planned until 2020.*
-
-*2015: Python 3.5 is released, introducing new features like async and await syntax for asynchronous programming.*
-
-*2018: Python becomes the most popular introductory teaching language at top U.S. universities.*
-
-*2020: Python 2.7 reaches its end of life, and Python 3.x becomes the only supported version.*
-
-*2021: Python 3.9 is released, featuring new syntax features like the walrus operator and type hinting improvements.*
-
-*2023: Python continues to grow in popularity, being widely used in web development, data science, artificial intelligence, scientific computing, and more.*
-
-*Python's journey from a hobby project to one of the most popular programming languages in the world is a testament to its simplicity, readability, and versatility. The language's community-driven development and adherence to "The Zen of Python" principles have ensured its continued success and relevance in the ever-evolving world of technology.*
->
+*For more detailed information, you can visit the [Python Software Foundation's official timeline](https://www.python.org/doc/versions/).*
 
