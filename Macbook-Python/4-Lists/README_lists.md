@@ -126,7 +126,7 @@ print(numbers[-3])  # Output: 30
 
 By understanding how to access elements in a list, you can easily retrieve and manipulate data stored in lists.
 
-## Important Notes about Lists
+### Important Notes about Lists
 
 - Lists are ordered collections, meaning the order of elements is preserved.
 - Lists are mutable, so you can change, add, or remove elements after the list is created.
