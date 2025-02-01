@@ -44,7 +44,28 @@ for force in forces:
     total_force += force
 
 print(f'Total Force: {total_force} N')
+## Flowchart for Summing a List of Forces
+
+Below is a flowchart that explains the process of summing a list of forces using a `for` loop:
+
+```mermaid
+flowchart TD
+    A[Start] --> B[Initialize total_force to 0]
+    B --> C[Iterate over each force in the forces list]
+    C --> D[Add the current force to total_force]
+    D --> E{More forces to iterate?}
+    E -- Yes --> C
+    E -- No --> F[Print total_force]
+    F --> G[End]
 ```
+
+In this flowchart:
+- We start by initializing `total_force` to 0.
+- We then iterate over each force in the `forces` list.
+- For each force, we add it to `total_force`.
+- We check if there are more forces to iterate over. If yes, we continue the loop; if no, we print the `total_force` and end the process.
+
+This visual representation helps in understanding the flow of the `for` loop in summing the list of forces.
 
 In this example, the `for` loop iterates over the `forces` list, adding each force to the `total_force` variable.
 
