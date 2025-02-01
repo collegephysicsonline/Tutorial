@@ -122,8 +122,8 @@
         - Example: For a mass of 1 kg with a specific heat of 4200 J/(kg K) and a temperature change of 10 K, $` Q = 1 \, \text{kg} \times 4200 \, \text{J/(kg K)} \times 10 \, \text{K} = 42000 \, \text{J} `$. 
 
 - **Thermodynamic Processes**:
-    - **Efficiency (\(\eta\))** of a heat engine is $` \eta = \frac{W}{Q_H} `$. 
-        - Example: An engine that does 100 J of work with a heat input of 200 J has $` \eta = \frac{100 \, \text{J}}{200 \, \text{J}} = 0.5 ` or 50%. 
+    - **Efficiency ($\eta$)** of a heat engine is $` \eta = \frac{W}{Q_H} `$. 
+        - Example: An engine that does 100 J of work with a heat input of 200 J has $` \eta = \frac{100 \, \text{J}}{200 \, \text{J}} = 0.5  or 50\% `$. 
     - **Entropy Change (\(\Delta S\))** in a reversible process is $` \Delta S = \frac{Q}{T} `$. 
         - Example: If 100 J of heat is transferred at a temperature of 300 K, $` \Delta S = \frac{100 \, \text{J}}{300 \, \text{K}} = 0.33 \, \text{J/K} `$. 
 
@@ -141,17 +141,17 @@
 ### Optics
 - **Light and Optics**:
     - The **wavelength (\(\lambda\))** of light is $` \lambda = \frac{c}{f} `$. 
-        - Example: Light with a frequency of $` 5 \times 10^{14} \, \text{Hz} ` has $` \lambda = \frac{3 \times 10^8 \, \text{m/s}}{5 \times 10^{14} \, \text{Hz}} = 6 \times 10^{-7} \, \text{m} ` or 600 nm. 
+        - Example: Light with a frequency of $` 5 \times 10^{14} \, \text{Hz} `$ has $` \lambda = \frac{3 \times 10^8 \, \text{m/s}}{5 \times 10^{14} \, \text{Hz}} = 6 \times 10^{-7} \, \text{m} `$ or 600 nm. 
     - The **energy (E)** of a photon is $` E = \frac{hc}{\lambda} `$. 
         - Example: A photon with a wavelength of 500 nm has $` E = \frac{6.626 \times 10^{-34} \, \text{Js} \times 3 \times 10^8 \, \text{m/s}}{500 \times 10^{-9} \, \text{m}} = 3.97 \times 10^{-19} \, \text{J} `$. 
     - The **refractive index (n)** of a medium is $` n = \frac{c}{v} `$. 
-        - Example: A medium where the speed of light is $` 2 \times 10^8 \, \text{m/s} ` has $` n = \frac{3 \times 10^8 \, \text{m/s}}{2 \times 10^8 \, \text{m/s}} = 1.5 `$. 
+        - Example: A medium where the speed of light is $` 2 \times 10^8 \, \text{m/s} `$ has $` n = \frac{3 \times 10^8 \, \text{m/s}}{2 \times 10^8 \, \text{m/s}} = 1.5 `$. 
     - The **focal length (f)** of a lens is given by $` \frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i} `$. 
-        - Example: A lens with object and image distances of 10 cm and 20 cm has $` \frac{1}{f} = \frac{1}{10 \, \text{cm}} + \frac{1}{20 \, \text{cm}} = \frac{3}{20} \, \text{cm}^{-1} ` or $` f = \frac{20}{3} \, \text{cm} \approx 6.67 \, \text{cm} `$. 
+        - Example: A lens with object and image distances of 10 cm and 20 cm has $` \frac{1}{f} = \frac{1}{10 \, \text{cm}} + \frac{1}{20 \, \text{cm}} = \frac{3}{20} \, \text{cm}^{-1} `$ or $` f = \frac{20}{3} \, \text{cm} \approx 6.67 \, \text{cm} `$. 
 
 ### Modern Physics
 - **Photon Energy**:
-    - The **energy (E)** of a photon is related to its wavelength (\(\lambda\)) and frequency (f) by $` E = hf ` and $` E = \frac{hc}{\lambda} `$. 
+    - The **energy (E)** of a photon is related to its wavelength ($\lambda$) and frequency (f) by $` E = hf `$ and $` E = \frac{hc}{\lambda}`$. 
         - Example: A photon with a wavelength of 500 nm has $` E = \frac{6.626 \times 10^{-34} \, \text{Js} \times 3 \times 10^8 \, \text{m/s}}{500 \times 10^{-9} \, \text{m}} = 3.97 \times 10^{-19} \, \text{J} `$. 
 
 These concepts will help you solve the given physics problems effectively.
