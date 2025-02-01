@@ -52,6 +52,23 @@ temperature = 25
 if temperature > 20:
     print("It's warm outside.")
 ```
+### Flowchart for Conditional Statements
+
+Below is a flowchart that explains the flow of the `if`, `elif`, and `else` statements:
+
+```mermaid
+graph TD
+    A[Start] --> B{condition1}
+    B -- True --> C[Execute code block for condition1]
+    B -- False --> D{condition2}
+    D -- True --> E[Execute code block for condition2]
+    D -- False --> F[Execute code block for else]
+    C --> G[End]
+    E --> G[End]
+    F --> G[End]
+```
+
+This flowchart demonstrates how the program evaluates each condition in sequence and executes the corresponding code block based on whether the conditions are `True` or `False`.
 
 ### Lists and Tuples
 We can use conditional statements to iterate over lists and tuples and perform actions based on their elements.
