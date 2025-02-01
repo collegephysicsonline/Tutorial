@@ -1,5 +1,1 @@
-markdown: kramdown
-kramdown:
-  math_engine: katex
-  syntax_highlighter_opts:
-    disable: true
+
