@@ -50,7 +50,7 @@
 ### Mechanics
 - **Velocity and Acceleration**: 
     - **Velocity** is the rate of change of displacement. It is a vector quantity with both magnitude and direction.
-        - Example: If a car moves from point A to point B, covering a distance of 100 meters in 10 seconds, its average velocity is $$ v = \frac{100 \, \text{m}}{10 \, \text{s}} = 10 \, \text{m/s} $$.
+        - Example: If a car moves from point A to point B, covering a distance of 100 meters in 10 seconds, its average velocity is $ v = \frac{100 \, \text{m}}{10 \, \text{s}} = 10 \, \text{m/s} $.
     - **Acceleration** is the rate of change of velocity. It is also a vector quantity.
         - Example: If a car's velocity changes from 0 to 20 m/s in 4 seconds, its acceleration is $$ a = \frac{20 \, \text{m/s} - 0 \, \text{m/s}}{4 \, \text{s}} = 5 \, \text{m/s}^2 $$.
 
