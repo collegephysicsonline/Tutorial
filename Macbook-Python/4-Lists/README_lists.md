@@ -306,6 +306,57 @@ When working with lists in Python, you may encounter various errors. Understandi
 | `AttributeError`         | Occurs when an invalid attribute reference is made | ```velocities = [5.0, 10.2] velocities.sort(reverse="yes")``` | Verify the method and its parameters are used correctly |
 | `KeyError`               | Occurs when trying to access a dictionary key that doesn't exist | ```data = {"velocity": [5.0, 10.2]} print(data["time"])``` | Use `dict.get()` method to safely access dictionary keys |
 
+## Nested Lists in Python
+
+In physics, you may encounter situations where you need to store and manage complex data structures, such as matrices or tables of measurements. Python allows you to create nested lists, which are lists within lists, to handle such data efficiently.
+
+### Example: Storing a Matrix of Measurements
+
+Suppose you have a matrix representing measurements taken at different times and positions. Each row in the matrix represents measurements at a specific time, and each column represents measurements at a specific position.
+
+```python
+# Matrix of measurements (rows: time intervals, columns: positions)
+measurements = [
+    [1.1, 1.2, 1.3],
+    [2.1, 2.2, 2.3],
+    [3.1, 3.2, 3.3]
+]
+```
+
+In this example, `measurements` is a nested list where each inner list represents a row of measurements.
+
+### Accessing Elements in a Nested List
+
+You can access elements in a nested list using multiple indices. The first index specifies the row, and the second index specifies the column.
+
+#### Example: Accessing a Specific Measurement
+
+To access the measurement at the second row and third column (2.3):
+
+```python
+print(measurements[1][2])  # Output: 2.3
+```
+
+### Modifying Elements in a Nested List
+
+You can modify elements in a nested list by specifying the indices of the element you want to change.
+
+#### Example: Updating a Measurement
+
+Suppose you want to update the measurement at the first row and second column to 1.5:
+
+```python
+measurements[0][1] = 1.5
+print(measurements)  # Output: [[1.1, 1.5, 1.3], [2.1, 2.2, 2.3], [3.1, 3.2, 3.3]]
+```
+
+### Practical Application
+
+Imagine you are conducting an experiment where you measure the temperature at different positions over time. You can use nested lists to store and manage this data, making it easier to analyze and interpret the results.
+
+By understanding and utilizing nested lists, you can handle complex data structures in your physics experiments, leading to more organized and efficient data analysis.
+
+
 ### Example: Handling `IndexError`
 
 Suppose you have a list of velocity measurements and you want to access an element by its index:
