@@ -50,9 +50,9 @@
 
 #### 1. Average Velocity
 The average velocity ($v_{avg}$) is given by:
-$$
+$`
 v_{avg} = \frac{v_i + v_f}{2}
-$$
+`$
 where $v_i$ is the initial velocity and $v_f$ is the final velocity.
 
 #### 2. Gravitational Force
