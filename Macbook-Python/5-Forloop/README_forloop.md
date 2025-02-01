@@ -19,7 +19,7 @@ Here, `variable` takes the value of each element in the `sequence` one by one, a
 
 Let's consider a list of masses and velocities of different objects. We want to calculate the kinetic energy for each object using the formula:
 
-\[ KE = \frac{1}{2}mv^2 \]
+$ KE = \frac{1}{2}mv^2 \$
 
 ```python
 masses = [2, 5, 10]  # in kilograms
