@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>forloop_homework.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="physics-problems-to-solve-using-python-for-loops-and-lists">Physics Problems to Solve Using Python For Loops and Lists</h1>
+<p>These problems can be solved using Python for loops and lists to iterate over the given data and perform the necessary calculations.
+### Numerical Values for Each Problem</p>
+<pre><code>1. **Calculate the average speed of a car over multiple trips.**
+    - Speeds: 60 km/h, 70 km/h, 80 km/h
+
+2. **Determine the total distance traveled by a car given a list of speeds and times.**
+    - Speeds: 60 km/h, 70 km/h, 80 km/h
+    - Times: 1 hour, 2 hours, 1.5 hours
+
+3. **Compute the kinetic energy of multiple objects given their masses and velocities.**
+    - Masses: 1000 kg, 1500 kg, 1200 kg
+    - Velocities: 10 m/s, 20 m/s, 15 m/s
+
+4. **Find the potential energy of objects at different heights.**
+    - Masses: 50 kg, 70 kg, 60 kg
+    - Heights: 10 meters, 15 meters, 12 meters
+
+5. **Calculate the work done by a force over various distances.**
+    - Forces: 100 N, 150 N, 200 N
+    - Distances: 5 meters, 10 meters, 8 meters
+
+6. **Determine the acceleration of a car given its change in velocity over time intervals.**
+    - Initial Velocities: 0 m/s, 10 m/s, 20 m/s
+    - Final Velocities: 20 m/s, 30 m/s, 40 m/s
+    - Times: 5 seconds, 10 seconds, 8 seconds
+
+7. **Compute the gravitational force between multiple pairs of objects.**
+    - Masses1: 5.97e24 kg (Earth), 1.989e30 kg (Sun)
+    - Masses2: 7.35e22 kg (Moon), 5.97e24 kg (Earth)
+    - Distances: 3.84e8 meters, 1.496e11 meters
+
+8. **Find the momentum of objects given their masses and velocities.**
+    - Masses: 1000 kg, 1500 kg, 1200 kg
+    - Velocities: 10 m/s, 20 m/s, 15 m/s
+
+9. **Calculate the pressure exerted by a fluid at different depths.**
+    - Depths: 10 meters, 20 meters, 30 meters
+    - Density: 1000 kg/m^3 (water)
+    - Gravity: 9.81 m/s^2
+
+10. **Determine the frequency of a wave given its speed and wavelength.**
+     - Speeds: 340 m/s, 300 m/s, 1500 m/s
+     - Wavelengths: 0.5 meters, 1 meter, 0.75 meters
+
+11. **Compute the electric potential energy of charges at different positions.**
+     - Charges1: 1e-6 C, 2e-6 C
+     - Charges2: 1e-6 C, 3e-6 C
+     - Distances: 0.1 meters, 0.2 meters
+
+12. **Find the magnetic force on a moving charge in different magnetic fields.**
+     - Charges: 1e-6 C, 2e-6 C
+     - Velocities: 10 m/s, 20 m/s
+     - Magnetic Fields: 0.1 T, 0.2 T
+
+13. **Calculate the heat transferred in various processes given specific heat capacities and temperature changes.**
+     - Masses: 1 kg, 2 kg, 1.5 kg
+     - Specific Heats: 4200 J/(kg·°C), 3900 J/(kg·°C), 4186 J/(kg·°C)
+     - Temperature Changes: 10°C, 20°C, 15°C
+
+14. **Determine the efficiency of different machines given input and output energies.**
+     - Input Energies: 1000 J, 2000 J, 1500 J
+     - Output Energies: 800 J, 1600 J, 1200 J
+
+15. **Compute the power output of engines over time intervals.**
+     - Work Done: 1000 J, 2000 J, 1500 J
+     - Times: 10 seconds, 20 seconds, 15 seconds
+
+16. **Find the angular momentum of rotating objects given their moments of inertia and angular velocities.**
+     - Moments of Inertia: 10 kg·m^2, 20 kg·m^2, 15 kg·m^2
+     - Angular Velocities: 5 rad/s, 10 rad/s, 7 rad/s
+
+17. **Calculate the torque on objects given forces and lever arms.**
+     - Forces: 100 N, 150 N, 200 N
+     - Lever Arms: 0.5 meters, 1 meter, 0.75 meters
+
+18. **Determine the centripetal force on objects moving in circular paths.**
+     - Masses: 1000 kg, 1500 kg, 1200 kg
+     - Velocities: 10 m/s, 20 m/s, 15 m/s
+     - Radii: 50 meters, 100 meters, 75 meters
+
+19. **Compute the buoyant force on objects submerged in fluids.**
+     - Volumes: 0.1 m^3, 0.2 m^3, 0.15 m^3
+     - Fluid Density: 1000 kg/m^3 (water)
+     - Gravity: 9.81 m/s^2
+
+20. **Find the refractive index of materials given angles of incidence and refraction.**
+     - Angles of Incidence: 30°, 45°, 60°
+     - Angles of Refraction: 20°, 30°, 40°
+
+21. **Calculate the Doppler shift for sound waves from moving sources.**
+     - Source Frequencies: 500 Hz, 1000 Hz, 1500 Hz
+     - Source Speeds: 10 m/s, 20 m/s, 15 m/s
+     - Observer Speed: 0 m/s (stationary)
+     - Speed of Sound: 343 m/s
+
+22. **Determine the intensity of light at different distances from a source.**
+     - Power: 100 W
+     - Distances: 1 meter, 2 meters, 3 meters
+
+23. **Compute the capacitance of capacitors in series and parallel circuits.**
+     - Capacitances: 1e-6 F, 2e-6 F, 3e-6 F
+
+24. **Find the inductance of coils given their physical properties.**
+     - Turns: 100, 200, 150
+     - Areas: 0.01 m^2, 0.02 m^2, 0.015 m^2
+     - Lengths: 0.1 meters, 0.2 meters, 0.15 meters
+     - Permeability: 4π × 10^-7 H/m
+
+25. **Calculate the resonant frequency of LC circuits.**
+     - Inductances: 1e-3 H, 2e-3 H, 1.5e-3 H
+     - Capacitances: 1e-6 F, 2e-6 F, 1.5e-6 F
+
+26. **Determine the impedance of RLC circuits at different frequencies.**
+     - Resistances: 10 ohms, 20 ohms, 15 ohms
+     - Inductances: 1e-3 H, 2e-3 H, 1.5e-3 H
+     - Capacitances: 1e-6 F, 2e-6 F, 1.5e-6 F
+     - Frequencies: 50 Hz, 60 Hz, 70 Hz
+
+27. **Compute the energy stored in magnetic fields of inductors.**
+     - Inductances: 1e-3 H, 2e-3 H, 1.5e-3 H
+     - Currents: 1 A, 2 A, 1.5 A
+
+28. **Find the charge and discharge times of capacitors in RC circuits.**
+     - Resistances: 10 ohms, 20 ohms, 15 ohms
+     - Capacitances: 1e-6 F, 2e-6 F, 1.5e-6 F
+
+29. **Calculate the diffraction angles for light passing through slits.**
+     - Wavelengths: 500 nm, 600 nm, 700 nm
+     - Slit Widths: 1 μm, 2 μm, 1.5 μm
+
+30. **Determine the polarization of light after passing through polarizers.**
+     - Initial Intensity: 100 W/m^2
+     - Angles: 30°, 45°, 60°</code></pre>
+
+</body>
+</html>
