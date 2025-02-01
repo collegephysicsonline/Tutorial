@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>github.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="github-cheat-sheet">GitHub Cheat Sheet</h1>
+<h2 id="introduction">Introduction</h2>
+<p>GitHub is a web-based platform used for version control and collaborative software development. It allows users to host and review code, manage projects, and build software alongside millions of other developers. GitHub uses Git, a distributed version control system, to track changes in source code during software development.</p>
+<h2 id="creating-a-github-repository">Creating a GitHub Repository</h2>
+<p>To upload your code to GitHub, you first need to create a repository. A repository (or &quot;repo&quot;) is a storage space where your project lives.</p>
+<h3 id="steps-to-create-a-repository">Steps to Create a Repository</h3>
+<ol>
+<li><strong>Sign in to GitHub</strong>: Go to <a href="https://github.com">GitHub</a> and sign in to your account.</li>
+<li><strong>Create a new repository</strong>:
+<ul>
+<li>Click the &quot;+&quot; icon in the upper-right corner and select &quot;New repository&quot;.</li>
+<li>Enter a repository name.</li>
+<li>Optionally, add a description.</li>
+<li>Choose to make the repository public or private.</li>
+<li>Initialize the repository with a README file (optional).</li>
+<li>Click &quot;Create repository&quot;.</li>
+</ul>
+</li>
+</ol>
+<h2 id="setting-up-git-ssh-key-and-token">Setting Up Git SSH Key and Token</h2>
+<h3 id="step-1-generate-ssh-key">Step 1: Generate SSH Key</h3>
+<p>Generate an SSH key if you don't have one:</p>
+<pre class="hljs"><code><div>ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">"your_email@example.com"</span>
+</div></code></pre>
+<p>Follow the prompts to save the key. By default, it will be saved in <code>~/.ssh/id_rsa</code>.</p>
+<h3 id="step-2-add-ssh-key-to-github">Step 2: Add SSH Key to GitHub</h3>
+<p>Copy the SSH key to your clipboard:</p>
+<pre class="hljs"><code><div>cat ~/.ssh/id_rsa.pub
+</div></code></pre>
+<p>Go to GitHub:</p>
+<ul>
+<li>Click on your profile picture in the upper-right corner and select <code>Settings</code>.</li>
+<li>In the left sidebar, click <code>SSH and GPG keys</code>.</li>
+<li>Click <code>New SSH key</code>, provide a title, and paste your key into the &quot;Key&quot; field.</li>
+<li>Click <code>Add SSH key</code>.</li>
+</ul>
+<h3 id="step-3-create-a-personal-access-token">Step 3: Create a Personal Access Token</h3>
+<p>Go to GitHub:</p>
+<ul>
+<li>Click on your profile picture in the upper-right corner and select <code>Settings</code>.</li>
+<li>In the left sidebar, click <code>Developer settings</code>.</li>
+<li>Click <code>Personal access tokens</code>, then <code>Generate new token</code>.</li>
+<li>Select the scopes or permissions you'd like to grant this token.</li>
+<li>Click <code>Generate token</code> and copy the token.</li>
+</ul>
+<h2 id="uploading-code-from-terminal">Uploading Code from Terminal</h2>
+<h3 id="step-1-install-git">Step 1: Install Git</h3>
+<p>Ensure Git is installed on your system. You can download it from <a href="https://git-scm.com/">git-scm.com</a>.</p>
+<h3 id="step-2-clone-the-repository">Step 2: Clone the Repository</h3>
+<p>Clone the repository to your local machine:</p>
+<pre class="hljs"><code><div>git <span class="hljs-built_in">clone</span> git@github.com:your-username/your-repository.git
+</div></code></pre>
+<h3 id="step-3-add-your-code">Step 3: Add Your Code</h3>
+<p>Navigate to the repository directory and add your code files:</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">cd</span> your-repository
+<span class="hljs-comment"># Add your files to the repository directory</span>
+</div></code></pre>
+<h3 id="step-4-commit-changes">Step 4: Commit Changes</h3>
+<p>Stage and commit your changes:</p>
+<pre class="hljs"><code><div>git add .
+git commit -m <span class="hljs-string">"Initial commit"</span>
+</div></code></pre>
+<h3 id="step-5-push-to-github">Step 5: Push to GitHub</h3>
+<p>Push your changes to the remote repository:</p>
+<pre class="hljs"><code><div>git push origin main
+</div></code></pre>
+<h2 id="uploading-code-from-vs-code">Uploading Code from VS Code</h2>
+<h3 id="step-1-install-git-and-vs-code">Step 1: Install Git and VS Code</h3>
+<p>Ensure Git and Visual Studio Code (VS Code) are installed on your system.</p>
+<h3 id="step-2-open-repository-in-vs-code">Step 2: Open Repository in VS Code</h3>
+<p>Open your repository in VS Code:</p>
+<ul>
+<li>Open VS Code.</li>
+<li>Go to <code>File &gt; Open Folder</code> and select your repository folder.</li>
+</ul>
+<h3 id="step-3-add-your-code">Step 3: Add Your Code</h3>
+<p>Add your code files to the repository folder.</p>
+<h3 id="step-4-commit-changes">Step 4: Commit Changes</h3>
+<p>Use the Source Control feature in VS Code:</p>
+<ul>
+<li>Click the Source Control icon in the Activity Bar on the side of the window.</li>
+<li>Stage your changes by clicking the &quot;+&quot; icon next to the files.</li>
+<li>Enter a commit message in the message box and click the checkmark icon to commit.</li>
+</ul>
+<h3 id="step-5-push-to-github">Step 5: Push to GitHub</h3>
+<p>Push your changes to the remote repository:</p>
+<ul>
+<li>Click the &quot;...&quot; icon in the Source Control panel.</li>
+<li>Select <code>Push</code> from the dropdown menu.</li>
+</ul>
+<h2 id="example-uploading-code-to-github">Example: Uploading Code to GitHub</h2>
+<h3 id="step-by-step-example">Step-by-Step Example</h3>
+<ol>
+<li>
+<p><strong>Create a repository on GitHub</strong>:</p>
+<ul>
+<li>Repository name: <code>example-repo</code></li>
+<li>Description: <code>Example repository for tutorial</code></li>
+<li>Public repository</li>
+<li>Initialize with a README</li>
+</ul>
+</li>
+<li>
+<p><strong>Clone the repository</strong>:</p>
+<pre class="hljs"><code><div>git <span class="hljs-built_in">clone</span> git@github.com:your-username/example-repo.git
+</div></code></pre>
+</li>
+<li>
+<p><strong>Add code files</strong>:</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">cd</span> example-repo
+<span class="hljs-built_in">echo</span> <span class="hljs-string">"# Example Project"</span> &gt; README.md
+</div></code></pre>
+</li>
+<li>
+<p><strong>Commit changes</strong>:</p>
+<pre class="hljs"><code><div>git add README.md
+git commit -m <span class="hljs-string">"Add README file"</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong>Push to GitHub</strong>:</p>
+<pre class="hljs"><code><div>git push origin main
+</div></code></pre>
+</li>
+</ol>
+<p>By following these steps, you can easily upload your code to GitHub using either the terminal or VS Code. Happy coding!</p>
+
+</body>
+</html>

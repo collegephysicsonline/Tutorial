@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>markdown.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="markdown-syntax-cheat-sheet">Markdown Syntax Cheat Sheet</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Markdown is a lightweight markup language with plain text formatting syntax. It is designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.</p>
+<h2 id="writing-markdown-for-python-projects-on-github">Writing Markdown for Python Projects on GitHub</h2>
+<p>Markdown is an essential tool for documenting Python projects on GitHub. It allows you to create well-structured and easily readable documentation, which is crucial for collaboration and sharing your work with others. This guide will help you understand how to use Markdown to create comprehensive documentation for your Python projects.</p>
+<p>When documenting your Python project, you might want to include the following sections:</p>
+<ol>
+<li><strong>Project Title and Description</strong>: Provide a clear and concise title and a brief description of your project.</li>
+<li><strong>Installation Instructions</strong>: Explain how to install and set up your project.</li>
+<li><strong>Usage</strong>: Provide examples of how to use your project.</li>
+<li><strong>Contributing</strong>: Outline guidelines for contributing to your project.</li>
+<li><strong>License</strong>: Specify the license under which your project is distributed.</li>
+</ol>
+<h2 id="character-formatting">Character Formatting</h2>
+<ul>
+<li><strong>Bold</strong>: <code>**text**</code> or <code>__text__</code></li>
+<li><em>Italic</em>: <code>*text*</code> or <code>_text_</code></li>
+<li><s>Strikethrough</s>: <code>~~text~~</code></li>
+</ul>
+<h2 id="headings">Headings</h2>
+<ul>
+<li><code># Heading 1</code></li>
+<li><code>## Heading 2</code></li>
+<li><code>### Heading 3</code></li>
+<li><code>#### Heading 4</code></li>
+<li><code>##### Heading 5</code></li>
+<li><code>###### Heading 6</code></li>
+</ul>
+<h2 id="paragraphs-and-line-breaks">Paragraphs and Line Breaks</h2>
+<ul>
+<li>Paragraphs are separated by a blank line.</li>
+<li>Line break: End a line with two spaces or use <code>&lt;br&gt;</code>.</li>
+</ul>
+<h2 id="thematic-break">Thematic Break</h2>
+<ul>
+<li><code>---</code></li>
+<li><code>***</code></li>
+<li><code>___</code></li>
+</ul>
+<h2 id="block-quotes">Block Quotes</h2>
+<ul>
+<li><code>&gt; This is a block quote.</code></li>
+</ul>
+<h2 id="inline-code">Inline Code</h2>
+<ul>
+<li><code>`code`</code></li>
+</ul>
+<h2 id="indented-code-block">Indented Code Block</h2>
+<pre><code>```
+This is an indented code block.
+```
+</code></pre>
+<h2 id="fenced-code-block">Fenced Code Block</h2>
+<pre><code>```language
+// This is a fenced code block with syntax highlighting.
+```
+</code></pre>
+<h2 id="lists">Lists</h2>
+<ul>
+<li><strong>Unordered List</strong>:
+<ul>
+<li><code>- Item</code></li>
+<li><code>* Item</code></li>
+<li><code>+ Item</code></li>
+</ul>
+</li>
+<li><strong>Ordered List</strong>:
+<ol>
+<li><code>1. Item</code></li>
+<li><code>2. Item</code></li>
+</ol>
+</li>
+</ul>
+<h2 id="tables">Tables</h2>
+<pre class="hljs"><code><div>| Header 1 | Header 2 |
+|----------|----------|
+| Cell 1   | Cell 2   |
+| Cell 3   | Cell 4   |
+</div></code></pre>
+<h2 id="links">Links</h2>
+<ul>
+<li><code>[Link Text](URL)</code></li>
+</ul>
+<h2 id="autolinks">Autolinks</h2>
+<ul>
+<li><code>&lt;http://example.com&gt;</code></li>
+</ul>
+<h2 id="images">Images</h2>
+<ul>
+<li><code>![Alt Text](URL)</code></li>
+</ul>
+<h2 id="character-formatting">Character Formatting</h2>
+<p>Character formatting in Markdown includes bold, italic, and strikethrough text.</p>
+<ul>
+<li><strong>Bold</strong>: To make text bold, wrap it with <code>**</code> or <code>__</code>.<br>
+Example: <code>**bold text**</code> or <code>__bold text__</code> will render as <strong>bold text</strong>.</li>
+<li><em>Italic</em>: To italicize text, wrap it with <code>*</code> or <code>_</code>.<br>
+Example: <code>*italic text*</code> or <code>_italic text_</code> will render as <em>italic text</em>.</li>
+<li><s>Strikethrough</s>: To strike through text, wrap it with <code>~~</code>.<br>
+Example: <code>~~strikethrough text~~</code> will render as <s>strikethrough text</s>.</li>
+</ul>
+<h2 id="headings">Headings</h2>
+<p>Headings are created using the <code>#</code> symbol followed by a space and the heading text. The number of <code>#</code> symbols indicates the level of the heading.</p>
+<ul>
+<li><code># Heading 1</code></li>
+<li><code>## Heading 2</code></li>
+<li><code>### Heading 3</code></li>
+<li><code>#### Heading 4</code></li>
+<li><code>##### Heading 5</code></li>
+<li><code>###### Heading 6</code></li>
+</ul>
+<p>Example:</p>
+<pre class="hljs"><code><div># Heading 1
+## Heading 2
+### Heading 3
+</div></code></pre>
+<h2 id="paragraphs-and-line-breaks">Paragraphs and Line Breaks</h2>
+<p>Paragraphs are separated by one or more blank lines. To create a line break within a paragraph, end a line with two spaces or use the <code>&lt;br&gt;</code> HTML tag.</p>
+<p>Example:</p>
+<pre class="hljs"><code><div>This is a paragraph.
+
+This is another paragraph.
+</div></code></pre>
+<p>To create a line break:</p>
+<pre class="hljs"><code><div>This is a line with a break.  
+This is the next line.
+</div></code></pre>
+<p>or</p>
+<pre class="hljs"><code><div>This is a line with a break.&lt;br&gt;
+This is the next line.
+</div></code></pre>
+<h2 id="thematic-break">Thematic Break</h2>
+<p>A thematic break (horizontal rule) can be created using three or more hyphens (<code>---</code>), asterisks (<code>***</code>), or underscores (<code>___</code>).</p>
+<p>Example:</p>
+<pre class="hljs"><code><div>---
+***
+___
+</div></code></pre>
+<h2 id="block-quotes">Block Quotes</h2>
+<p>Block quotes are created using the <code>&gt;</code> symbol followed by a space.</p>
+<p>Example:</p>
+<pre class="hljs"><code><div>&gt; This is a block quote.
+</div></code></pre>
+<h2 id="inline-code">Inline Code</h2>
+<p>Inline code is created by wrapping text with backticks (<code>`</code>).</p>
+<p>Example:
+<code>`code`</code> will render as <code>code</code>.</p>
+<h2 id="indented-code-block">Indented Code Block</h2>
+<p>Indented code blocks are created by indenting lines with four spaces or one tab.</p>
+<p>Example:</p>
+<pre class="hljs"><code><div>        This is an indented code block.
+</div></code></pre>
+<h2 id="fenced-code-block">Fenced Code Block</h2>
+<p>Fenced code blocks are created by wrapping code with triple backticks (<code>```</code>). Optionally, you can specify a language for syntax highlighting.</p>
+<p>Example:
+<code>python         def hello_world():                 print(&quot;Hello, world!&quot;)         </code></p>
+<h2 id="lists">Lists</h2>
+<p>Markdown supports ordered and unordered lists.</p>
+<ul>
+<li>
+<p><strong>Unordered List</strong>: Use <code>-</code>, <code>*</code>, or <code>+</code> followed by a space.
+Example:</p>
+<pre class="hljs"><code><div>- Item 1
+- Item 2
+</div></code></pre>
+</li>
+<li>
+<p><strong>Ordered List</strong>: Use numbers followed by a period and a space.
+Example:</p>
+<pre class="hljs"><code><div>1. Item 1
+2. Item 2
+</div></code></pre>
+</li>
+</ul>
+<h2 id="tables">Tables</h2>
+<p>Tables are created using pipes (<code>|</code>) and hyphens (<code>-</code>). The first row is the header, and the second row contains hyphens to separate the header from the body.</p>
+<p>Example:</p>
+<pre class="hljs"><code><div>| Header 1 | Header 2 |
+|----------|----------|
+| Cell 1   | Cell 2   |
+| Cell 3   | Cell 4   |
+</div></code></pre>
+<h2 id="links">Links</h2>
+<p>Links are created using square brackets for the link text and parentheses for the URL.</p>
+<p>Example:</p>
+<pre class="hljs"><code><div>[Link Text](http://example.com)
+</div></code></pre>
+<h2 id="autolinks">Autolinks</h2>
+<p>Autolinks are created by wrapping URLs or email addresses with angle brackets.</p>
+<p>Example:</p>
+<pre class="hljs"><code><div>&lt;http://example.com&gt;
+&lt;user@example.com&gt;
+</div></code></pre>
+<h2 id="images">Images</h2>
+<p>Images are created using an exclamation mark followed by square brackets for the alt text and parentheses for the URL.</p>
+<p>Example:</p>
+<pre class="hljs"><code><div>![Alt Text](http://example.com/image.jpg)
+</div></code></pre>
+<h2 id="python-code-examples-in-markdown">Python Code Examples in Markdown</h2>
+<p>When documenting Python projects, including code examples is essential. Here are some examples of how to write Python code in Markdown:</p>
+<h3 id="inline-code">Inline Code</h3>
+<p>To include a short snippet of Python code within a sentence, use inline code formatting with backticks.</p>
+<p>Example:</p>
+<pre class="hljs"><code><div>The `print()` function in Python is used to output text to the console.
+</div></code></pre>
+<h3 id="code-blocks">Code Blocks</h3>
+<p>For longer code examples, use fenced code blocks. Specify the language (e.g., <code>python</code>) to enable syntax highlighting.</p>
+<p>Example:</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">greet</span><span class="hljs-params">(name)</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">f"Hello, <span class="hljs-subst">{name}</span>!"</span>
+
+print(greet(<span class="hljs-string">"World"</span>))
+</div></code></pre>
+<h3 id="including-output">Including Output</h3>
+<p>You can also include the expected output of your code by using a combination of code blocks and text.</p>
+<p>Example:</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add</span><span class="hljs-params">(a, b)</span>:</span>
+    <span class="hljs-keyword">return</span> a + b
+
+result = add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+print(result)
+</div></code></pre>
+<p>Output:</p>
+<pre class="hljs"><code><div>5
+</div></code></pre>
+<h3 id="documenting-functions">Documenting Functions</h3>
+<p>When documenting functions, provide a description, the function signature, and an example of how to use the function.</p>
+<p>Example:</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">multiply</span><span class="hljs-params">(a, b)</span>:</span>
+    <span class="hljs-string">"""
+    Multiply two numbers and return the result.
+
+    Parameters:
+    a (int): The first number.
+    b (int): The second number.
+
+    Returns:
+    int: The product of the two numbers.
+    """</span>
+    <span class="hljs-keyword">return</span> a * b
+
+<span class="hljs-comment"># Example usage</span>
+result = multiply(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+print(result)  <span class="hljs-comment"># Output: 20</span>
+</div></code></pre>
+<h3 id="using-markdown-for-jupyter-notebooks">Using Markdown for Jupyter Notebooks</h3>
+<p>Markdown is also used in Jupyter Notebooks to provide explanations and context for your code. Here is an example of how to combine Markdown and Python code in a Jupyter Notebook:</p>
+<p>Markdown Cell:</p>
+<pre class="hljs"><code><div># Data Analysis with Pandas
+
+In this notebook, we will perform data analysis using the Pandas library.
+</div></code></pre>
+<p>Code Cell:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+
+<span class="hljs-comment"># Load the dataset</span>
+df = pd.read_csv(<span class="hljs-string">'data.csv'</span>)
+
+<span class="hljs-comment"># Display the first few rows of the dataframe</span>
+df.head()
+</div></code></pre>
+<p>By following these examples, you can effectively document your Python code and make it easier for others to understand and use your projects.
+By following this guide, you will be able to create professional and informative documentation for your Python projects on GitHub.</p>
+
+</body>
+</html>
