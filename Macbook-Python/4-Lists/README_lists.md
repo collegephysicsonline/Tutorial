@@ -373,6 +373,56 @@ sum_velocities = [v1 + v2 for v1, v2 in zip(velocities1, velocities2)]
 print(sum_velocities)  # Output: [7.0, 14.0, 20.0]
 ```
 
+The `sum_velocities` list is calculated using a list comprehension combined with the `zip()` function. The `zip()` function pairs up the corresponding elements from `velocities1` and `velocities2`, and the list comprehension iterates over these pairs, adding each pair of elements together to form the new list.
+
+Here's the relevant code snippet:
+
+```python
+velocities1 = [5.0, 10.2, 15.4]
+velocities2 = [2.0, 3.8, 4.6]
+
+sum_velocities = [v1 + v2 for v1, v2 in zip(velocities1, velocities2)]
+print(sum_velocities)  # Output: [7.0, 14.0, 20.0]
+```
+
+In this example, `zip(velocities1, velocities2)` creates an iterator that produces tuples of corresponding elements from the two lists. The list comprehension `[v1 + v2 for v1, v2 in zip(velocities1, velocities2)]` then iterates over these tuples, adding the elements together and creating a new list with the results.
+
+### Example: Using a For Loop to Iterate Over a List
+
+In Python, a `for` loop is a powerful tool that allows you to iterate over each element in a list. This is particularly useful when you need to perform the same operation on each element of the list.
+
+#### Example: Iterating Over a List of Measurements
+
+Suppose you have a list of time measurements in seconds:
+
+```python
+time_measurements = [0.5, 1.0, 1.5, 2.0, 2.5]
+```
+
+You can use a `for` loop to iterate over each measurement and print it:
+
+```python
+for time in time_measurements:
+    print(time)
+```
+
+Output:
+```
+0.5
+1.0
+1.5
+2.0
+2.5
+```
+
+In this example, the `for` loop goes through each element in the `time_measurements` list and prints it. This is a simple yet powerful way to process each element in a list.
+
+### Practical Application
+
+Imagine you are conducting an experiment where you measure the temperature at different positions over time. You can use a `for` loop to iterate over your list of measurements and perform calculations, such as converting the temperatures from Celsius to Fahrenheit.
+
+By understanding and utilizing `for` loops, you can efficiently process and analyze your experimental data, making your physics experiments more organized and insightful.
+
 #### Example: Subtracting Two Lists
 
 To subtract the corresponding elements of the two lists:
