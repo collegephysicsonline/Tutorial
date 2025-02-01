@@ -145,20 +145,6 @@ for force in forces:
         print(f"{force}N is a weak force.")
 ```
 
-### Flowchart for Conditional Statements
-
-Below is a flowchart that explains the flow of the `if`, `elif`, and `else` statements in the context of checking velocity:
-
-```mermaid
-graph TD
-    A[Start] --> B{velocity > 20}
-    B -- True --> C[Print "The object is moving fast."]
-    B -- False --> D[Print "The object is moving slow."]
-    C --> E[End]
-    D --> E[End]
-```
-
-This flowchart demonstrates how the program evaluates the velocity condition and executes the corresponding print statement based on whether the condition is `True` or `False`.
 
 ### Flowchart for `while` Loop
 
