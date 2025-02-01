@@ -574,9 +574,11 @@ This code demonstrates the use of variables, lists, `for` loop, `if`, `elif`, `e
 ### Example 6: Simulating Quantum Particle Energy Levels
 
 Let's simulate a quantum mechanics problem where we calculate the energy levels of a particle in a one-dimensional infinite potential well. The energy levels are given by the formula:
+
 $$
 E_n = \frac{n^2 h^2}{8mL^2}
 $$
+
 where \( n \) is the quantum number, \( h \) is Planck's constant, \( m \) is the mass of the particle, and \( L \) is the width of the well.
 
 #### Problem Statement
