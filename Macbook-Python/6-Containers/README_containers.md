@@ -135,3 +135,86 @@ unique_numbers = {1, 2, 3, 4, 5}
 unique_numbers.add(6)
 print(unique_numbers)  # Output: {1, 2, 3, 4, 5, 6}
 ```
+
+## Using For Loops with Tuples, Dictionaries, and Sets
+
+For loops are a fundamental concept in Python that allow you to iterate over a sequence of elements. Let's explore how to use for loops with tuples, dictionaries, and sets using examples from Physics.
+
+### Tuples
+
+Tuples are immutable sequences, which means their values cannot be changed after creation. They are useful for storing related pieces of data that should not be modified.
+
+#### Example: Iterating Over Physical Constants
+
+```python
+# Tuple of physical constants (name, symbol, value)
+physical_constants = (
+    ("Speed of Light", "c", 299792458),  # in meters per second
+    ("Gravitational Constant", "G", 6.67430e-11),  # in m^3 kg^-1 s^-2
+    ("Planck's Constant", "h", 6.62607015e-34)  # in Joule seconds
+)
+
+# Using a for loop to iterate over the tuple
+for constant in physical_constants:
+    name, symbol, value = constant
+    print(f"{name} ({symbol}): {value}")
+```
+
+### Dictionaries
+
+Dictionaries store data in key-value pairs, allowing for fast retrieval of values based on their keys. This is useful for storing data that needs to be accessed by a unique identifier.
+
+#### Example: Iterating Over Particle Properties
+
+```python
+# Dictionary of particle properties
+particles = {
+    "electron": {"charge": -1.602e-19, "mass": 9.109e-31},  # charge in Coulombs, mass in kg
+    "proton": {"charge": 1.602e-19, "mass": 1.673e-27},
+    "neutron": {"charge": 0, "mass": 1.675e-27}
+}
+
+# Using a for loop to iterate over the dictionary
+for particle, properties in particles.items():
+    charge = properties["charge"]
+    mass = properties["mass"]
+    print(f"{particle.capitalize()}: Charge = {charge} C, Mass = {mass} kg")
+```
+
+### Sets
+
+Sets are collections of unique elements. They are useful for storing data where duplicates are not allowed and for performing mathematical set operations like union, intersection, and difference.
+
+#### Example: Iterating Over Unique Measurement Units
+
+```python
+# Set of measurement units
+units = {"meter", "second", "kilogram", "ampere", "kelvin", "mole", "candela"}
+
+# Using a for loop to iterate over the set
+for unit in units:
+    print(unit)
+
+# Set operations
+base_units = {"meter", "second", "kilogram"}
+derived_units = {"newton", "joule", "watt"}
+
+# Using a for loop to iterate over the union of sets
+all_units = base_units.union(derived_units)
+for unit in all_units:
+    print(unit)
+```
+
+By using for loops with tuples, dictionaries, and sets, you can efficiently process and manipulate data in your Physics projects. These examples demonstrate how to iterate over different data structures, providing you with the tools to handle various types of data in Python.
+
+## Summary
+
+In this section, we explored three essential data structures in Python: tuples, dictionaries, and sets. Each of these structures has unique characteristics and use cases:
+
+- **Tuples** are immutable sequences, ideal for storing related data that should not be changed. They are defined using parentheses `()` and can be accessed via indexing.
+- **Dictionaries** store data in key-value pairs, allowing for efficient retrieval based on unique keys. They are defined using curly braces `{}` and accessed using keys.
+- **Sets** are collections of unique elements, useful for storing data without duplicates and performing set operations like union and intersection. They are defined using the `set()` function or curly braces `{}`.
+
+We also compared these data structures with lists, highlighting their differences in terms of mutability, syntax, and operations. Additionally, we provided examples of using for loops to iterate over tuples, dictionaries, and sets, demonstrating their practical applications in Physics-related projects.
+
+Understanding these data structures and their operations will enhance your ability to manage and manipulate data effectively in Python.
