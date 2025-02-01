@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README_containers.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="introduction-to-tuples-dictionaries-and-sets-in-python">Introduction to Tuples, Dictionaries, and Sets in Python</h1>
+<p>In this course, we have already discussed variables, data types, lists, and for loops in Python. Now, let's explore some additional data structures: tuples, dictionaries, and sets. We'll use examples from Physics to make these concepts more relatable.</p>
+<h2 id="tuples">Tuples</h2>
+<p>Tuples are similar to lists, but they are immutable, meaning their values cannot be changed after creation. Tuples are useful for storing related pieces of data that should not be modified.</p>
+<h3 id="example-storing-physical-constants">Example: Storing Physical Constants</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Tuple of physical constants (name, symbol, value)</span>
+physical_constants = (
+    (<span class="hljs-string">"Speed of Light"</span>, <span class="hljs-string">"c"</span>, <span class="hljs-number">299792458</span>),  <span class="hljs-comment"># in meters per second</span>
+    (<span class="hljs-string">"Gravitational Constant"</span>, <span class="hljs-string">"G"</span>, <span class="hljs-number">6.67430e-11</span>),  <span class="hljs-comment"># in m^3 kg^-1 s^-2</span>
+    (<span class="hljs-string">"Planck's Constant"</span>, <span class="hljs-string">"h"</span>, <span class="hljs-number">6.62607015e-34</span>)  <span class="hljs-comment"># in Joule seconds</span>
+)
+
+<span class="hljs-comment"># Accessing elements in a tuple</span>
+<span class="hljs-keyword">for</span> constant <span class="hljs-keyword">in</span> physical_constants:
+    print(<span class="hljs-string">f"<span class="hljs-subst">{constant[<span class="hljs-number">0</span>]}</span> (<span class="hljs-subst">{constant[<span class="hljs-number">1</span>]}</span>): <span class="hljs-subst">{constant[<span class="hljs-number">2</span>]}</span>"</span>)
+</div></code></pre>
+<h2 id="dictionaries">Dictionaries</h2>
+<p>Dictionaries store data in key-value pairs, allowing for fast retrieval of values based on their keys. This is useful for storing data that needs to be accessed by a unique identifier.</p>
+<h3 id="example-storing-particle-properties">Example: Storing Particle Properties</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Dictionary of particle properties</span>
+particles = {
+    <span class="hljs-string">"electron"</span>: {<span class="hljs-string">"charge"</span>: <span class="hljs-number">-1.602e-19</span>, <span class="hljs-string">"mass"</span>: <span class="hljs-number">9.109e-31</span>},  <span class="hljs-comment"># charge in Coulombs, mass in kg</span>
+    <span class="hljs-string">"proton"</span>: {<span class="hljs-string">"charge"</span>: <span class="hljs-number">1.602e-19</span>, <span class="hljs-string">"mass"</span>: <span class="hljs-number">1.673e-27</span>},
+    <span class="hljs-string">"neutron"</span>: {<span class="hljs-string">"charge"</span>: <span class="hljs-number">0</span>, <span class="hljs-string">"mass"</span>: <span class="hljs-number">1.675e-27</span>}
+}
+
+<span class="hljs-comment"># Accessing dictionary values</span>
+<span class="hljs-keyword">for</span> particle, properties <span class="hljs-keyword">in</span> particles.items():
+    print(<span class="hljs-string">f"<span class="hljs-subst">{particle.capitalize()}</span>: Charge = <span class="hljs-subst">{properties[<span class="hljs-string">'charge'</span>]}</span> C, Mass = <span class="hljs-subst">{properties[<span class="hljs-string">'mass'</span>]}</span> kg"</span>)
+</div></code></pre>
+<h2 id="sets">Sets</h2>
+<p>Sets are collections of unique elements. They are useful for storing data where duplicates are not allowed and for performing mathematical set operations like union, intersection, and difference.</p>
+<h3 id="example-unique-measurement-units">Example: Unique Measurement Units</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Set of measurement units</span>
+units = {<span class="hljs-string">"meter"</span>, <span class="hljs-string">"second"</span>, <span class="hljs-string">"kilogram"</span>, <span class="hljs-string">"ampere"</span>, <span class="hljs-string">"kelvin"</span>, <span class="hljs-string">"mole"</span>, <span class="hljs-string">"candela"</span>}
+
+<span class="hljs-comment"># Adding a new unit</span>
+units.add(<span class="hljs-string">"liter"</span>)
+
+<span class="hljs-comment"># Removing a unit</span>
+units.remove(<span class="hljs-string">"liter"</span>)
+
+<span class="hljs-comment"># Checking membership</span>
+print(<span class="hljs-string">"meter"</span> <span class="hljs-keyword">in</span> units)  <span class="hljs-comment"># Output: True</span>
+
+<span class="hljs-comment"># Set operations</span>
+base_units = {<span class="hljs-string">"meter"</span>, <span class="hljs-string">"second"</span>, <span class="hljs-string">"kilogram"</span>}
+derived_units = {<span class="hljs-string">"newton"</span>, <span class="hljs-string">"joule"</span>, <span class="hljs-string">"watt"</span>}
+
+<span class="hljs-comment"># Union of sets</span>
+all_units = base_units.union(derived_units)
+print(all_units)
+
+<span class="hljs-comment"># Intersection of sets</span>
+common_units = base_units.intersection(derived_units)
+print(common_units)
+</div></code></pre>
+<p>By understanding and using tuples, dictionaries, and sets, you can efficiently manage and manipulate data in your Physics projects. These data structures complement the variables, data types, lists, and for loops we have previously discussed, providing you with a robust toolkit for your programming needs.</p>
+<blockquote>
+<p><em>Once upon a time in a faraway land of Physicsville, there lived three friends: Tuppy the Tuple, Dicky the Dictionary, and Setty the Set. They were always seen together, helping the townsfolk with their daily data problems.</em></p>
+</blockquote>
+<blockquote>
+<p><em>Tuppy the Tuple was known for his steadfast nature. Once he made a decision, he never changed his mind. This made him perfect for storing important information that should never be altered, like the town's physical constants. For example, Tuppy would store the speed of light as 299792458 meters per second and never let anyone change it.</em></p>
+</blockquote>
+<blockquote>
+<p><em>Dicky the Dictionary, on the other hand, was the town's go-to for quick answers. He had a unique ability to remember things by name, making it easy for the townsfolk to find what they needed. Whether it was the charge of an electron (-1.602e-19 C) or the mass of a proton (1.673e-27 kg), Dicky always had the right information at his fingertips.</em></p>
+</blockquote>
+<blockquote>
+<p><em>Setty the Set was the most unique of the trio. She loved collecting things but hated duplicates. This made her the perfect choice for managing the town's collection of measurement units. Setty also enjoyed playing games with her friends, like finding common interests (intersection) or combining their collections (union). For instance, she would ensure that the units &quot;meter&quot;, &quot;second&quot;, and &quot;kilogram&quot; were always unique in her collection.</em></p>
+</blockquote>
+<blockquote>
+<p><em>Together, Tuppy, Dicky, and Setty made life in Physicsville much easier, showing everyone that with the right tools, even the most complex data could be managed with ease and a bit of fun.</em></p>
+</blockquote>
+<blockquote>
+<p><em>And so, the townsfolk lived happily ever after, always grateful for their three data-savvy friends.</em></p>
+</blockquote>
+<h2 id="comparison-of-lists-tuples-dictionaries-and-sets-in-python">Comparison of Lists, Tuples, Dictionaries, and Sets in Python</h2>
+<table>
+<thead>
+<tr>
+<th>Feature/Operation</th>
+<th>List</th>
+<th>Tuple</th>
+<th>Dictionary</th>
+<th>Set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Definition</td>
+<td>Ordered, mutable collection of elements</td>
+<td>Ordered, immutable collection of elements</td>
+<td>Unordered collection of key-value pairs</td>
+<td>Unordered collection of unique elements</td>
+</tr>
+<tr>
+<td>Syntax</td>
+<td><code>[]</code></td>
+<td><code>()</code></td>
+<td><code>{}</code></td>
+<td><code>set()</code> or <code>{}</code></td>
+</tr>
+<tr>
+<td>Example</td>
+<td><code>[1, 2, 3]</code></td>
+<td><code>(1, 2, 3)</code></td>
+<td><code>{&quot;a&quot;: 1, &quot;b&quot;: 2}</code></td>
+<td><code>{1, 2, 3}</code></td>
+</tr>
+<tr>
+<td>Access Elements</td>
+<td><code>list[index]</code></td>
+<td><code>tuple[index]</code></td>
+<td><code>dict[key]</code></td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>Change Elements</td>
+<td><code>list[index] = value</code></td>
+<td>Not allowed</td>
+<td><code>dict[key] = value</code></td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>Add Elements</td>
+<td><code>list.append(value)</code></td>
+<td>Not allowed</td>
+<td><code>dict[key] = value</code></td>
+<td><code>set.add(value)</code></td>
+</tr>
+<tr>
+<td>Remove Elements</td>
+<td><code>list.remove(value)</code></td>
+<td>Not allowed</td>
+<td><code>dict.pop(key)</code></td>
+<td><code>set.remove(value)</code></td>
+</tr>
+<tr>
+<td>Length</td>
+<td><code>len(list)</code></td>
+<td><code>len(tuple)</code></td>
+<td><code>len(dict)</code></td>
+<td><code>len(set)</code></td>
+</tr>
+<tr>
+<td>Iteration</td>
+<td><code>for item in list</code></td>
+<td><code>for item in tuple</code></td>
+<td><code>for key, value in dict.items()</code></td>
+<td><code>for item in set</code></td>
+</tr>
+<tr>
+<td>Membership Test</td>
+<td><code>value in list</code></td>
+<td><code>value in tuple</code></td>
+<td><code>key in dict</code></td>
+<td><code>value in set</code></td>
+</tr>
+<tr>
+<td>Concatenation</td>
+<td><code>list1 + list2</code></td>
+<td><code>tuple1 + tuple2</code></td>
+<td>Not applicable</td>
+<td><code>set1.union(set2)</code></td>
+</tr>
+<tr>
+<td>Repetition</td>
+<td><code>list * n</code></td>
+<td><code>tuple * n</code></td>
+<td>Not applicable</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>Slicing</td>
+<td><code>list[start:end]</code></td>
+<td><code>tuple[start:end]</code></td>
+<td>Not applicable</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td>Nesting</td>
+<td>Allowed</td>
+<td>Allowed</td>
+<td>Allowed</td>
+<td>Allowed</td>
+</tr>
+<tr>
+<td>Comprehensions</td>
+<td><code>[x for x in list]</code></td>
+<td><code>(x for x in tuple)</code></td>
+<td><code>{k: v for k, v in dict.items()}</code></td>
+<td><code>{x for x in set}</code></td>
+</tr>
+<tr>
+<td>Methods</td>
+<td><code>append</code>, <code>extend</code>, <code>insert</code>, <code>remove</code>, <code>pop</code>, <code>clear</code>, <code>index</code>, <code>count</code>, <code>sort</code>, <code>reverse</code></td>
+<td><code>count</code>, <code>index</code></td>
+<td><code>keys</code>, <code>values</code>, <code>items</code>, <code>get</code>, <code>pop</code>, <code>popitem</code>, <code>clear</code>, <code>update</code></td>
+<td><code>add</code>, <code>remove</code>, <code>discard</code>, <code>pop</code>, <code>clear</code>, <code>union</code>, <code>intersection</code>, <code>difference</code>, <code>symmetric_difference</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples">Examples</h3>
+<h4 id="list">List</h4>
+<pre class="hljs"><code><div>fruits = [<span class="hljs-string">"apple"</span>, <span class="hljs-string">"banana"</span>, <span class="hljs-string">"cherry"</span>]
+fruits.append(<span class="hljs-string">"date"</span>)
+print(fruits)  <span class="hljs-comment"># Output: ['apple', 'banana', 'cherry', 'date']</span>
+</div></code></pre>
+<h4 id="tuple">Tuple</h4>
+<pre class="hljs"><code><div>coordinates = (<span class="hljs-number">10.0</span>, <span class="hljs-number">20.0</span>, <span class="hljs-number">30.0</span>)
+print(coordinates[<span class="hljs-number">1</span>])  <span class="hljs-comment"># Output: 20.0</span>
+</div></code></pre>
+<h4 id="dictionary">Dictionary</h4>
+<pre class="hljs"><code><div>student = {<span class="hljs-string">"name"</span>: <span class="hljs-string">"Alice"</span>, <span class="hljs-string">"age"</span>: <span class="hljs-number">25</span>, <span class="hljs-string">"courses"</span>: [<span class="hljs-string">"Math"</span>, <span class="hljs-string">"Physics"</span>]}
+print(student[<span class="hljs-string">"name"</span>])  <span class="hljs-comment"># Output: Alice</span>
+</div></code></pre>
+<h4 id="set">Set</h4>
+<pre class="hljs"><code><div>unique_numbers = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>}
+unique_numbers.add(<span class="hljs-number">6</span>)
+print(unique_numbers)  <span class="hljs-comment"># Output: {1, 2, 3, 4, 5, 6}</span>
+</div></code></pre>
+<h2 id="using-for-loops-with-tuples-dictionaries-and-sets">Using For Loops with Tuples, Dictionaries, and Sets</h2>
+<p>For loops are a fundamental concept in Python that allow you to iterate over a sequence of elements. Let's explore how to use for loops with tuples, dictionaries, and sets using examples from Physics.</p>
+<h3 id="tuples">Tuples</h3>
+<p>Tuples are immutable sequences, which means their values cannot be changed after creation. They are useful for storing related pieces of data that should not be modified.</p>
+<h4 id="example-iterating-over-physical-constants">Example: Iterating Over Physical Constants</h4>
+<pre class="hljs"><code><div><span class="hljs-comment"># Tuple of physical constants (name, symbol, value)</span>
+physical_constants = (
+    (<span class="hljs-string">"Speed of Light"</span>, <span class="hljs-string">"c"</span>, <span class="hljs-number">299792458</span>),  <span class="hljs-comment"># in meters per second</span>
+    (<span class="hljs-string">"Gravitational Constant"</span>, <span class="hljs-string">"G"</span>, <span class="hljs-number">6.67430e-11</span>),  <span class="hljs-comment"># in m^3 kg^-1 s^-2</span>
+    (<span class="hljs-string">"Planck's Constant"</span>, <span class="hljs-string">"h"</span>, <span class="hljs-number">6.62607015e-34</span>)  <span class="hljs-comment"># in Joule seconds</span>
+)
+
+<span class="hljs-comment"># Using a for loop to iterate over the tuple</span>
+<span class="hljs-keyword">for</span> constant <span class="hljs-keyword">in</span> physical_constants:
+    name, symbol, value = constant
+    print(<span class="hljs-string">f"<span class="hljs-subst">{name}</span> (<span class="hljs-subst">{symbol}</span>): <span class="hljs-subst">{value}</span>"</span>)
+</div></code></pre>
+<h3 id="dictionaries">Dictionaries</h3>
+<p>Dictionaries store data in key-value pairs, allowing for fast retrieval of values based on their keys. This is useful for storing data that needs to be accessed by a unique identifier.</p>
+<h4 id="example-iterating-over-particle-properties">Example: Iterating Over Particle Properties</h4>
+<pre class="hljs"><code><div><span class="hljs-comment"># Dictionary of particle properties</span>
+particles = {
+    <span class="hljs-string">"electron"</span>: {<span class="hljs-string">"charge"</span>: <span class="hljs-number">-1.602e-19</span>, <span class="hljs-string">"mass"</span>: <span class="hljs-number">9.109e-31</span>},  <span class="hljs-comment"># charge in Coulombs, mass in kg</span>
+    <span class="hljs-string">"proton"</span>: {<span class="hljs-string">"charge"</span>: <span class="hljs-number">1.602e-19</span>, <span class="hljs-string">"mass"</span>: <span class="hljs-number">1.673e-27</span>},
+    <span class="hljs-string">"neutron"</span>: {<span class="hljs-string">"charge"</span>: <span class="hljs-number">0</span>, <span class="hljs-string">"mass"</span>: <span class="hljs-number">1.675e-27</span>}
+}
+
+<span class="hljs-comment"># Using a for loop to iterate over the dictionary</span>
+<span class="hljs-keyword">for</span> particle, properties <span class="hljs-keyword">in</span> particles.items():
+    charge = properties[<span class="hljs-string">"charge"</span>]
+    mass = properties[<span class="hljs-string">"mass"</span>]
+    print(<span class="hljs-string">f"<span class="hljs-subst">{particle.capitalize()}</span>: Charge = <span class="hljs-subst">{charge}</span> C, Mass = <span class="hljs-subst">{mass}</span> kg"</span>)
+</div></code></pre>
+<h3 id="sets">Sets</h3>
+<p>Sets are collections of unique elements. They are useful for storing data where duplicates are not allowed and for performing mathematical set operations like union, intersection, and difference.</p>
+<h4 id="example-iterating-over-unique-measurement-units">Example: Iterating Over Unique Measurement Units</h4>
+<pre class="hljs"><code><div><span class="hljs-comment"># Set of measurement units</span>
+units = {<span class="hljs-string">"meter"</span>, <span class="hljs-string">"second"</span>, <span class="hljs-string">"kilogram"</span>, <span class="hljs-string">"ampere"</span>, <span class="hljs-string">"kelvin"</span>, <span class="hljs-string">"mole"</span>, <span class="hljs-string">"candela"</span>}
+
+<span class="hljs-comment"># Using a for loop to iterate over the set</span>
+<span class="hljs-keyword">for</span> unit <span class="hljs-keyword">in</span> units:
+    print(unit)
+
+<span class="hljs-comment"># Set operations</span>
+base_units = {<span class="hljs-string">"meter"</span>, <span class="hljs-string">"second"</span>, <span class="hljs-string">"kilogram"</span>}
+derived_units = {<span class="hljs-string">"newton"</span>, <span class="hljs-string">"joule"</span>, <span class="hljs-string">"watt"</span>}
+
+<span class="hljs-comment"># Using a for loop to iterate over the union of sets</span>
+all_units = base_units.union(derived_units)
+<span class="hljs-keyword">for</span> unit <span class="hljs-keyword">in</span> all_units:
+    print(unit)
+</div></code></pre>
+<p>By using for loops with tuples, dictionaries, and sets, you can efficiently process and manipulate data in your Physics projects. These examples demonstrate how to iterate over different data structures, providing you with the tools to handle various types of data in Python.</p>
+<h2 id="summary">Summary</h2>
+<p>In this section, we explored three essential data structures in Python: tuples, dictionaries, and sets. Each of these structures has unique characteristics and use cases:</p>
+<ul>
+<li><strong>Tuples</strong> are immutable sequences, ideal for storing related data that should not be changed. They are defined using parentheses <code>()</code> and can be accessed via indexing.</li>
+<li><strong>Dictionaries</strong> store data in key-value pairs, allowing for efficient retrieval based on unique keys. They are defined using curly braces <code>{}</code> and accessed using keys.</li>
+<li><strong>Sets</strong> are collections of unique elements, useful for storing data without duplicates and performing set operations like union and intersection. They are defined using the <code>set()</code> function or curly braces <code>{}</code>.</li>
+</ul>
+<p>We also compared these data structures with lists, highlighting their differences in terms of mutability, syntax, and operations. Additionally, we provided examples of using for loops to iterate over tuples, dictionaries, and sets, demonstrating their practical applications in Physics-related projects.</p>
+<p>Understanding these data structures and their operations will enhance your ability to manage and manipulate data effectively in Python.</p>
+
+</body>
+</html>

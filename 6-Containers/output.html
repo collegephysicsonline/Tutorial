@@ -1,0 +1,604 @@
+<h1 id="physics-problems-for-python-containers">Physics Problems for
+Python Containers</h1>
+<script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script type="text/javascript" async 
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  
+
+<h2 id="problems">Problems</h2>
+<ol type="1">
+<li>Calculate the average velocity of a car given its initial velocity
+of 10 m/s and final velocity of 20 m/s.</li>
+<li>Determine the gravitational force between two masses of 5 kg and 10
+kg separated by a distance of 2 meters.</li>
+<li>Find the kinetic energy of an object with a mass of 2 kg moving at a
+velocity of 3 m/s.</li>
+<li>Calculate the potential energy of an object with a mass of 2 kg at a
+height of 5 meters.</li>
+<li>Determine the work done by a force of 10 N over a distance of 5
+meters.</li>
+<li>Calculate the power output of a machine that does 100 J of work in 5
+seconds.</li>
+<li>Find the acceleration of an object that goes from 0 m/s to 20 m/s in
+4 seconds.</li>
+<li>Determine the momentum of an object with a mass of 2 kg moving at a
+velocity of 3 m/s.</li>
+<li>Calculate the impulse experienced by an object when a force of 10 N
+is applied for 2 seconds.</li>
+<li>Find the frequency of a wave with a wavelength of 2 meters traveling
+at a speed of 340 m/s.</li>
+<li>Determine the period of a pendulum with a length of 2 meters.</li>
+<li>Calculate the electric force between two charges of 1e-6 C and 2e-6
+C separated by a distance of 0.5 meters.</li>
+<li>Find the electric field at a point 0.5 meters away from a point
+charge of 1e-6 C.</li>
+<li>Determine the potential difference between two points in an electric
+field of 1000 N/C separated by a distance of 0.1 meters.</li>
+<li>Calculate the capacitance of a parallel plate capacitor with an area
+of 1 m² and a separation of 0.01 meters.</li>
+<li>Find the magnetic force on a charge of 1e-6 C moving at 10 m/s in a
+magnetic field of 0.1 T.</li>
+<li>Determine the magnetic flux through a loop of wire with an area of
+0.01 m² in a magnetic field of 0.1 T at an angle of 30 degrees.</li>
+<li>Calculate the inductance of a coil with 100 turns, an area of 0.01
+m², and a length of 0.1 meters.</li>
+<li>Find the energy stored in an inductor with an inductance of 0.01 H
+and a current of 2 A.</li>
+<li>Determine the resonant frequency of an LC circuit with an inductance
+of 0.01 H and a capacitance of 1e-6 F.</li>
+<li>Calculate the pressure exerted by a fluid with a density of 1000
+kg/m³ at a depth of 10 meters.</li>
+<li>Find the buoyant force on an object with a volume of 0.01 m³
+submerged in a fluid with a density of 1000 kg/m³.</li>
+<li>Determine the flow rate of a fluid through a pipe with an area of
+0.01 m² and a velocity of 2 m/s.</li>
+<li>Calculate the heat transferred in a thermodynamic process for a mass
+of 1 kg with a specific heat of 4200 J/(kg K) and a temperature change
+of 10 K.</li>
+<li>Find the efficiency of a heat engine that does 100 J of work with a
+heat input of 200 J.</li>
+<li>Determine the entropy change in a reversible process where 100 J of
+heat is transferred at a temperature of 300 K.</li>
+<li>Calculate the wavelength of light with a frequency of 5e14 Hz.</li>
+<li>Find the energy of a photon with a wavelength of 500 nm.</li>
+<li>Determine the refractive index of a medium where the speed of light
+is 2e8 m/s.</li>
+<li>Calculate the focal length of a lens with object and image distances
+of 10 cm and 20 cm, respectively.</li>
+</ol>
+<h2 id="additional-problems-requiring-for-loops">Additional Problems
+Requiring For Loops</h2>
+<ol start="31" type="1">
+<li>Calculate the sum of the first 10 natural numbers.</li>
+<li>Determine the factorial of a given number, e.g., 5.</li>
+<li>Find the sum of all even numbers between 1 and 20.</li>
+<li>Calculate the average of a list of numbers: [2, 4, 6, 8, 10].</li>
+<li>Determine the maximum value in a list of numbers: [3, 1, 4, 1, 5, 9,
+2, 6, 5].</li>
+<li>Find the number of occurrences of the number 3 in a list: [3, 1, 4,
+3, 5, 3, 2, 3, 5].</li>
+<li>Calculate the sum of the squares of the first 5 natural
+numbers.</li>
+<li>Determine the product of all odd numbers between 1 and 10.</li>
+<li>Find the sum of all prime numbers less than 20.</li>
+<li>Calculate the Fibonacci sequence up to the 10th term.</li>
+</ol>
+<h2 id="physics-concepts-to-solve-above-problems">Physics concepts to
+solve above problems</h2>
+<h3 id="mechanics">Mechanics</h3>
+<ul>
+<li><strong>Velocity</strong> is the rate of change of displacement. It
+is a vector quantity with both magnitude and direction.
+<ul>
+<li>Example: If a car moves from point A to point B, covering a distance
+of 100 meters in 10 seconds, its average velocity is <span
+class="math inline">\(` v = \frac{100 \, \text{m}}{10 \, \text{s}} = 10
+\, \text{m/s} `\)</span>.</li>
+</ul></li>
+<li><strong>Acceleration</strong> is the rate of change of velocity. It
+is also a vector quantity.
+<ul>
+<li>Example: If a car’s velocity changes from 0 to 20 m/s in 4 seconds,
+its acceleration is <span class="math inline">\(` a = \frac{20 \,
+\text{m/s} - 0 \, \text{m/s}}{4 \, \text{s}} = 5 \, \text{m/s}^2
+`\)</span>.</li>
+</ul></li>
+<li><strong>Newton’s Laws of Motion</strong>:
+<ul>
+<li><strong>First Law</strong>: An object remains at rest or in uniform
+motion unless acted upon by a net external force.</li>
+<li><strong>Second Law</strong>: The force acting on an object is equal
+to the mass of that object times its acceleration <span
+class="math inline">\(` ( F = ma ) `\)</span>.
+<ul>
+<li>Example: A force of 10 N acting on a mass of 2 kg produces an
+acceleration of <span class="math inline">\(` a = \frac{F}{m} = \frac{10
+\, \text{N}}{2 \, \text{kg}} = 5 \, \text{m/s}^2 `\)</span>.</li>
+</ul></li>
+<li><strong>Third Law</strong>: For every action, there is an equal and
+opposite reaction.</li>
+</ul></li>
+<li><strong>Work, Energy, and Power</strong>:
+<ul>
+<li><strong>Work</strong> is done when a force moves an object over a
+distance <span class="math inline">\(` ( W = Fd ) `\)</span>.
+<ul>
+<li>Example: If a force of 10 N moves an object 5 meters, the work done
+is <span class="math inline">\(` W = 10 \, \text{N} \times 5 \, \text{m}
+= 50 \, \text{J} `\)</span>.</li>
+</ul></li>
+<li><strong>Kinetic Energy (KE)</strong> is the energy of motion <span
+class="math inline">\(` ( KE = \frac{1}{2} mv^2 ) `\)</span>.
+<ul>
+<li>Example: An object with a mass of 2 kg moving at 3 m/s has <span
+class="math inline">\(` KE = \frac{1}{2} \times 2 \, \text{kg} \times (3
+\, \text{m/s})^2 = 9 \, \text{J} `\)</span>.</li>
+</ul></li>
+<li><strong>Potential Energy (PE)</strong> is the energy stored due to
+position <span class="math inline">\(` ( PE = mgh ) `\)</span>.
+<ul>
+<li>Example: An object with a mass of 2 kg at a height of 5 meters has
+<span class="math inline">\(` PE = 2 \, \text{kg} \times 9.8 \,
+\text{m/s}^2 \times 5 \, \text{m} = 98 \, \text{J} `\)</span>.</li>
+</ul></li>
+<li><strong>Power (P)</strong> is the rate of doing work <span
+class="math inline">\(` ( P = \frac{W}{t} ) `\)</span>.
+<ul>
+<li>Example: A machine that does 100 J of work in 5 seconds has <span
+class="math inline">\(` P = \frac{100 \, \text{J}}{5 \, \text{s}} = 20
+\, \text{W} `\)</span>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Momentum and Impulse</strong>:
+<ul>
+<li><strong>Momentum (p)</strong> is the product of mass and velocity
+<span class="math inline">\(` ( p = mv ) `\)</span>.
+<ul>
+<li>Example: An object with a mass of 2 kg moving at 3 m/s has <span
+class="math inline">\(` p = 2 \, \text{kg} \times 3 \, \text{m/s} = 6 \,
+\text{kg m/s} `\)</span>.</li>
+</ul></li>
+<li><strong>Impulse (J)</strong> is the change in momentum resulting
+from a force applied over a time interval <span class="math inline">\(`
+( J = Ft ) `\)</span>.
+<ul>
+<li>Example: A force of 10 N applied for 2 seconds gives an impulse of
+<span class="math inline">\(` J = 10 \, \text{N} \times 2 \, \text{s} =
+20 \, \text{Ns} `\)</span>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="gravitation">Gravitation</h3>
+<ul>
+<li><strong>Gravitational Force</strong>:
+<ul>
+<li>Newton’s law of universal gravitation states that every mass
+attracts every other mass with a force <span class="math inline">\(` ( F
+= G \frac{m_1 m_2}{r^2} ) `\)</span>.
+<ul>
+<li>Example: The gravitational force between two masses of 5 kg and 10
+kg separated by 2 meters is <span class="math inline">\(` F = 6.674
+\times 10^{-11} \frac{5 \, \text{kg} \times 10 \, \text{kg}}{(2 \,
+\text{m})^2} = 8.34 \times 10^{-10} \, \text{N} `\)</span>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="waves-and-oscillations">Waves and Oscillations</h3>
+<ul>
+<li><strong>Wave Properties</strong>:
+<ul>
+<li><strong>Frequency (f)</strong> is the number of waves passing a
+point per second <span class="math inline">\(` ( f = \frac{v}{\lambda} )
+`\)</span>.
+<ul>
+<li>Example: A wave with a wavelength of 2 meters traveling at 340 m/s
+has <span class="math inline">\(` f = \frac{340 \, \text{m/s}}{2 \,
+\text{m}} = 170 \, \text{Hz} `\)</span>.</li>
+</ul></li>
+<li><strong>Wavelength (())</strong> is the distance between successive
+crests of a wave.</li>
+<li><strong>Speed (v)</strong> of a wave is the product of its frequency
+and wavelength <span class="math inline">\(` ( v = f\lambda )
+`\)</span>.</li>
+</ul></li>
+<li><strong>Simple Harmonic Motion</strong>:
+<ul>
+<li>The <strong>period (T)</strong> of a pendulum is given by <span
+class="math inline">\(` T = 2\pi \sqrt{\frac{L}{g}} `\)</span>.
+<ul>
+<li>Example: A pendulum with a length of 2 meters has <span
+class="math inline">\(` T = 2\pi \sqrt{\frac{2 \, \text{m}}{9.8 \,
+\text{m/s}^2}} \approx 2.83 \, \text{s} `\)</span>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="electromagnetism">Electromagnetism</h3>
+<ul>
+<li><strong>Electric Forces and Fields</strong>:
+<ul>
+<li><strong>Electric Force (F)</strong> between two charges is given by
+Coulomb’s law <span class="math inline">\(` ( F = k \frac{q_1 q_2}{r^2}
+) `\)</span>.
+<ul>
+<li>Example: The force between charges of
+$<code>1 \times 10^{-6} \, \text{C}</code> and
+$<code>2 \times 10^{-6} \, \text{C}</code> separated by 0.5 meters is
+<span class="math inline">\(` F = 8.99 \times 10^9 \frac{(1 \times
+10^{-6} \, \text{C})(2 \times 10^{-6} \, \text{C})}{(0.5 \, \text{m})^2}
+= 0.072 \, \text{N} `\)</span>.</li>
+</ul></li>
+<li><strong>Electric Field (E)</strong> at a point is given by <span
+class="math inline">\(` E = k \frac{q}{r^2} `\)</span>.
+<ul>
+<li>Example: The electric field 0.5 meters away from a charge of
+$<code>1 \times 10^{-6} \, \text{C}</code> is <span
+class="math inline">\(` E = 8.99 \times 10^9 \frac{1 \times 10^{-6} \,
+\text{C}}{(0.5 \, \text{m})^2} = 3.6 \times 10^4 \, \text{N/C}
+`\)</span>.</li>
+</ul></li>
+<li><strong>Potential Difference (V)</strong> between two points in an
+electric field is <span class="math inline">\(` V = Ed `\)</span>.
+<ul>
+<li>Example: The potential difference in an electric field of 1000 N/C
+over a distance of 0.1 meters is <span class="math inline">\(` V = 1000
+\, \text{N/C} \times 0.1 \, \text{m} = 100 \, \text{V} `\)</span>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Capacitance</strong>:
+<ul>
+<li>The <strong>capacitance (C)</strong> of a parallel plate capacitor
+is <span class="math inline">\(` C = \frac{\epsilon_0 A}{d} `\)</span>.
+<ul>
+<li>Example: A capacitor with an area of 1 m² and a separation of 0.01
+meters has <span class="math inline">\(` C = \frac{8.85 \times 10^{-12}
+\, \text{F/m} \times 1 \, \text{m}^2}{0.01 \, \text{m}} = 8.85 \times
+10^{-10} \, \text{F} `\)</span>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Magnetic Forces and Fields</strong>:
+<ul>
+<li>The <strong>magnetic force (F)</strong> on a moving charge is <span
+class="math inline">\(` F = qvB `\)</span>.
+<ul>
+<li>Example: A charge of $<code>1 \times 10^{-6} \, \text{C}</code>
+moving at 10 m/s in a magnetic field of 0.1 T experiences <span
+class="math inline">\(` F = 1 \times 10^{-6} \, \text{C} \times 10 \,
+\text{m/s} \times 0.1 \, \text{T} = 1 \times 10^{-6} \, \text{N}
+`\)</span>.</li>
+</ul></li>
+<li><strong>Magnetic Flux (())</strong> through a loop is <span
+class="math inline">\(` \Phi = B A \cos(\theta) `\)</span>.
+<ul>
+<li>Example: A loop with an area of 0.01 m² in a magnetic field of 0.1 T
+at an angle of 30 degrees has <span class="math inline">\(` \Phi = 0.1
+\, \text{T} \times 0.01 \, \text{m}^2 \times \cos(30^\circ) \approx 8.66
+\times 10^{-4} \, \text{Wb} `\)</span>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Inductance</strong>:
+<ul>
+<li>The <strong>inductance (L)</strong> of a coil is <span
+class="math inline">\(` L = \frac{\mu_0 N^2 A}{l} `\)</span>.
+<ul>
+<li>Example: A coil with 100 turns, an area of 0.01 m², and a length of
+0.1 meters has <span class="math inline">\(` L = \frac{4\pi \times
+10^{-7} \, \text{H/m} \times 100^2 \times 0.01 \, \text{m}^2}{0.1 \,
+\text{m}} = 1.26 \times 10^{-4} \, \text{H} `\)</span>.</li>
+</ul></li>
+<li>The <strong>energy (E)</strong> stored in an inductor is <span
+class="math inline">\(` E = \frac{1}{2} L I^2 `\)</span>.
+<ul>
+<li>Example: An inductor with an inductance of 0.01 H and a current of 2
+A stores <span class="math inline">\(` E = \frac{1}{2} \times 0.01 \,
+\text{H} \times (2 \, \text{A})^2 = 0.02 \, \text{J} `\)</span>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="thermodynamics">Thermodynamics</h3>
+<ul>
+<li><strong>Heat and Temperature</strong>:
+<ul>
+<li>The <strong>heat (Q)</strong> transferred in a process is <span
+class="math inline">\(` Q = mc\Delta T `\)</span>.
+<ul>
+<li>Example: For a mass of 1 kg with a specific heat of 4200 J/(kg K)
+and a temperature change of 10 K, <span class="math inline">\(` Q = 1 \,
+\text{kg} \times 4200 \, \text{J/(kg K)} \times 10 \, \text{K} = 42000
+\, \text{J} `\)</span>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Thermodynamic Processes</strong>:
+<ul>
+<li><strong>Efficiency (())</strong> of a heat engine is <span
+class="math inline">\(` \eta = \frac{W}{Q_H} `\)</span>.
+<ul>
+<li>Example: An engine that does 100 J of work with a heat input of 200
+J has $<code>\eta = \frac{100 \, \text{J}}{200 \, \text{J}} = 0.5</code>
+or 50%.</li>
+</ul></li>
+<li><strong>Entropy Change ((S))</strong> in a reversible process is
+<span class="math inline">\(` \Delta S = \frac{Q}{T} `\)</span>.
+<ul>
+<li>Example: If 100 J of heat is transferred at a temperature of 300 K,
+<span class="math inline">\(` \Delta S = \frac{100 \, \text{J}}{300 \,
+\text{K}} = 0.33 \, \text{J/K} `\)</span>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="fluid-mechanics">Fluid Mechanics</h3>
+<ul>
+<li><strong>Pressure and Buoyancy</strong>:
+<ul>
+<li><strong>Pressure (P)</strong> exerted by a fluid is <span
+class="math inline">\(` P = \rho gh `\)</span>.
+<ul>
+<li>Example: A fluid with a density of 1000 kg/m³ at a depth of 10
+meters exerts <span class="math inline">\(` P = 1000 \, \text{kg/m}^3
+\times 9.8 \, \text{m/s}^2 \times 10 \, \text{m} = 98000 \, \text{Pa}
+`\)</span>.</li>
+</ul></li>
+<li><strong>Buoyant Force (F_b)</strong> on a submerged object is <span
+class="math inline">\(` F_b = \rho V g `\)</span>.
+<ul>
+<li>Example: An object with a volume of 0.01 m³ submerged in a fluid
+with a density of 1000 kg/m³ experiences <span class="math inline">\(`
+F_b = 1000 \, \text{kg/m}^3 \times 0.01 \, \text{m}^3 \times 9.8 \,
+\text{m/s}^2 = 98 \, \text{N} `\)</span>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Flow Rate</strong>:
+<ul>
+<li>The <strong>flow rate (Q)</strong> of a fluid through a pipe is
+<span class="math inline">\(` Q = A v `\)</span>.
+<ul>
+<li>Example: A pipe with an area of 0.01 m² and a velocity of 2 m/s has
+<span class="math inline">\(` Q = 0.01 \, \text{m}^2 \times 2 \,
+\text{m/s} = 0.02 \, \text{m}^3/\text{s} `\)</span>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="optics">Optics</h3>
+<ul>
+<li><strong>Light and Optics</strong>:
+<ul>
+<li>The <strong>wavelength (())</strong> of light is <span
+class="math inline">\(` \lambda = \frac{c}{f} `\)</span>.
+<ul>
+<li>Example: Light with a frequency of
+$<code>5 \times 10^{14} \, \text{Hz}</code> has
+$<code>\lambda = \frac{3 \times 10^8 \, \text{m/s}}{5 \times 10^{14} \, \text{Hz}} = 6 \times 10^{-7} \, \text{m}</code>
+or 600 nm.</li>
+</ul></li>
+<li>The <strong>energy (E)</strong> of a photon is <span
+class="math inline">\(` E = \frac{hc}{\lambda} `\)</span>.
+<ul>
+<li>Example: A photon with a wavelength of 500 nm has <span
+class="math inline">\(` E = \frac{6.626 \times 10^{-34} \, \text{Js}
+\times 3 \times 10^8 \, \text{m/s}}{500 \times 10^{-9} \, \text{m}} =
+3.97 \times 10^{-19} \, \text{J} `\)</span>.</li>
+</ul></li>
+<li>The <strong>refractive index (n)</strong> of a medium is <span
+class="math inline">\(` n = \frac{c}{v} `\)</span>.
+<ul>
+<li>Example: A medium where the speed of light is
+$<code>2 \times 10^8 \, \text{m/s}</code> has <span
+class="math inline">\(` n = \frac{3 \times 10^8 \, \text{m/s}}{2 \times
+10^8 \, \text{m/s}} = 1.5 `\)</span>.</li>
+</ul></li>
+<li>The <strong>focal length (f)</strong> of a lens is given by <span
+class="math inline">\(` \frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}
+`\)</span>.
+<ul>
+<li>Example: A lens with object and image distances of 10 cm and 20 cm
+has
+$<code>\frac{1}{f} = \frac{1}{10 \, \text{cm}} + \frac{1}{20 \, \text{cm}} = \frac{3}{20} \, \text{cm}^{-1}</code>
+or <span class="math inline">\(` f = \frac{20}{3} \, \text{cm} \approx
+6.67 \, \text{cm} `\)</span>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="modern-physics">Modern Physics</h3>
+<ul>
+<li><strong>Photon Energy</strong>:
+<ul>
+<li>The <strong>energy (E)</strong> of a photon is related to its
+wavelength (()) and frequency (f) by $<code>E = hf</code> and <span
+class="math inline">\(` E = \frac{hc}{\lambda} `\)</span>.
+<ul>
+<li>Example: A photon with a wavelength of 500 nm has <span
+class="math inline">\(` E = \frac{6.626 \times 10^{-34} \, \text{Js}
+\times 3 \times 10^8 \, \text{m/s}}{500 \times 10^{-9} \, \text{m}} =
+3.97 \times 10^{-19} \, \text{J} `\)</span>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>These concepts will help you solve the given physics problems
+effectively.</p>
+<h3 id="hints">Hints:</h3>
+<p><span class="math display">\[
+\text{average velocity} = \frac{\text{initial velocity} + \text{final
+velocity}}{2}
+\]</span></p>
+<p><span class="math display">\[
+F = G \frac{m_1 m_2}{r^2}
+\]</span></p>
+<p><span class="math display">\[
+KE = \frac{1}{2} m v^2
+\]</span></p>
+<p><span class="math display">\[
+PE = mgh
+\]</span></p>
+<p><span class="math display">\[
+W = Fd
+\]</span></p>
+<p><span class="math display">\[
+P = \frac{W}{t}
+\]</span></p>
+<p><span class="math display">\[
+a = \frac{v_f - v_i}{t}
+\]</span></p>
+<p><span class="math display">\[
+p = mv
+\]</span></p>
+<p><span class="math display">\[
+J = Ft
+\]</span></p>
+<p><span class="math display">\[
+f = \frac{v}{\lambda}
+\]</span></p>
+<p><span class="math display">\[
+T = 2\pi \sqrt{\frac{L}{g}}
+\]</span></p>
+<p><span class="math display">\[
+F = k \frac{q_1 q_2}{r^2}
+\]</span></p>
+<p><span class="math display">\[
+E = k \frac{q}{r^2}
+\]</span></p>
+<p><span class="math display">\[
+V = Ed
+\]</span></p>
+<p><span class="math display">\[
+C = \frac{\epsilon_0 A}{d}
+\]</span></p>
+<p><span class="math display">\[
+F = qvB
+\]</span></p>
+<p><span class="math display">\[
+\Phi = B A \cos(\theta)
+\]</span></p>
+<p><span class="math display">\[
+L = \frac{\mu_0 N^2 A}{l}
+\]</span></p>
+<p><span class="math display">\[
+E = \frac{1}{2} L I^2
+\]</span></p>
+<p><span class="math display">\[
+f = \frac{1}{2\pi \sqrt{LC}}
+\]</span></p>
+<p><span class="math display">\[
+P = \rho gh
+\]</span></p>
+<p><span class="math display">\[
+F_b = \rho V g
+\]</span></p>
+<p><span class="math display">\[
+Q = A v
+\]</span></p>
+<p><span class="math display">\[
+Q = mc\Delta T
+\]</span></p>
+<p><span class="math display">\[
+\eta = \frac{W}{Q_H}
+\]</span></p>
+<p><span class="math display">\[
+\Delta S = \frac{Q}{T}
+\]</span></p>
+<p><span class="math display">\[
+\lambda = \frac{c}{f}
+\]</span></p>
+<p><span class="math display">\[
+E = \frac{hc}{\lambda}
+\]</span></p>
+<p><span class="math display">\[
+n = \frac{c}{v}
+\]</span></p>
+<p><span class="math display">\[
+\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}\]</span></p>
+<p><span class="math display">\[ \text{average velocity} =
+\frac{\text{initial velocity} + \text{final velocity}}{2} \]</span></p>
+<p><span class="math display">\[
+F = G \frac{m_1 m_2}{r^2}
+\]</span></p>
+<p><span class="math display">\[
+KE = \frac{1}{2} m v^2
+\]</span></p>
+<p><span class="math display">\[
+PE = mgh
+\]</span></p>
+<p><span class="math display">\[
+W = Fd
+\]</span></p>
+<p><span class="math display">\[
+P = \frac{W}{t}
+\]</span></p>
+<p><span class="math display">\[
+a = \frac{v_f - v_i}{t}
+\]</span></p>
+<p><span class="math display">\[
+p = mv
+\]</span></p>
+<p><span class="math display">\[
+J = Ft
+\]</span></p>
+<p><span class="math display">\[
+f = \frac{v}{\lambda}
+\]</span></p>
+<p><span class="math display">\[
+T = 2\pi \sqrt{\frac{L}{g}}
+\]</span></p>
+<p><span class="math display">\[
+F = k \frac{q_1 q_2}{r^2}
+\]</span></p>
+<p><span class="math display">\[
+E = k \frac{q}{r^2}
+\]</span></p>
+<p><span class="math display">\[
+V = Ed
+\]</span></p>
+<p><span class="math display">\[
+C = \frac{\epsilon_0 A}{d}
+\]</span></p>
+<p><span class="math display">\[
+F = qvB
+\]</span></p>
+<p><span class="math display">\[
+\Phi = B A \cos(\theta)
+\]</span></p>
+<p><span class="math display">\[
+L = \frac{\mu_0 N^2 A}{l}
+\]</span></p>
+<p><span class="math display">\[
+E = \frac{1}{2} L I^2
+\]</span></p>
+<p><span class="math display">\[
+f = \frac{1}{2\pi \sqrt{LC}}
+\]</span></p>
+<p><span class="math display">\[
+P = \rho gh
+\]</span></p>
+<p><span class="math display">\[
+F_b = \rho V g
+\]</span></p>
+<p><span class="math display">\[
+Q = A v
+\]</span></p>
+<p><span class="math display">\[
+Q = mc\Delta T
+\]</span></p>
+<p><span class="math display">\[
+\eta = \frac{W}{Q_H}
+\]</span></p>
+<p><span class="math display">\[
+\Delta S = \frac{Q}{T}
+\]</span></p>
+<p><span class="math display">\[
+\lambda = \frac{c}{f}
+\]</span></p>
+<p><span class="math display">\[
+E = \frac{hc}{\lambda}
+\]</span></p>
+<p><span class="math display">\[
+n = \frac{c}{v}
+\]</span></p>
+<p><span class="math display">\[
+\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}
+\]</span></p>
