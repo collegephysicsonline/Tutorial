@@ -3,7 +3,7 @@
 These problems can be solved using Python for loops and lists to iterate over the given data and perform the necessary calculations.
     ### Numerical Values for Each Problem
 
-    1. **Calculate the average speed of a car over multiple trips.**
+    1. ** Calculate the average speed of a car over multiple trips. **
         - Speeds: 60 km/h, 70 km/h, 80 km/h
 
     2. **Determine the total distance traveled by a car given a list of speeds and times.**
