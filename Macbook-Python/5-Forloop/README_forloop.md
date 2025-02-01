@@ -47,7 +47,7 @@ print(f'Total Force: {total_force} N')
 ## Flowchart for Summing a List of Forces
 
 Below is a flowchart that explains the process of summing a list of forces using a `for` loop:
-
+```
 ```mermaid
 flowchart TD
     A[Start] --> B[Initialize total_force to 0]
