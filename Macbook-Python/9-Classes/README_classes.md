@@ -304,6 +304,72 @@ print(robot2.charge())  # Output: Mecha is now fully charged!
 ## Quantum Physics Problem: Modeling a Quantum Particle in a Potential Well
 
 In this problem, we will model a quantum particle in a one-dimensional potential well using a class in Python. The potential well is a fundamental concept in quantum mechanics, where a particle is confined within a region of space with potential energy barriers on either side.
+### Physics Concept: Quantum Particle in a Potential Well
+
+In quantum mechanics, a potential well is a region where a particle with less energy than the potential energy of the surrounding barriers is confined. The particle can only exist within the well and cannot escape unless it gains enough energy to overcome the barriers. This concept is fundamental in understanding the behavior of particles at the quantum level.
+
+#### Potential Well Diagram
+
+Below is a simple diagram of a one-dimensional potential well:
+
+```plaintext
+Potential Energy (V)
+^
+|          _______
+|         |       |
+|         |       |
+|         |       |
+|_________|       |_________
+|         |       |
+|         |       |
+|         |       |
+|         |_______|
+|
+|----------------------------> Position (x)
+```
+
+In this diagram:
+- The horizontal axis represents the position ($`x`$) of the particle.
+- The vertical axis represents the potential energy ($`V`$) of the particle.
+- The particle is confined within the well and cannot escape unless it gains enough energy to overcome the barriers.
+
+#### Quantum Mechanics and Potential Wells
+
+In quantum mechanics, the behavior of a particle in a potential well is described by the Schrödinger equation. The solutions to this equation provide the allowed energy levels and wavefunctions of the particle.
+
+##### Schrödinger Equation
+
+The time-independent Schrödinger equation for a particle of mass $m$ in a one-dimensional potential well $V(x)$ is given by:
+
+$` -\frac{\hbar^2}{2m} \frac{d^2 \psi(x)}{dx^2} + V(x) \psi(x) = E \psi(x) `$
+
+Where:
+- $\hbar$ is the reduced Planck's constant.
+- $\psi(x)$ is the wavefunction of the particle.
+- $E$ is the energy of the particle.
+
+#### Energy Levels
+
+For a particle in an infinite potential well of width $L$, the allowed energy levels are quantized and given by:
+
+$` E_n = \frac{n^2 \pi^2 \hbar^2}{2mL^2} `$
+
+Where:
+- $n$ is a positive integer ($`n = 1, 2, 3, \ldots`$).
+- $L$ is the width of the potential well.
+
+#### Wavefunctions
+
+The corresponding wavefunctions for the particle in an infinite potential well are given by:
+
+$` \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n \pi x}{L}\right) `$
+
+Where:
+- $\psi_n(x)$ is the wavefunction for the $n$-th energy level.
+
+### Summary
+
+The concept of a quantum particle in a potential well is essential in understanding the quantization of energy levels and the behavior of particles at the quantum level. The Schrödinger equation provides the framework for calculating the allowed energy levels and wavefunctions of the particle, which are crucial for various applications in quantum mechanics and modern physics.
 
 ### Problem Statement
 
