@@ -301,3 +301,88 @@ print(robot2.charge())  # Output: Mecha is now fully charged!
 
 >*And they coded happily ever after.*
 
+## Quantum Physics Problem: Modeling a Quantum Particle in a Potential Well
+
+In this problem, we will model a quantum particle in a one-dimensional potential well using a class in Python. The potential well is a fundamental concept in quantum mechanics, where a particle is confined within a region of space with potential energy barriers on either side.
+
+### Problem Statement
+
+We want to create a class `QuantumParticle` that models a quantum particle in a potential well. The class should have the following attributes and methods:
+
+- **Attributes**:
+    - `mass`: The mass of the particle.
+    - `position`: The position of the particle in the potential well.
+    - `potential_energy`: The potential energy of the particle at its current position.
+
+- **Methods**:
+    - `__init__(self, mass, position)`: Initializes the particle with a given mass and position.
+    - `calculate_potential_energy(self)`: Calculates the potential energy of the particle based on its position.
+    - `move(self, new_position)`: Updates the position of the particle and recalculates its potential energy.
+
+### Solution
+
+Let's implement the `QuantumParticle` class in Python:
+
+```python
+class QuantumParticle:
+        def __init__(self, mass, position):
+                self.mass = mass
+                self.position = position
+                self.potential_energy = self.calculate_potential_energy()
+
+        def calculate_potential_energy(self):
+                # Assuming a simple harmonic potential well: V(x) = 0.5 * k * x^2
+                k = 1.0  # Spring constant
+                return 0.5 * k * self.position**2
+
+        def move(self, new_position):
+                self.position = new_position
+                self.potential_energy = self.calculate_potential_energy()
+
+# Example usage
+particle = QuantumParticle(mass=1.0, position=0.0)
+print(f"Initial Position: {particle.position}, Potential Energy: {particle.potential_energy}")
+
+# Move the particle to a new position
+particle.move(2.0)
+print(f"New Position: {particle.position}, Potential Energy: {particle.potential_energy}")
+```
+
+### Detailed Explanation
+
+1. **Class Definition**:
+     - We define a class `QuantumParticle` to model the quantum particle.
+
+2. **Constructor Method (`__init__`)**:
+     - The constructor initializes the particle's mass and position.
+     - It also calculates the initial potential energy using the `calculate_potential_energy` method.
+
+3. **Calculate Potential Energy Method (`calculate_potential_energy`)**:
+     - This method calculates the potential energy of the particle based on its position.
+     - We assume a simple harmonic potential well with the formula:
+     $$
+      V(x) = 0.5 \times k \times x^2 
+     $$
+    where $ k $ is the spring constant.
+
+4. **Move Method (`move`)**:
+     - This method updates the particle's position and recalculates its potential energy.
+
+### Flowchart
+
+Below is a flowchart that explains the flow of the solution:
+
+```mermaid
+flowchart TD
+        A[Start] --> B[Create QuantumParticle instance]
+        B --> C[Initialize mass and position]
+        C --> D[Calculate initial potential energy]
+        D --> E[Print initial position and potential energy]
+        E --> F[Move particle to new position]
+        F --> G[Update position]
+        G --> H[Recalculate potential energy]
+        H --> I[Print new position and potential energy]
+        I --> J[End]
+```
+
+By following this approach, we can model a quantum particle in a potential well and simulate its behavior using object-oriented programming in Python. This example demonstrates how classes can be used to encapsulate data and behavior, making the code more modular and reusable.
