@@ -625,7 +625,7 @@ restaurant1.describe_restaurant()
 restaurant2.describe_restaurant()
 restaurant3.describe_restaurant()
 ```
-```python:w
+```python
 
 class User:
     def __init__(self, first_name, last_name, age, email, username):
