@@ -985,3 +985,26 @@ class MyClass:
 
 
 
+### Additional Resources
+
+To further enhance your understanding of classes and object-oriented programming in Python, here are some additional resources:
+
+1. **Python Official Documentation**:
+    - [Classes](https://docs.python.org/3/tutorial/classes.html)
+    - [Object-Oriented Programming](https://docs.python.org/3/tutorial/classes.html#object-oriented-programming)
+
+2. **Books**:
+    - "Python Crash Course" by Eric Matthes
+    - "Learning Python" by Mark Lutz
+    - "Fluent Python" by Luciano Ramalho
+
+3. **Online Courses**:
+    - [Coursera: Python for Everybody](https://www.coursera.org/specializations/python)
+    - [edX: Introduction to Computer Science and Programming Using Python](https://www.edx.org/course/introduction-to-computer-science-and-programming-using-python)
+    - [Udemy: Complete Python Bootcamp](https://www.udemy.com/course/complete-python-bootcamp/)
+
+4. **Tutorials and Articles**:
+    - [Real Python: Object-Oriented Programming (OOP) in Python 3](https://realpython.com/python3-object-oriented-programming/)
+    - [GeeksforGeeks: Python Classes and Objects](https://www.geeksforgeeks.org/python-classes-and-objects/)
+
+By exploring these resources, you can deepen your knowledge of classes and object-oriented programming in Python, and apply these concepts to create more efficient and maintainable code.
