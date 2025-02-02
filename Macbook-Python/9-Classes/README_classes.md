@@ -660,6 +660,9 @@ called the parent class, and the new class is the child class. The child class
 inherits every attribute and method from its parent class but is also free to
 define new attributes and methods of its own.
 
+The name of the parent class must be included in parentheses in the definition of the child class. The `super()` function is a special function that helps Python make connections between the parent and child class. The name super comes from a convention of calling the parent class a superclass and the
+child class a subclass.
+
 ### Example: Inheriting from the Particle Class
 
 Let extend our `Particle` class to create a new class called `ChargedParticle` that represents a particle with an electric charge.
@@ -720,3 +723,85 @@ print(f"Electric Force: {charged_particle.electric_force([0, 0, 1e5])}")
 - **Maintainability**: Changes made to the base class are automatically reflected in derived classes, making the code easier to maintain.
 
 By understanding inheritance, you can create more complex and organized programs that leverage existing code and extend functionality in a structured manner.
+
+## Importing Classes in Python
+
+In Python, you can organize your code into multiple files and modules to keep it clean and manageable. This is especially useful when working on larger projects, such as simulations or models in physics. By importing classes from other files, you can reuse code and maintain a modular structure.
+
+### Why Import Classes?
+
+Importing classes allows you to:
+- **Reuse Code**: Avoid duplicating code by reusing classes across different files.
+- **Organize Code**: Keep your code organized by separating different functionalities into different files.
+- **Maintain Code**: Make your code easier to maintain and update.
+
+### Example: Importing a Class from Another File
+
+Let's consider a simple example where we have a class `Particle` defined in one file, and we want to use it in another file.
+
+#### Step 1: Define the Class in a Separate File
+
+Create a file named `particle.py` and define the `Particle` class in it.
+
+```python
+# particle.py
+
+class Particle:
+    def __init__(self, position, velocity, mass):
+        self.position = position
+        self.velocity = velocity
+        self.mass = mass
+
+    def move(self, time):
+        self.position[0] += self.velocity[0] * time
+        self.position[1] += self.velocity[1] * time
+        self.position[2] += self.velocity[2] * time
+
+    def kinetic_energy(self):
+        v_squared = sum(v**2 for v in self.velocity)
+        return 0.5 * self.mass * v_squared
+```
+
+#### Step 2: Import and Use the Class in Another File
+
+Create another file named `main.py` where you will import and use the `Particle` class.
+
+```python
+# main.py
+
+# Import the Particle class from the particle module
+from particle import Particle
+
+# Create an instance of the Particle class
+particle = Particle([0, 0, 0], [1, 1, 1], 1.0)
+
+# Print the initial position and kinetic energy
+print(f"Initial Position: {particle.position}")
+print(f"Initial Kinetic Energy: {particle.kinetic_energy()}")
+
+# Move the particle and print the new position and kinetic energy
+particle.move(2.0)
+print(f"New Position: {particle.position}")
+print(f"New Kinetic Energy: {particle.kinetic_energy()}")
+```
+
+### Detailed Explanation
+
+1. **Defining the Class**:
+    - In `particle.py`, we define the `Particle` class with attributes `position`, `velocity`, and `mass`, and methods `move` and `kinetic_energy`.
+
+2. **Importing the Class**:
+    - In `main.py`, we use the `from particle import Particle` statement to import the `Particle` class from the `particle` module (file).
+
+3. **Using the Imported Class**:
+    - We create an instance of the `Particle` class and use its methods to perform operations like moving the particle and calculating its kinetic energy.
+
+### Benefits for Physics Students
+
+For physics students, importing classes can be particularly useful when working on complex simulations or models. By organizing different components (e.g., particles, fields, forces) into separate files and importing them as needed, you can:
+- **Focus on Physics Concepts**: Spend more time understanding and implementing physics concepts rather than managing code complexity.
+- **Collaborate Easily**: Work on different parts of a project with classmates and combine them seamlessly.
+- **Extend Functionality**: Easily extend your models by adding new classes or modifying existing ones without affecting the entire codebase.
+
+By mastering the concept of importing classes, you can create more organized, reusable, and maintainable code for your physics projects.
+
