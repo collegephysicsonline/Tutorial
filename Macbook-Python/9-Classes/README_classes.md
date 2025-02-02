@@ -650,4 +650,61 @@ class User:
 user1 = User("John", "Doe", 30, "john.doe@example.com", "johndoe")
 user1.describe_user()
 user1.greet_user()
+
 ```
+## Inheritance in Python
+
+Inheritance is a fundamental concept in object-oriented programming (OOP) that allows a class to inherit attributes and methods from another class. This promotes code reuse and establishes a relationship between classes.
+
+### Example: Inheriting from the Particle Class
+
+Let extend our `Particle` class to create a new class called `ChargedParticle` that represents a particle with an electric charge.
+
+```python
+class Particle:
+    def __init__(self, position, velocity, mass):
+        self.position = position
+        self.velocity = velocity
+        self.mass = mass
+
+    def move(self, time):
+        self.position[0] += self.velocity[0] * time
+        self.position[1] += self.velocity[1] * time
+        self.position[2] += self.velocity[2] * time
+
+    def kinetic_energy(self):
+        v_squared = sum(v**2 for v in self.velocity)
+        return 0.5 * self.mass * v_squared
+
+class ChargedParticle(Particle):
+    def __init__(self, position, velocity, mass, charge):
+        super().__init__(position, velocity, mass)
+        self.charge = charge
+
+    def electric_force(self, electric_field):
+        return [self.charge * e for e in electric_field]
+
+# Example usage
+charged_particle = ChargedParticle([0, 0, 0], [1, 1, 1], 1.0, 1.6e-19)
+print(f"Position: {charged_particle.position}")
+print(f"Kinetic Energy: {charged_particle.kinetic_energy()}")
+print(f"Electric Force: {charged_particle.electric_force([0, 0, 1e5])}")
+```
+
+### Detailed Explanation
+
+1. **Base Class (`Particle`)**:
+    - The `Particle` class defines the basic properties and methods for a particle, such as `position`, `velocity`, `mass`, `move`, and `kinetic_energy`.
+
+2. **Derived Class (`ChargedParticle`)**:
+    - The `ChargedParticle` class inherits from the `Particle` class using the syntax `class ChargedParticle(Particle)`.
+    - The `__init__` method of the `ChargedParticle` class calls the `__init__` method of the `Particle` class using `super().__init__(position, velocity, mass)` to initialize the inherited attributes.
+    - The `ChargedParticle` class adds a new attribute `charge` and a method `electric_force` to calculate the electric force on the particle in a given electric field.
+
+### Benefits of Inheritance
+
+- **Code Reuse**: Inheritance allows you to reuse existing code by creating new classes that build upon the functionality of existing ones.
+- **Modularity**: It promotes modularity by organizing related classes into a hierarchy.
+- **Maintainability**: Changes made to the base class are automatically reflected in derived classes, making the code easier to maintain.
+
+By understanding inheritance, you can create more complex and organized programs that leverage existing code and extend functionality in a structured manner.
