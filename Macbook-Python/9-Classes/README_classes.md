@@ -359,11 +359,8 @@ print(f"New Position: {particle.position}, Potential Energy: {particle.potential
 
 3. **Calculate Potential Energy Method (`calculate_potential_energy`)**:
      - This method calculates the potential energy of the particle based on its position.
-     - We assume a simple harmonic potential well with the formula:
-     $$
-      V(x) = 0.5 \times k \times x^2 
-     $$
-    where $ k $ is the spring constant.
+     - We assume a simple harmonic potential well with the formula: $` V(x) = 0.5 \times k \times x^2 `$
+    where $k$ is the spring constant.
 
 4. **Move Method (`move`)**:
      - This method updates the particle's position and recalculates its potential energy.
