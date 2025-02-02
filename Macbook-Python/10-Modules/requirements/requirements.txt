@@ -1,0 +1,12 @@
+numpy
+pandas
+requests
+PhysiPy
+scipy
+matplotlib
+sympy
+pandas
+astropy
+pint
+vpython
+PyOpenGL
