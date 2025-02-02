@@ -198,7 +198,53 @@ class Rectangle:
 # Creating an instance of the Rectangle class
 rect = Rectangle(4, 5)
 print(rect.area())  # Output: 20
+### Detailed Explanation of the Rectangle Class
 ```
+Let's break down the `Rectangle` class example line by line to understand its structure and functionality.
+
+```python
+class Rectangle:
+    """
+    This class represents a rectangle with width and height.
+    """
+```
+- This line defines a new class named `Rectangle` and includes a docstring that describes the class.
+
+```python
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+```
+- The `__init__` method is a special method called a constructor. It is automatically called when a new instance of the class is created. It initializes the object's attributes `width` and `height`.
+
+```python
+    def area(self):
+        """
+            This method calculates the area of the rectangle.
+            """
+            return self.width * self.height
+
+        ### Frequently Asked Question
+
+        **Q: Why is `self.width * self.height` used in the `area` method instead of using `width * height` initialized in the constructor?**
+
+        **A:** In the `area` method, `self.width` and `self.height` are used to refer to the instance variables of the object. When the constructor initializes the object, it assigns the values of `width` and `height` to `self.width` and `self.height`. Using `self.width` and `self.height` ensures that the method accesses the correct values associated with the specific instance of the class. If we used `width` and `height` directly, it would refer to the parameters passed to the constructor, which are not accessible outside the constructor.
+```
+- This line defines a method named `area` that calculates and returns the area of the rectangle using the formula `width * height`.
+
+### Instance of the Rectangle Class
+
+An instance of a class is a specific object created from that class blueprint. When you create an instance, you are essentially creating a unique object with its own set of attributes and methods defined by the class. For example:
+
+```python
+# Creating an instance of the Rectangle class
+rect = Rectangle(4, 5)
+print(rect.area())  # Output: 20
+```
+
+In this example, `rect` is an instance of the `Rectangle` class with `width` 4 and `height` 5. The `area` method calculates the area of the rectangle, which is 20.
+
+By understanding each line of this example, you can see how classes encapsulate data and behavior, making your code more modular and reusable.
 
 ### When to Use Functions vs Classes
 
