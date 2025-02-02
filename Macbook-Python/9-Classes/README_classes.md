@@ -224,12 +224,12 @@ class Rectangle:
             """
             return self.width * self.height
 
+```
         ### Frequently Asked Question
 
         **Q: Why is `self.width * self.height` used in the `area` method instead of using `width * height` initialized in the constructor?**
 
         **A:** In the `area` method, `self.width` and `self.height` are used to refer to the instance variables of the object. When the constructor initializes the object, it assigns the values of `width` and `height` to `self.width` and `self.height`. Using `self.width` and `self.height` ensures that the method accesses the correct values associated with the specific instance of the class. If we used `width` and `height` directly, it would refer to the parameters passed to the constructor, which are not accessible outside the constructor.
-```
 - This line defines a method named `area` that calculates and returns the area of the rectangle using the formula `width * height`.
 
 ### Instance of the Rectangle Class
