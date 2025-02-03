@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Programming Course</title>
+    <title>Python Programming Course - Part 1</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Prism.js for syntax highlighting -->
@@ -24,7 +24,6 @@
 </head>
 
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
@@ -35,13 +34,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Courses</a>
+                        <a class="nav-link" href="index.html">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="index.html">About</a>
                     </li>
                 </ul>
             </div>
@@ -52,86 +51,6 @@
     <div class="container mt-4">
         <h1>Particle in a Box Quantum Mechanical Problem</h1>
         <p>The particle in a box (also known as the infinite potential well) is a fundamental problem in quantum mechanics that illustrates the quantization of energy levels. It describes a particle free to move in a small space surrounded by impenetrable barriers.</p>
-
-        <h2>Problem Setup</h2>
-        <p>Consider a particle of mass \( m \) confined in a one-dimensional box of length \( L \). The potential energy \( V(x) \) is defined as:</p>
-
-        <div class="math-equation">
-            $$ V(x) = \begin{cases} 
-            0 & \text{if } 0 < x < L \\
-            \infty & \text{otherwise}
-            \end{cases} $$
-        </div>
-
-        <p>This means the particle can only exist within the region \( 0 < x < L \) and cannot penetrate the walls of the box.</p>
-
-        <h2>Schrödinger Equation</h2>
-        <p>The time-independent Schrödinger equation for the particle is:</p>
-
-        <div class="math-equation">
-            $$ -\frac{\hbar^2}{2m} \frac{d^2 \psi(x)}{dx^2} + V(x) \psi(x) = E \psi(x) $$
-        </div>
-
-        <p>Within the box, where \( V(x) = 0 \), the equation simplifies to:</p>
-
-        <div class="math-equation">
-            $$ -\frac{\hbar^2}{2m} \frac{d^2 \psi(x)}{dx^2} = E \psi(x) $$
-        </div>
-
-        <p>Rearranging, we get:</p>
-
-        <div class="math-equation">
-            $$ \frac{d^2 \psi(x)}{dx^2} = -\frac{2mE}{\hbar^2} \psi(x) $$
-        </div>
-
-        <p>Let \( k = \sqrt{\frac{2mE}{\hbar^2}} \), then:</p>
-
-        <div class="math-equation">
-            $$ \frac{d^2 \psi(x)}{dx^2} = -k^2 \psi(x) $$
-        </div>
-
-        <p>The general solution to this differential equation is:</p>
-
-        <div class="math-equation">
-            $$ \psi(x) = A \sin(kx) + B \cos(kx) $$
-        </div>
-
-        <h2>Boundary Conditions</h2>
-        <p>The boundary conditions are \( \psi(0) = 0 \) and \( \psi(L) = 0 \) because the wavefunction must be zero at the walls of the box.</p>
-
-        <ol>
-            <li>
-                <p>At \( x = 0 \):</p>
-                <div class="math-equation">
-                    $$ \psi(0) = A \sin(0) + B \cos(0) = B = 0 $$
-                </div>
-            </li>
-            <li>
-                <p>At \( x = L \):</p>
-                <div class="math-equation">
-                    $$ \psi(L) = A \sin(kL) = 0 $$
-                </div>
-            </li>
-        </ol>
-
-        <h2>Quantized Energy Levels</h2>
-        <p>The energy levels are quantized and given by:</p>
-
-        <div class="math-equation">
-            $$ E_n = \frac{\hbar^2 k^2}{2m} = \frac{\hbar^2}{2m} \left( \frac{n\pi}{L} \right)^2 = \frac{n^2 \pi^2 \hbar^2}{2mL^2} $$
-        </div>
-
-        <p>where \( n \) is a positive integer (quantum number).</p>
-
-        <h2>Wavefunctions</h2>
-        <p>The normalized wavefunctions corresponding to these energy levels are:</p>
-
-        <div class="math-equation">
-            $$ \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left( \frac{n\pi x}{L} \right) $$
-        </div>
-
-        <h2>Summary</h2>
-        <p>The particle in a box problem demonstrates that a particle confined to a finite region of space can only have specific, discrete energy levels. The wavefunctions associated with these energy levels are sinusoidal functions that satisfy the boundary conditions of the problem.</p>
     </div>
 
     <!-- Bootstrap JS and dependencies -->
