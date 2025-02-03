@@ -432,7 +432,8 @@ where $k$ is the spring constant.</li>
 </ol>
 <h3 id="flowchart">Flowchart</h3>
 <p>Below is a flowchart that explains the flow of the solution:</p>
-<pre><code class="language-mermaid">flowchart TD
+   <div class="flowchart">      
+<pre><code class="mermaid">flowchart TD
         A[Start] --&gt; B[Create QuantumParticle instance]
         B --&gt; C[Initialize mass and position]
         C --&gt; D[Calculate initial potential energy]
@@ -443,6 +444,18 @@ where $k$ is the spring constant.</li>
         H --&gt; I[Print new position and potential energy]
         I --&gt; J[End]
 </code></pre>
+            </div>
+                <div class="flowchart">
+            <div class="mermaid">
+                graph TD;
+                    A[Start] --> B{Decision?};
+                    B -- Yes --> C[Do something];
+                    B -- No --> D[Do something else];
+                    C --> E[End];
+                    D --> E;
+            </div>
+        </div>
+        
 <p>By following this approach, we can model a quantum particle in a potential well and simulate its behavior using object-oriented programming in Python. This example demonstrates how classes can be used to encapsulate data and behavior, making the code more modular and reusable.</p>
 <blockquote>
 <h2 id="note-on-object-oriented-programming-oop">Note on Object-Oriented Programming (OOP)</h2>
