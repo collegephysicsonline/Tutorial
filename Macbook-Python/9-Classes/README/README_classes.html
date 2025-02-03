@@ -1,394 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>README_classes.md</title>
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
-<style>
-/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
 
-body {
-	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
-	font-size: var(--vscode-markdown-font-size, 14px);
-	padding: 0 26px;
-	line-height: var(--vscode-markdown-line-height, 22px);
-	word-wrap: break-word;
-}
-
-#code-csp-warning {
-	position: fixed;
-	top: 0;
-	right: 0;
-	color: white;
-	margin: 16px;
-	text-align: center;
-	font-size: 12px;
-	font-family: sans-serif;
-	background-color:#444444;
-	cursor: pointer;
-	padding: 6px;
-	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
-}
-
-#code-csp-warning:hover {
-	text-decoration: none;
-	background-color:#007acc;
-	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
-}
-
-body.scrollBeyondLastLine {
-	margin-bottom: calc(100vh - 22px);
-}
-
-body.showEditorSelection .code-line {
-	position: relative;
-}
-
-body.showEditorSelection .code-active-line:before,
-body.showEditorSelection .code-line:hover:before {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: -12px;
-	height: 100%;
-}
-
-body.showEditorSelection li.code-active-line:before,
-body.showEditorSelection li.code-line:hover:before {
-	left: -30px;
-}
-
-.vscode-light.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.15);
-}
-
-.vscode-light.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.40);
-}
-
-.vscode-light.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-.vscode-dark.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.4);
-}
-
-.vscode-dark.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.60);
-}
-
-.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-.vscode-high-contrast.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 160, 0, 0.7);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 160, 0, 1);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-img {
-	max-width: 100%;
-	max-height: 100%;
-}
-
-a {
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-a:focus,
-input:focus,
-select:focus,
-textarea:focus {
-	outline: 1px solid -webkit-focus-ring-color;
-	outline-offset: -1px;
-}
-
-hr {
-	border: 0;
-	height: 2px;
-	border-bottom: 2px solid;
-}
-
-h1 {
-	padding-bottom: 0.3em;
-	line-height: 1.2;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-}
-
-h1, h2, h3 {
-	font-weight: normal;
-}
-
-table {
-	border-collapse: collapse;
-}
-
-table > thead > tr > th {
-	text-align: left;
-	border-bottom: 1px solid;
-}
-
-table > thead > tr > th,
-table > thead > tr > td,
-table > tbody > tr > th,
-table > tbody > tr > td {
-	padding: 5px 10px;
-}
-
-table > tbody > tr + tr > td {
-	border-top: 1px solid;
-}
-
-blockquote {
-	margin: 0 7px 0 5px;
-	padding: 0 16px 0 10px;
-	border-left-width: 5px;
-	border-left-style: solid;
-}
-
-code {
-	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
-	font-size: 1em;
-	line-height: 1.357em;
-}
-
-body.wordWrap pre {
-	white-space: pre-wrap;
-}
-
-pre:not(.hljs),
-pre.hljs code > div {
-	padding: 16px;
-	border-radius: 3px;
-	overflow: auto;
-}
-
-pre code {
-	color: var(--vscode-editor-foreground);
-	tab-size: 4;
-}
-
-/** Theming */
-
-.vscode-light pre {
-	background-color: rgba(220, 220, 220, 0.4);
-}
-
-.vscode-dark pre {
-	background-color: rgba(10, 10, 10, 0.4);
-}
-
-.vscode-high-contrast pre {
-	background-color: rgb(0, 0, 0);
-}
-
-.vscode-high-contrast h1 {
-	border-color: rgb(0, 0, 0);
-}
-
-.vscode-light table > thead > tr > th {
-	border-color: rgba(0, 0, 0, 0.69);
-}
-
-.vscode-dark table > thead > tr > th {
-	border-color: rgba(255, 255, 255, 0.69);
-}
-
-.vscode-light h1,
-.vscode-light hr,
-.vscode-light table > tbody > tr + tr > td {
-	border-color: rgba(0, 0, 0, 0.18);
-}
-
-.vscode-dark h1,
-.vscode-dark hr,
-.vscode-dark table > tbody > tr + tr > td {
-	border-color: rgba(255, 255, 255, 0.18);
-}
-
-</style>
-
-<style>
-/* Tomorrow Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-
-/* Tomorrow Comment */
-.hljs-comment,
-.hljs-quote {
-	color: #8e908c;
-}
-
-/* Tomorrow Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-	color: #c82829;
-}
-
-/* Tomorrow Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-	color: #f5871f;
-}
-
-/* Tomorrow Yellow */
-.hljs-attribute {
-	color: #eab700;
-}
-
-/* Tomorrow Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-	color: #718c00;
-}
-
-/* Tomorrow Blue */
-.hljs-title,
-.hljs-section {
-	color: #4271ae;
-}
-
-/* Tomorrow Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-	color: #8959a8;
-}
-
-.hljs {
-	display: block;
-	overflow-x: auto;
-	color: #4d4d4c;
-	padding: 0.5em;
-}
-
-.hljs-emphasis {
-	font-style: italic;
-}
-
-.hljs-strong {
-	font-weight: bold;
-}
-</style>
-
-<style>
-/*
- * Markdown PDF CSS
- */
-
- body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
-	padding: 0 12px;
-}
-
-pre {
-	background-color: #f8f8f8;
-	border: 1px solid #cccccc;
-	border-radius: 3px;
-	overflow-x: auto;
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
-}
-
-pre:not(.hljs) {
-	padding: 23px;
-	line-height: 19px;
-}
-
-blockquote {
-	background: rgba(127, 127, 127, 0.1);
-	border-color: rgba(0, 122, 204, 0.5);
-}
-
-.emoji {
-	height: 1.4em;
-}
-
-code {
-	font-size: 14px;
-	line-height: 19px;
-}
-
-/* for inline code */
-:not(pre):not(.hljs) > code {
-	color: #C9AE75; /* Change the old color so it seems less like an error */
-	font-size: inherit;
-}
-
-/* Page Break : use <div class="page"/> to insert page break
--------------------------------------------------------- */
-.page {
-	page-break-after: always;
-}
-
-</style>
-
-<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-</head>
-<body>
-  <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
-          ? 'dark'
-          : 'default'
-    });
-  </script>
-<h1 id="introduction-to-classes-in-python">Introduction to Classes in Python</h1>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Document</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <h1>Introduction to Classes in Python</h1>
 <p>In previous lessons, we have explored various fundamental concepts in Python such as variables and data types, lists, tuples, dictionaries, sets, and control flow statements like <code>for</code>, <code>if</code>, <code>elif</code>, <code>else</code>, and <code>while</code> loops. Now, we will take a step further and introduce you to the concept of <strong>classes</strong> in Python, which is a cornerstone of object-oriented programming (OOP).</p>
-<h2 id="what-is-a-class">What is a Class?</h2>
+<h2>What is a Class?</h2>
 <p>A class is a blueprint for creating objects. An object is an instance of a class. Classes encapsulate data for the object and methods to manipulate that data. This allows for more modular and reusable code.</p>
-<h3 id="example-physics-concepts">Example: Physics Concepts</h3>
+<h3>Example: Physics Concepts</h3>
 <p>Let's consider a simple example from physics to illustrate the concept of classes. Suppose we want to model a <strong>Particle</strong> in physics. A particle has properties such as position, velocity, and mass. These properties can be represented as variables (attributes) within a class.</p>
-<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Particle</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, position, velocity, mass)</span>:</span>
-        self.position = position  <span class="hljs-comment"># List to store x, y, z coordinates</span>
-        self.velocity = velocity  <span class="hljs-comment"># List to store velocity components</span>
-        self.mass = mass          <span class="hljs-comment"># Float to store mass of the particle</span>
+<pre><code class="language-python">class Particle:
+    def __init__(self, position, velocity, mass):
+        self.position = position  # List to store x, y, z coordinates
+        self.velocity = velocity  # List to store velocity components
+        self.mass = mass          # Float to store mass of the particle
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">move</span><span class="hljs-params">(self, time)</span>:</span>
-        <span class="hljs-comment"># Update position based on velocity and time</span>
-        self.position[<span class="hljs-number">0</span>] += self.velocity[<span class="hljs-number">0</span>] * time
-        self.position[<span class="hljs-number">1</span>] += self.velocity[<span class="hljs-number">1</span>] * time
-        self.position[<span class="hljs-number">2</span>] += self.velocity[<span class="hljs-number">2</span>] * time
+    def move(self, time):
+        # Update position based on velocity and time
+        self.position[0] += self.velocity[0] * time
+        self.position[1] += self.velocity[1] * time
+        self.position[2] += self.velocity[2] * time
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">kinetic_energy</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-comment"># Calculate kinetic energy: (1/2) * mass * velocity^2</span>
-        v_squared = sum(v**<span class="hljs-number">2</span> <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> self.velocity)
-        <span class="hljs-keyword">return</span> <span class="hljs-number">0.5</span> * self.mass * v_squared
-</div></code></pre>
-<h3 id="connecting-with-previous-topics">Connecting with Previous Topics</h3>
+    def kinetic_energy(self):
+        # Calculate kinetic energy: (1/2) * mass * velocity^2
+        v_squared = sum(v**2 for v in self.velocity)
+        return 0.5 * self.mass * v_squared
+</code></pre>
+<h3>Connecting with Previous Topics</h3>
 <ul>
 <li><strong>Variables and Data Types</strong>: The attributes <code>position</code>, <code>velocity</code>, and <code>mass</code> are variables of different data types (list and float).</li>
 <li><strong>Lists</strong>: We use lists to store the position and velocity components.</li>
@@ -397,77 +39,77 @@ code {
 </ul>
 <p>By understanding classes, you will be able to create more complex and organized programs. Classes allow you to model real-world entities and their interactions in a more intuitive way.</p>
 <p>In the next lessons, we will delve deeper into object-oriented programming concepts such as inheritance, polymorphism, and encapsulation, which will further enhance your ability to write efficient and maintainable code.</p>
-<h2 id="detailed-explanation-of-example-1">Detailed Explanation of Example 1</h2>
+<h2>Detailed Explanation of Example 1</h2>
 <p>Let's break down the <code>Particle</code> class example line by line to understand its structure and functionality.</p>
-<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Particle</span>:</span>
-</div></code></pre>
+<pre><code class="language-python">class Particle:
+</code></pre>
 <ul>
 <li>This line defines a new class named <code>Particle</code>.</li>
 </ul>
-<pre class="hljs"><code><div>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, position, velocity, mass)</span>:</span>
-</div></code></pre>
+<pre><code class="language-python">    def __init__(self, position, velocity, mass):
+</code></pre>
 <ul>
 <li>The <code>__init__</code> method is a special method called a constructor. It is automatically called when a new instance of the class is created. It initializes the object's attributes.</li>
 </ul>
-<pre class="hljs"><code><div>        self.position = position  <span class="hljs-comment"># List to store x, y, z coordinates</span>
-        self.velocity = velocity  <span class="hljs-comment"># List to store velocity components</span>
-        self.mass = mass          <span class="hljs-comment"># Float to store mass of the particle</span>
-</div></code></pre>
+<pre><code class="language-python">        self.position = position  # List to store x, y, z coordinates
+        self.velocity = velocity  # List to store velocity components
+        self.mass = mass          # Float to store mass of the particle
+</code></pre>
 <ul>
 <li>These lines assign the values of <code>position</code>, <code>velocity</code>, and <code>mass</code> to the instance variables <code>self.position</code>, <code>self.velocity</code>, and <code>self.mass</code>, respectively. The <code>self</code> keyword refers to the instance of the class.</li>
 </ul>
-<pre class="hljs"><code><div>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">move</span><span class="hljs-params">(self, time)</span>:</span>
-</div></code></pre>
+<pre><code class="language-python">    def move(self, time):
+</code></pre>
 <ul>
 <li>This line defines a method named <code>move</code> that takes <code>time</code> as a parameter. This method will update the particle's position based on its velocity and the given time.</li>
 </ul>
-<pre class="hljs"><code><div>        self.position[<span class="hljs-number">0</span>] += self.velocity[<span class="hljs-number">0</span>] * time
-        self.position[<span class="hljs-number">1</span>] += self.velocity[<span class="hljs-number">1</span>] * time
-        self.position[<span class="hljs-number">2</span>] += self.velocity[<span class="hljs-number">2</span>] * time
-</div></code></pre>
+<pre><code class="language-python">        self.position[0] += self.velocity[0] * time
+        self.position[1] += self.velocity[1] * time
+        self.position[2] += self.velocity[2] * time
+</code></pre>
 <ul>
 <li>These lines update the <code>position</code> of the particle by adding the product of <code>velocity</code> and <code>time</code> to each coordinate (x, y, z).</li>
 </ul>
-<pre class="hljs"><code><div>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">kinetic_energy</span><span class="hljs-params">(self)</span>:</span>
-</div></code></pre>
+<pre><code class="language-python">    def kinetic_energy(self):
+</code></pre>
 <ul>
 <li>This line defines a method named <code>kinetic_energy</code> that calculates and returns the kinetic energy of the particle.</li>
 </ul>
-<pre class="hljs"><code><div>        v_squared = sum(v**<span class="hljs-number">2</span> <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> self.velocity)
-</div></code></pre>
+<pre><code class="language-python">        v_squared = sum(v**2 for v in self.velocity)
+</code></pre>
 <ul>
 <li>This line calculates the sum of the squares of the velocity components.</li>
 </ul>
-<pre class="hljs"><code><div>        <span class="hljs-keyword">return</span> <span class="hljs-number">0.5</span> * self.mass * v_squared
-</div></code></pre>
+<pre><code class="language-python">        return 0.5 * self.mass * v_squared
+</code></pre>
 <ul>
-<li>This line calculates and returns the kinetic energy using the formula $<code>\frac{1}{2} \times \text{mass} \times \text{velocity}^2</code>$.</li>
+<li>This line calculates and returns the kinetic energy using the formula <span class="arithmatex">\(<code>\frac{1}{2} \times \text{mass} \times \text{velocity}^2</code>\)</span>.</li>
 </ul>
-<h3 id="instance-of-a-class">Instance of a Class</h3>
+<h3>Instance of a Class</h3>
 <p>An instance of a class is a specific object created from that class blueprint. When you create an instance, you are essentially creating a unique object with its own set of attributes and methods defined by the class. For example, if you create two instances of the <code>Particle</code> class, each instance will have its own <code>position</code>, <code>velocity</code>, and <code>mass</code> attributes.</p>
-<pre class="hljs"><code><div><span class="hljs-comment"># Creating two instances of the Particle class</span>
-particle1 = Particle([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>], <span class="hljs-number">1.0</span>)
-particle2 = Particle([<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">0</span>], <span class="hljs-number">2.0</span>)
+<pre><code class="language-python"># Creating two instances of the Particle class
+particle1 = Particle([0, 0, 0], [1, 1, 1], 1.0)
+particle2 = Particle([10, 10, 10], [0, -1, 0], 2.0)
 
-<span class="hljs-comment"># Each instance has its own attributes</span>
-print(particle1.position)  <span class="hljs-comment"># Output: [0, 0, 0]</span>
-print(particle2.position)  <span class="hljs-comment"># Output: [10, 10, 10]</span>
-</div></code></pre>
+# Each instance has its own attributes
+print(particle1.position)  # Output: [0, 0, 0]
+print(particle2.position)  # Output: [10, 10, 10]
+</code></pre>
 <p>In this example, <code>particle1</code> and <code>particle2</code> are two different instances of the <code>Particle</code> class, each with its own state. This demonstrates how classes can be used to create multiple objects with similar structures but different data.</p>
 <p>By understanding each line of this example, you can see how classes encapsulate data and behavior, making your code more modular and reusable.</p>
-<h2 id="functions-vs-classes-in-python">Functions vs Classes in Python</h2>
+<h2>Functions vs Classes in Python</h2>
 <p>In Python, both functions and classes are fundamental building blocks that help in organizing and structuring code. However, they serve different purposes and have distinct structures.</p>
-<h3 id="functions">Functions</h3>
+<h3>Functions</h3>
 <p>A function is a block of reusable code that performs a specific task. Functions help in breaking down complex problems into smaller, manageable pieces. They can take inputs (parameters), perform operations, and return outputs.</p>
-<h4 id="structure-of-a-function">Structure of a Function</h4>
-<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">function_name</span><span class="hljs-params">(parameters)</span>:</span>
-    <span class="hljs-string">"""
+<h4>Structure of a Function</h4>
+<pre><code class="language-python">def function_name(parameters):
+    &quot;&quot;&quot;
     Docstring: A brief description of what the function does.
-    """</span>
-    <span class="hljs-comment"># Function body</span>
-    <span class="hljs-comment"># Perform operations</span>
-    <span class="hljs-keyword">return</span> result
-</div></code></pre>
+    &quot;&quot;&quot;
+    # Function body
+    # Perform operations
+    return result
+</code></pre>
 <ul>
 <li><strong>Function Definition</strong>: The <code>def</code> keyword is used to define a function.</li>
 <li><strong>Function Name</strong>: A unique name that identifies the function.</li>
@@ -476,37 +118,37 @@ print(particle2.position)  <span class="hljs-comment"># Output: [10, 10, 10]</sp
 <li><strong>Function Body</strong>: The block of code that performs the function's operations.</li>
 <li><strong>Return Statement</strong>: The output that the function returns.</li>
 </ul>
-<h4 id="example-of-a-function">Example of a Function</h4>
-<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add</span><span class="hljs-params">(a, b)</span>:</span>
-    <span class="hljs-string">"""
+<h4>Example of a Function</h4>
+<pre><code class="language-python">def add(a, b):
+    &quot;&quot;&quot;
     This function takes two numbers and returns their sum.
-    """</span>
-    <span class="hljs-keyword">return</span> a + b
+    &quot;&quot;&quot;
+    return a + b
 
-<span class="hljs-comment"># Using the function</span>
-result = add(<span class="hljs-number">3</span>, <span class="hljs-number">5</span>)
-print(result)  <span class="hljs-comment"># Output: 8</span>
-</div></code></pre>
-<h3 id="classes">Classes</h3>
+# Using the function
+result = add(3, 5)
+print(result)  # Output: 8
+</code></pre>
+<h3>Classes</h3>
 <p>A class is a blueprint for creating objects. It encapsulates data (attributes) and methods (functions) that operate on that data. Classes are the foundation of object-oriented programming (OOP) in Python.</p>
-<h4 id="structure-of-a-class">Structure of a Class</h4>
-<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClassName</span>:</span>
-    <span class="hljs-string">"""
+<h4>Structure of a Class</h4>
+<pre><code class="language-python">class ClassName:
+    &quot;&quot;&quot;
     Docstring: A brief description of what the class represents.
-    """</span>
-    
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, parameters)</span>:</span>
-        <span class="hljs-comment"># Constructor method to initialize the object's attributes</span>
+    &quot;&quot;&quot;
+
+    def __init__(self, parameters):
+        # Constructor method to initialize the object's attributes
         self.attribute = value
-    
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">method_name</span><span class="hljs-params">(self, parameters)</span>:</span>
-        <span class="hljs-string">"""
+
+    def method_name(self, parameters):
+        &quot;&quot;&quot;
         Docstring: A brief description of what the method does.
-        """</span>
-        <span class="hljs-comment"># Method body</span>
-        <span class="hljs-comment"># Perform operations</span>
-        <span class="hljs-keyword">return</span> result
-</div></code></pre>
+        &quot;&quot;&quot;
+        # Method body
+        # Perform operations
+        return result
+</code></pre>
 <ul>
 <li><strong>Class Definition</strong>: The <code>class</code> keyword is used to define a class.</li>
 <li><strong>Class Name</strong>: A unique name that identifies the class.</li>
@@ -515,139 +157,123 @@ print(result)  <span class="hljs-comment"># Output: 8</span>
 <li><strong>Attributes</strong>: Variables that store the object's data.</li>
 <li><strong>Methods</strong>: Functions defined within the class that operate on the object's data.</li>
 </ul>
-<h4 id="example-of-a-class">Example of a Class</h4>
-<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Rectangle</span>:</span>
-    <span class="hljs-string">"""
+<h4>Example of a Class</h4>
+<pre><code class="language-python">class Rectangle:
+    &quot;&quot;&quot;
     This class represents a rectangle with width and height.
-    """</span>
-    
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, width, height)</span>:</span>
+    &quot;&quot;&quot;
+
+    def __init__(self, width, height):
         self.width = width
         self.height = height
-    
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">area</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-string">"""
-        This method calculates the area of the rectangle.
-        """</span>
-        <span class="hljs-keyword">return</span> self.width * self.height
 
-<span class="hljs-comment"># Creating an instance of the Rectangle class</span>
-rect = Rectangle(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
-print(rect.area())  <span class="hljs-comment"># Output: 20</span>
-<span class="hljs-comment">### Detailed Explanation of the Rectangle Class</span>
-</div></code></pre>
+    def area(self):
+        &quot;&quot;&quot;
+        This method calculates the area of the rectangle.
+        &quot;&quot;&quot;
+        return self.width * self.height
+
+# Creating an instance of the Rectangle class
+rect = Rectangle(4, 5)
+print(rect.area())  # Output: 20
+### Detailed Explanation of the Rectangle Class
+</code></pre>
 <p>Let's break down the <code>Rectangle</code> class example line by line to understand its structure and functionality.</p>
-<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Rectangle</span>:</span>
-    <span class="hljs-string">"""
+<pre><code class="language-python">class Rectangle:
+    &quot;&quot;&quot;
     This class represents a rectangle with width and height.
-    """</span>
-</div></code></pre>
+    &quot;&quot;&quot;
+</code></pre>
 <ul>
 <li>This line defines a new class named <code>Rectangle</code> and includes a docstring that describes the class.</li>
 </ul>
-<pre class="hljs"><code><div>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, width, height)</span>:</span>
+<pre><code class="language-python">    def __init__(self, width, height):
         self.width = width
         self.height = height
-</div></code></pre>
+</code></pre>
 <ul>
 <li>The <code>__init__</code> method is a special method called a constructor. It is automatically called when a new instance of the class is created. It initializes the object's attributes <code>width</code> and <code>height</code>.</li>
 </ul>
-<pre class="hljs"><code><div>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">area</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-string">"""
+<pre><code class="language-python">    def area(self):
+        &quot;&quot;&quot;
             This method calculates the area of the rectangle.
-            """</span>
-            <span class="hljs-keyword">return</span> self.width * self.height
+            &quot;&quot;&quot;
+            return self.width * self.height
 
-</div></code></pre>
+</code></pre>
 <blockquote>
-<h3 id="frequently-asked-question">Frequently Asked Question</h3>
-</blockquote>
-<blockquote>
+<h3>Frequently Asked Question</h3>
 <p><strong>Q: Why is <code>self.width * self.height</code> used in the <code>area</code> method instead of using <code>width * height</code> initialized in the constructor?</strong></p>
-</blockquote>
-<blockquote>
 <p><strong>A:</strong> In the <code>area</code> method, <code>self.width</code> and <code>self.height</code> are used to refer to the instance variables of the object. When the constructor initializes the object, it assigns the values of <code>width</code> and <code>height</code> to <code>self.width</code> and <code>self.height</code>. Using <code>self.width</code> and <code>self.height</code> ensures that the method accesses the correct values associated with the specific instance of the class. If we used <code>width</code> and <code>height</code> directly, it would refer to the parameters passed to the constructor, which are not accessible outside the constructor.</p>
 </blockquote>
 <ul>
 <li>This line defines a method named <code>area</code> that calculates and returns the area of the rectangle using the formula <code>width * height</code>.</li>
 </ul>
-<h3 id="instance-of-the-rectangle-class">Instance of the Rectangle Class</h3>
+<h3>Instance of the Rectangle Class</h3>
 <p>An instance of a class is a specific object created from that class blueprint. When you create an instance, you are essentially creating a unique object with its own set of attributes and methods defined by the class. For example:</p>
-<pre class="hljs"><code><div><span class="hljs-comment"># Creating an instance of the Rectangle class</span>
-rect = Rectangle(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
-print(rect.area())  <span class="hljs-comment"># Output: 20</span>
-</div></code></pre>
+<pre><code class="language-python"># Creating an instance of the Rectangle class
+rect = Rectangle(4, 5)
+print(rect.area())  # Output: 20
+</code></pre>
 <p>In this example, <code>rect</code> is an instance of the <code>Rectangle</code> class with <code>width</code> 4 and <code>height</code> 5. The <code>area</code> method calculates the area of the rectangle, which is 20.</p>
 <p>By understanding each line of this example, you can see how classes encapsulate data and behavior, making your code more modular and reusable.</p>
-<h3 id="when-to-use-functions-vs-classes">When to Use Functions vs Classes</h3>
+<h3>When to Use Functions vs Classes</h3>
 <ul>
-<li>
-<p><strong>Functions</strong>:</p>
-<ul>
+<li><strong>Functions</strong>:</li>
 <li>Use functions when you need to perform a specific task or calculation.</li>
 <li>Functions are suitable for operations that do not require maintaining a state.</li>
-<li>They are ideal for modularizing code and promoting code reuse.</li>
-</ul>
+<li>
+<p>They are ideal for modularizing code and promoting code reuse.</p>
 </li>
 <li>
 <p><strong>Classes</strong>:</p>
-<ul>
+</li>
 <li>Use classes when you need to model real-world entities with attributes and behaviors.</li>
 <li>Classes are suitable for operations that require maintaining a state.</li>
 <li>They are ideal for creating complex data structures and implementing OOP principles like inheritance and polymorphism.</li>
 </ul>
-</li>
-</ul>
 <p>By understanding the differences between functions and classes, you can choose the appropriate tool for organizing and structuring your code effectively.</p>
 <blockquote>
-<p><em>In our Pythonia land, there was a wise old programmer named Guido. Guido loved creating things, but he found that his creations were often too complex and difficult to manage. One day, while pondering a solution, he had an epiphany: what if he could create blueprints for his creations? These blueprints would allow him to build multiple objects with similar structures but different details. And thus, the concept of <strong>classes</strong> was born.</em></p>
+<p><em>In our Pythonia land, there was a wise old programmer named Guido. Guido loved creating things, but he found that his creations were often too complex and difficult to manage. One day, while pondering a solution, he had an epiphany: what if he could create blueprints for his creations? These blueprints would allow him to build multiple objects with similar structures but different details. And thus, the concept of </em><em>classes</em><em> was born.</em></p>
+<p><em>In Pythonia, there were many different creatures, but one of the most fascinating was the </em><em>Robot</em><em>. Robots had various attributes like <code>name</code>, <code>color</code>, and <code>battery_level</code>, and they could perform actions like <code>speak</code> and <code>charge</code>. Guido decided to create a class to represent these robots.</em></p>
 </blockquote>
-<blockquote>
-<p><em>In Pythonia, there were many different creatures, but one of the most fascinating was the <strong>Robot</strong>. Robots had various attributes like <code>name</code>, <code>color</code>, and <code>battery_level</code>, and they could perform actions like <code>speak</code> and <code>charge</code>. Guido decided to create a class to represent these robots.</em></p>
-</blockquote>
-<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Robot</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name, color, battery_level)</span>:</span>
+<pre><code class="language-python">class Robot:
+    def __init__(self, name, color, battery_level):
         self.name = name
         self.color = color
         self.battery_level = battery_level
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-keyword">return</span> <span class="hljs-string">f"Hello, I am <span class="hljs-subst">{self.name}</span>!"</span>
+    def speak(self):
+        return f&quot;Hello, I am {self.name}!&quot;
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">charge</span><span class="hljs-params">(self)</span>:</span>
-        self.battery_level = <span class="hljs-number">100</span>
-        <span class="hljs-keyword">return</span> <span class="hljs-string">f"<span class="hljs-subst">{self.name}</span> is now fully charged!"</span>
-</div></code></pre>
+    def charge(self):
+        self.battery_level = 100
+        return f&quot;{self.name} is now fully charged!&quot;
+</code></pre>
 <blockquote>
 <p><em>With this blueprint, Guido could now create as many robots as he wanted, each with its own unique attributes.</em></p>
 </blockquote>
-<pre class="hljs"><code><div><span class="hljs-comment"># Creating instances of the Robot class</span>
-robot1 = Robot(<span class="hljs-string">"Robo"</span>, <span class="hljs-string">"red"</span>, <span class="hljs-number">50</span>)
-robot2 = Robot(<span class="hljs-string">"Mecha"</span>, <span class="hljs-string">"blue"</span>, <span class="hljs-number">75</span>)
+<pre><code class="language-python"># Creating instances of the Robot class
+robot1 = Robot(&quot;Robo&quot;, &quot;red&quot;, 50)
+robot2 = Robot(&quot;Mecha&quot;, &quot;blue&quot;, 75)
 
-<span class="hljs-comment"># Each robot can perform actions</span>
-print(robot1.speak())  <span class="hljs-comment"># Output: Hello, I am Robo!</span>
-print(robot2.charge())  <span class="hljs-comment"># Output: Mecha is now fully charged!</span>
-</div></code></pre>
+# Each robot can perform actions
+print(robot1.speak())  # Output: Hello, I am Robo!
+print(robot2.charge())  # Output: Mecha is now fully charged!
+</code></pre>
 <blockquote>
 <p><em>The robots in Pythonia were happy and efficient, thanks to Guido's brilliant idea. They could now be created, customized, and controlled with ease. The concept of classes allowed Guido to organize his code better and reuse it whenever needed.</em></p>
-</blockquote>
-<blockquote>
 <p><em>As the days passed, Guido continued to refine his blueprints, adding more features and capabilities. He introduced concepts like inheritance, where one class could inherit attributes and methods from another, and polymorphism, where different classes could be used interchangeably.</em></p>
-</blockquote>
-<blockquote>
 <p><em>The land of Pythonia flourished with creativity and innovation, all thanks to the power of classes. And so, the story of the Python class became a legend, inspiring programmers everywhere to write clean, modular, and reusable code.</em></p>
-</blockquote>
-<blockquote>
 <p><em>And they coded happily ever after.</em></p>
 </blockquote>
-<h2 id="quantum-physics-problem-modeling-a-quantum-particle-in-a-potential-well">Quantum Physics Problem: Modeling a Quantum Particle in a Potential Well</h2>
+<h2>Quantum Physics Problem: Modeling a Quantum Particle in a Potential Well</h2>
 <p>In this problem, we will model a quantum particle in a one-dimensional potential well using a class in Python. The potential well is a fundamental concept in quantum mechanics, where a particle is confined within a region of space with potential energy barriers on either side.</p>
-<h3 id="physics-concept-quantum-particle-in-a-potential-well">Physics Concept: Quantum Particle in a Potential Well</h3>
+<h3>Physics Concept: Quantum Particle in a Potential Well</h3>
 <p>In quantum mechanics, a potential well is a region where a particle with less energy than the potential energy of the surrounding barriers is confined. The particle can only exist within the well and cannot escape unless it gains enough energy to overcome the barriers. This concept is fundamental in understanding the behavior of particles at the quantum level.</p>
-<h4 id="potential-well-diagram">Potential Well Diagram</h4>
+<h4>Potential Well Diagram</h4>
 <p>Below is a simple diagram of a one-dimensional potential well:</p>
-<pre class="hljs"><code><div>Potential Energy (V)
+<pre><code class="language-plaintext">Potential Energy (V)
 ^
 |          _______
 |         |       |
@@ -660,42 +286,34 @@ print(robot2.charge())  <span class="hljs-comment"># Output: Mecha is now fully 
 |         |_______|
 |
 |----------------------------&gt; Position (x)
-</div></code></pre>
-<p>In this diagram:</p>
-<ul>
-<li>The horizontal axis represents the position ($<code>x</code>$) of the particle.</li>
-<li>The vertical axis represents the potential energy ($<code>V</code>$) of the particle.</li>
-<li>The particle is confined within the well and cannot escape unless it gains enough energy to overcome the barriers.</li>
-</ul>
-<h4 id="quantum-mechanics-and-potential-wells">Quantum Mechanics and Potential Wells</h4>
+</code></pre>
+<p>In this diagram:
+- The horizontal axis represents the position (<span class="arithmatex">\(<code>x</code>\)</span>) of the particle.
+- The vertical axis represents the potential energy (<span class="arithmatex">\(<code>V</code>\)</span>) of the particle.
+- The particle is confined within the well and cannot escape unless it gains enough energy to overcome the barriers.</p>
+<h4>Quantum Mechanics and Potential Wells</h4>
 <p>In quantum mechanics, the behavior of a particle in a potential well is described by the Schrödinger equation. The solutions to this equation provide the allowed energy levels and wavefunctions of the particle.</p>
-<h5 id="schr%C3%B6dinger-equation">Schrödinger Equation</h5>
-<p>The time-independent Schrödinger equation for a particle of mass $m$ in a one-dimensional potential well $V(x)$ is given by:</p>
-<p>$<code>-\frac{\hbar^2}{2m} \frac{d^2 \psi(x)}{dx^2} + V(x) \psi(x) = E \psi(x)</code>$</p>
-<p>Where:</p>
-<ul>
-<li>$\hbar$ is the reduced Planck's constant.</li>
-<li>$\psi(x)$ is the wavefunction of the particle.</li>
-<li>$E$ is the energy of the particle.</li>
-</ul>
-<h4 id="energy-levels">Energy Levels</h4>
-<p>For a particle in an infinite potential well of width $L$, the allowed energy levels are quantized and given by:</p>
-<p>$$ E_n = \frac{n^2 \pi^2 \hbar^2}{2mL^2} $$</p>
-<p>Where:</p>
-<ul>
-<li>$n$ is a positive integer ($<code>n = 1, 2, 3, \ldots</code>$).</li>
-<li>$L$ is the width of the potential well.</li>
-</ul>
-<h4 id="wavefunctions">Wavefunctions</h4>
+<h5>Schrödinger Equation</h5>
+<p>The time-independent Schrödinger equation for a particle of mass <span class="arithmatex">\(m\)</span> in a one-dimensional potential well <span class="arithmatex">\(V(x)\)</span> is given by:</p>
+<p><span class="arithmatex">\(<code>-\frac{\hbar^2}{2m} \frac{d^2 \psi(x)}{dx^2} + V(x) \psi(x) = E \psi(x)</code>\)</span></p>
+<p>Where:
+- <span class="arithmatex">\(\hbar\)</span> is the reduced Planck's constant.
+- <span class="arithmatex">\(\psi(x)\)</span> is the wavefunction of the particle.
+- <span class="arithmatex">\(E\)</span> is the energy of the particle.</p>
+<h4>Energy Levels</h4>
+<p>For a particle in an infinite potential well of width <span class="arithmatex">\(L\)</span>, the allowed energy levels are quantized and given by:</p>
+<p><span class="arithmatex">\(<code>E_n = \frac{n^2 \pi^2 \hbar^2}{2mL^2}</code>\)</span></p>
+<p>Where:
+- <span class="arithmatex">\(n\)</span> is a positive integer (<span class="arithmatex">\(<code>n = 1, 2, 3, \ldots</code>\)</span>).
+- <span class="arithmatex">\(L\)</span> is the width of the potential well.</p>
+<h4>Wavefunctions</h4>
 <p>The corresponding wavefunctions for the particle in an infinite potential well are given by:</p>
-<p>$<code>\psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n \pi x}{L}\right)</code>$</p>
-<p>Where:</p>
-<ul>
-<li>$\psi_n(x)$ is the wavefunction for the $n$-th energy level.</li>
-</ul>
-<h3 id="summary">Summary</h3>
+<p><span class="arithmatex">\(<code>\psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n \pi x}{L}\right)</code>\)</span></p>
+<p>Where:
+- <span class="arithmatex">\(\psi_n(x)\)</span> is the wavefunction for the <span class="arithmatex">\(n\)</span>-th energy level.</p>
+<h3>Summary</h3>
 <p>The concept of a quantum particle in a potential well is essential in understanding the quantization of energy levels and the behavior of particles at the quantum level. The Schrödinger equation provides the framework for calculating the allowed energy levels and wavefunctions of the particle, which are crucial for various applications in quantum mechanics and modern physics.</p>
-<h3 id="problem-statement">Problem Statement</h3>
+<h3>Problem Statement</h3>
 <p>We want to create a class <code>QuantumParticle</code> that models a quantum particle in a potential well. The class should have the following attributes and methods:</p>
 <ul>
 <li>
@@ -715,32 +333,32 @@ print(robot2.charge())  <span class="hljs-comment"># Output: Mecha is now fully 
 </ul>
 </li>
 </ul>
-<h3 id="solution">Solution</h3>
+<h3>Solution</h3>
 <p>Let's implement the <code>QuantumParticle</code> class in Python:</p>
-<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">QuantumParticle</span>:</span>
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, mass, position)</span>:</span>
+<pre><code class="language-python">class QuantumParticle:
+        def __init__(self, mass, position):
                 self.mass = mass
                 self.position = position
                 self.potential_energy = self.calculate_potential_energy()
 
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calculate_potential_energy</span><span class="hljs-params">(self)</span>:</span>
-                <span class="hljs-comment"># Assuming a simple harmonic potential well: V(x) = 0.5 * k * x^2</span>
-                k = <span class="hljs-number">1.0</span>  <span class="hljs-comment"># Spring constant</span>
-                <span class="hljs-keyword">return</span> <span class="hljs-number">0.5</span> * k * self.position**<span class="hljs-number">2</span>
+        def calculate_potential_energy(self):
+                # Assuming a simple harmonic potential well: V(x) = 0.5 * k * x^2
+                k = 1.0  # Spring constant
+                return 0.5 * k * self.position**2
 
-        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">move</span><span class="hljs-params">(self, new_position)</span>:</span>
+        def move(self, new_position):
                 self.position = new_position
                 self.potential_energy = self.calculate_potential_energy()
 
-<span class="hljs-comment"># Example usage</span>
-particle = QuantumParticle(mass=<span class="hljs-number">1.0</span>, position=<span class="hljs-number">0.0</span>)
-print(<span class="hljs-string">f"Initial Position: <span class="hljs-subst">{particle.position}</span>, Potential Energy: <span class="hljs-subst">{particle.potential_energy}</span>"</span>)
+# Example usage
+particle = QuantumParticle(mass=1.0, position=0.0)
+print(f&quot;Initial Position: {particle.position}, Potential Energy: {particle.potential_energy}&quot;)
 
-<span class="hljs-comment"># Move the particle to a new position</span>
-particle.move(<span class="hljs-number">2.0</span>)
-print(<span class="hljs-string">f"New Position: <span class="hljs-subst">{particle.position}</span>, Potential Energy: <span class="hljs-subst">{particle.potential_energy}</span>"</span>)
-</div></code></pre>
-<h3 id="detailed-explanation">Detailed Explanation</h3>
+# Move the particle to a new position
+particle.move(2.0)
+print(f&quot;New Position: {particle.position}, Potential Energy: {particle.potential_energy}&quot;)
+</code></pre>
+<h3>Detailed Explanation</h3>
 <ol>
 <li>
 <p><strong>Class Definition</strong>:</p>
@@ -759,8 +377,8 @@ print(<span class="hljs-string">f"New Position: <span class="hljs-subst">{partic
 <p><strong>Calculate Potential Energy Method (<code>calculate_potential_energy</code>)</strong>:</p>
 <ul>
 <li>This method calculates the potential energy of the particle based on its position.</li>
-<li>We assume a simple harmonic potential well with the formula: $<code>V(x) = 0.5 \times k \times x^2</code>$
-where $k$ is the spring constant.</li>
+<li>We assume a simple harmonic potential well with the formula: <span class="arithmatex">\(<code>V(x) = 0.5 \times k \times x^2</code>\)</span>
+where <span class="arithmatex">\(k\)</span> is the spring constant.</li>
 </ul>
 </li>
 <li>
@@ -770,131 +388,121 @@ where $k$ is the spring constant.</li>
 </ul>
 </li>
 </ol>
-<h3 id="flowchart">Flowchart</h3>
+<h3>Flowchart</h3>
 <p>Below is a flowchart that explains the flow of the solution:</p>
-<pre><code class="language-mermaid"><div class="mermaid">flowchart TD
-        A[Start] --> B[Create QuantumParticle instance]
-        B --> C[Initialize mass and position]
-        C --> D[Calculate initial potential energy]
-        D --> E[Print initial position and potential energy]
-        E --> F[Move particle to new position]
-        F --> G[Update position]
-        G --> H[Recalculate potential energy]
-        H --> I[Print new position and potential energy]
-        I --> J[End]
-</div></code></pre>
+<pre><code class="language-mermaid">flowchart TD
+        A[Start] --&gt; B[Create QuantumParticle instance]
+        B --&gt; C[Initialize mass and position]
+        C --&gt; D[Calculate initial potential energy]
+        D --&gt; E[Print initial position and potential energy]
+        E --&gt; F[Move particle to new position]
+        F --&gt; G[Update position]
+        G --&gt; H[Recalculate potential energy]
+        H --&gt; I[Print new position and potential energy]
+        I --&gt; J[End]
+</code></pre>
 <p>By following this approach, we can model a quantum particle in a potential well and simulate its behavior using object-oriented programming in Python. This example demonstrates how classes can be used to encapsulate data and behavior, making the code more modular and reusable.</p>
 <blockquote>
-<h2 id="note-on-object-oriented-programming-oop">Note on Object-Oriented Programming (OOP)</h2>
-</blockquote>
-<blockquote>
-<p>Object-oriented programming (OOP) is a programming paradigm that uses &quot;objects&quot; to design and structure software. An object is a self-contained unit that contains both data and methods that operate on that data. OOP is based on several key concepts that make it a powerful and flexible way to write software.</p>
-</blockquote>
-<blockquote>
-<h3 id="key-concepts-of-oop">Key Concepts of OOP</h3>
-</blockquote>
-<blockquote>
+<h2>Note on Object-Oriented Programming (OOP)</h2>
+<p>Object-oriented programming (OOP) is a programming paradigm that uses "objects" to design and structure software. An object is a self-contained unit that contains both data and methods that operate on that data. OOP is based on several key concepts that make it a powerful and flexible way to write software.</p>
+<h3>Key Concepts of OOP</h3>
 <ol>
-<li><strong>Classes and Objects</strong>:
-- A <strong>class</strong> is a blueprint for creating objects. It defines a set of attributes and methods that the objects created from the class will have.
-- An <strong>object</strong> is an instance of a class. It is a specific realization of the class with its own unique data.</li>
+<li>
+<p><strong>Classes and Objects</strong>:</p>
+<ul>
+<li>A <strong>class</strong> is a blueprint for creating objects. It defines a set of attributes and methods that the objects created from the class will have.</li>
+<li>An <strong>object</strong> is an instance of a class. It is a specific realization of the class with its own unique data.</li>
+</ul>
+</li>
+<li>
+<p><strong>Encapsulation</strong>:</p>
+<ul>
+<li>Encapsulation is the concept of bundling data (attributes) and methods (functions) that operate on the data into a single unit, or class. It helps in hiding the internal state of the object and only exposing necessary parts through methods.</li>
+</ul>
+</li>
+<li>
+<p><strong>Inheritance</strong>:</p>
+<ul>
+<li>Inheritance allows a class to inherit attributes and methods from another class. This promotes code reuse and establishes a relationship between classes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Polymorphism</strong>:</p>
+<ul>
+<li>Polymorphism allows objects of different classes to be treated as objects of a common superclass. It enables a single interface to represent different underlying forms (data types).</li>
+</ul>
+</li>
+<li>
+<p><strong>Abstraction</strong>:</p>
+<ul>
+<li>Abstraction is the concept of hiding the complex implementation details and showing only the essential features of the object. It helps in reducing complexity and increasing efficiency.</li>
+</ul>
+</li>
 </ol>
-</blockquote>
-<blockquote>
-<ol start="2">
-<li><strong>Encapsulation</strong>:
-- Encapsulation is the concept of bundling data (attributes) and methods (functions) that operate on the data into a single unit, or class. It helps in hiding the internal state of the object and only exposing necessary parts through methods.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="3">
-<li><strong>Inheritance</strong>:
-- Inheritance allows a class to inherit attributes and methods from another class. This promotes code reuse and establishes a relationship between classes.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="4">
-<li><strong>Polymorphism</strong>:
-- Polymorphism allows objects of different classes to be treated as objects of a common superclass. It enables a single interface to represent different underlying forms (data types).</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="5">
-<li><strong>Abstraction</strong>:
-- Abstraction is the concept of hiding the complex implementation details and showing only the essential features of the object. It helps in reducing complexity and increasing efficiency.</li>
-</ol>
-</blockquote>
-<blockquote>
-<h3 id="connecting-classes-with-oop">Connecting Classes with OOP</h3>
-</blockquote>
-<blockquote>
+<h3>Connecting Classes with OOP</h3>
 <p>Classes are the foundation of object-oriented programming. They provide a way to create and manage objects, encapsulate data and behavior, and establish relationships between different parts of the software. By using classes, you can model real-world entities and their interactions in a more intuitive and organized way.</p>
-</blockquote>
-<blockquote>
 <p>For example, consider a class <code>Car</code> that models a real-world car. The class can have attributes like <code>make</code>, <code>model</code>, and <code>year</code>, and methods like <code>start</code>, <code>stop</code>, and <code>drive</code>. Each car object created from the <code>Car</code> class will have its own set of attributes and can perform actions defined by the methods.</p>
 </blockquote>
-<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, make, model, year)</span>:</span>
+<pre><code class="language-python">class Car:
+    def __init__(self, make, model, year):
         self.make = make
         self.model = model
         self.year = year
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">start</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-keyword">return</span> <span class="hljs-string">f"<span class="hljs-subst">{self.make}</span> <span class="hljs-subst">{self.model}</span> is starting."</span>
+    def start(self):
+        return f&quot;{self.make} {self.model} is starting.&quot;
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">stop</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-keyword">return</span> <span class="hljs-string">f"<span class="hljs-subst">{self.make}</span> <span class="hljs-subst">{self.model}</span> is stopping."</span>
+    def stop(self):
+        return f&quot;{self.make} {self.model} is stopping.&quot;
 
-<span class="hljs-comment"># Creating instances of the Car class</span>
-car1 = Car(<span class="hljs-string">"Toyota"</span>, <span class="hljs-string">"Corolla"</span>, <span class="hljs-number">2020</span>)
-car2 = Car(<span class="hljs-string">"Honda"</span>, <span class="hljs-string">"Civic"</span>, <span class="hljs-number">2019</span>)
+# Creating instances of the Car class
+car1 = Car(&quot;Toyota&quot;, &quot;Corolla&quot;, 2020)
+car2 = Car(&quot;Honda&quot;, &quot;Civic&quot;, 2019)
 
-<span class="hljs-comment"># Each car can perform actions</span>
-print(car1.start())  <span class="hljs-comment"># Output: Toyota Corolla is starting.</span>
-print(car2.stop())   <span class="hljs-comment"># Output: Honda Civic is stopping.</span>
-</div></code></pre>
+# Each car can perform actions
+print(car1.start())  # Output: Toyota Corolla is starting.
+print(car2.stop())   # Output: Honda Civic is stopping.
+</code></pre>
 <blockquote>
 <p>In this example, the <code>Car</code> class encapsulates the attributes and methods related to a car. Each car object has its own state and can perform actions independently. This demonstrates how classes and OOP concepts work together to create modular, reusable, and maintainable code.</p>
-</blockquote>
-<blockquote>
 <p>By understanding and applying OOP principles, you can write software that is easier to understand, extend, and maintain.</p>
 </blockquote>
-<h2 id="the-init-method">The <code>__init__()</code> Method</h2>
+<h2>The <code>__init__()</code> Method</h2>
 <p>The <code>__init__()</code> method in Python is a special method that is automatically called when a new instance of a class is created. It is also known as the constructor method. The primary purpose of the <code>__init__()</code> method is to initialize the attributes of the class with the values provided during the creation of the object. This method has two leading underscores and two trailing underscores, a convention that helps prevent Python’s default method names from conflicting with your method names.</p>
-<h3 id="syntax-of-the-init-method">Syntax of the <code>__init__()</code> Method</h3>
-<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClassName</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, parameters)</span>:</span>
+<h3>Syntax of the <code>__init__()</code> Method</h3>
+<pre><code class="language-python">class ClassName:
+    def __init__(self, parameters):
         self.attribute1 = value1
         self.attribute2 = value2
-        <span class="hljs-comment"># Initialize other attributes</span>
-</div></code></pre>
+        # Initialize other attributes
+</code></pre>
 <ul>
 <li><strong><code>def __init__(self, parameters):</code></strong>: This line defines the <code>__init__()</code> method. The <code>self</code> parameter refers to the instance of the class being created. Additional parameters can be passed to initialize the attributes.</li>
 <li><strong><code>self.attribute = value</code></strong>: Inside the <code>__init__()</code> method, the <code>self</code> keyword is used to assign values to the instance attributes. This ensures that each instance of the class has its own set of attributes.</li>
 </ul>
-<h3 id="example-of-the-init-method">Example of the <code>__init__()</code> Method</h3>
+<h3>Example of the <code>__init__()</code> Method</h3>
 <p>Let's consider an example to understand how the <code>__init__()</code> method works:</p>
-<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name, breed, age)</span>:</span>
+<pre><code class="language-python">class Dog:
+    def __init__(self, name, breed, age):
         self.name = name
         self.breed = breed
         self.age = age
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bark</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-keyword">return</span> <span class="hljs-string">f"<span class="hljs-subst">{self.name}</span> is barking!"</span>
+    def bark(self):
+        return f&quot;{self.name} is barking!&quot;
 
-<span class="hljs-comment"># Creating an instance of the Dog class</span>
-dog1 = Dog(<span class="hljs-string">"Buddy"</span>, <span class="hljs-string">"Golden Retriever"</span>, <span class="hljs-number">3</span>)
+# Creating an instance of the Dog class
+dog1 = Dog(&quot;Buddy&quot;, &quot;Golden Retriever&quot;, 3)
 
-<span class="hljs-comment"># Accessing the attributes</span>
-print(dog1.name)  <span class="hljs-comment"># Output: Buddy</span>
-print(dog1.breed)  <span class="hljs-comment"># Output: Golden Retriever</span>
-print(dog1.age)  <span class="hljs-comment"># Output: 3</span>
+# Accessing the attributes
+print(dog1.name)  # Output: Buddy
+print(dog1.breed)  # Output: Golden Retriever
+print(dog1.age)  # Output: 3
 
-<span class="hljs-comment"># Calling the method</span>
-print(dog1.bark())  <span class="hljs-comment"># Output: Buddy is barking!</span>
-</div></code></pre>
-<h3 id="detailed-explanation">Detailed Explanation</h3>
+# Calling the method
+print(dog1.bark())  # Output: Buddy is barking!
+</code></pre>
+<h3>Detailed Explanation</h3>
 <ol>
 <li>
 <p><strong>Class Definition</strong>:</p>
@@ -911,7 +519,7 @@ print(dog1.bark())  <span class="hljs-comment"># Output: Buddy is barking!</span
 <li>
 <p><strong>Creating an Instance</strong>:</p>
 <ul>
-<li>When we create an instance of the <code>Dog</code> class using <code>dog1 = Dog(&quot;Buddy&quot;, &quot;Golden Retriever&quot;, 3)</code>, the <code>__init__()</code> method is automatically called with the provided arguments. This initializes the attributes of <code>dog1</code>.</li>
+<li>When we create an instance of the <code>Dog</code> class using <code>dog1 = Dog("Buddy", "Golden Retriever", 3)</code>, the <code>__init__()</code> method is automatically called with the provided arguments. This initializes the attributes of <code>dog1</code>.</li>
 </ul>
 </li>
 <li>
@@ -922,34 +530,34 @@ print(dog1.bark())  <span class="hljs-comment"># Output: Buddy is barking!</span
 </ul>
 </li>
 </ol>
-<h3 id="importance-of-the-init-method">Importance of the <code>__init__()</code> Method</h3>
+<h3>Importance of the <code>__init__()</code> Method</h3>
 <ul>
 <li><strong>Initialization</strong>: The <code>__init__()</code> method ensures that the attributes of the class are initialized with the values provided during the creation of the object.</li>
 <li><strong>Encapsulation</strong>: It helps in encapsulating the data within the class, making the code more modular and organized.</li>
 <li><strong>Customization</strong>: By defining the <code>__init__()</code> method, you can customize the initialization process for each instance of the class.</li>
 </ul>
 <p>By understanding the <code>__init__()</code> method, you can effectively initialize and manage the attributes of your class instances, making your code more robust and maintainable.</p>
-<h2 id="example-restaurant-class">Example: Restaurant Class</h2>
+<h2>Example: Restaurant Class</h2>
 <p>Let's create a class called <code>Restaurant</code> that models a restaurant with attributes for its name and cuisine type. The class will also have methods to describe the restaurant and indicate when it is open.</p>
-<h3 id="restaurant-class-implementation">Restaurant Class Implementation</h3>
-<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Restaurant</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, restaurant_name, cuisine_type)</span>:</span>
+<h3>Restaurant Class Implementation</h3>
+<pre><code class="language-python">class Restaurant:
+    def __init__(self, restaurant_name, cuisine_type):
         self.restaurant_name = restaurant_name
         self.cuisine_type = cuisine_type
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">describe_restaurant</span><span class="hljs-params">(self)</span>:</span>
-        print(<span class="hljs-string">f"Restaurant Name: <span class="hljs-subst">{self.restaurant_name}</span>"</span>)
-        print(<span class="hljs-string">f"Cuisine Type: <span class="hljs-subst">{self.cuisine_type}</span>"</span>)
+    def describe_restaurant(self):
+        print(f&quot;Restaurant Name: {self.restaurant_name}&quot;)
+        print(f&quot;Cuisine Type: {self.cuisine_type}&quot;)
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">open_restaurant</span><span class="hljs-params">(self)</span>:</span>
-        print(<span class="hljs-string">f"<span class="hljs-subst">{self.restaurant_name}</span> is now open!"</span>)
+    def open_restaurant(self):
+        print(f&quot;{self.restaurant_name} is now open!&quot;)
 
-<span class="hljs-comment"># Example usage</span>
-restaurant = Restaurant(<span class="hljs-string">"The Food Place"</span>, <span class="hljs-string">"Italian"</span>)
+# Example usage
+restaurant = Restaurant(&quot;The Food Place&quot;, &quot;Italian&quot;)
 restaurant.describe_restaurant()
 restaurant.open_restaurant()
-</div></code></pre>
-<h3 id="detailed-explanation">Detailed Explanation</h3>
+</code></pre>
+<h3>Detailed Explanation</h3>
 <ol>
 <li>
 <p><strong>Class Definition</strong>:</p>
@@ -976,46 +584,46 @@ restaurant.open_restaurant()
 </ul>
 </li>
 </ol>
-<h3 id="example-usage">Example Usage</h3>
-<p>In the example usage, we create an instance of the <code>Restaurant</code> class with the name &quot;The Food Place&quot; and cuisine type &quot;Italian&quot;. We then call the <code>describe_restaurant()</code> and <code>open_restaurant()</code> methods to display the restaurant's information and indicate that it is open.</p>
+<h3>Example Usage</h3>
+<p>In the example usage, we create an instance of the <code>Restaurant</code> class with the name "The Food Place" and cuisine type "Italian". We then call the <code>describe_restaurant()</code> and <code>open_restaurant()</code> methods to display the restaurant's information and indicate that it is open.</p>
 <p>By following this approach, you can model a restaurant and its behavior using object-oriented programming in Python.</p>
-<pre class="hljs"><code><div><span class="hljs-comment"># Creating three instances of the Restaurant class</span>
-restaurant1 = Restaurant(<span class="hljs-string">"The Food Place"</span>, <span class="hljs-string">"Italian"</span>)
-restaurant2 = Restaurant(<span class="hljs-string">"Sushi World"</span>, <span class="hljs-string">"Japanese"</span>)
-restaurant3 = Restaurant(<span class="hljs-string">"Taco Town"</span>, <span class="hljs-string">"Mexican"</span>)
+<pre><code class="language-python"># Creating three instances of the Restaurant class
+restaurant1 = Restaurant(&quot;The Food Place&quot;, &quot;Italian&quot;)
+restaurant2 = Restaurant(&quot;Sushi World&quot;, &quot;Japanese&quot;)
+restaurant3 = Restaurant(&quot;Taco Town&quot;, &quot;Mexican&quot;)
 
-<span class="hljs-comment"># Calling describe_restaurant() for each instance</span>
+# Calling describe_restaurant() for each instance
 restaurant1.describe_restaurant()
 restaurant2.describe_restaurant()
 restaurant3.describe_restaurant()
-</div></code></pre>
-<pre class="hljs"><code><div>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, first_name, last_name, age, email, username)</span>:</span>
+</code></pre>
+<pre><code class="language-python">
+class User:
+    def __init__(self, first_name, last_name, age, email, username):
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
         self.email = email
         self.username = username
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">describe_user</span><span class="hljs-params">(self)</span>:</span>
-        print(<span class="hljs-string">f"User Profile:"</span>)
-        print(<span class="hljs-string">f"First Name: <span class="hljs-subst">{self.first_name}</span>"</span>)
-        print(<span class="hljs-string">f"Last Name: <span class="hljs-subst">{self.last_name}</span>"</span>)
-        print(<span class="hljs-string">f"Age: <span class="hljs-subst">{self.age}</span>"</span>)
-        print(<span class="hljs-string">f"Email: <span class="hljs-subst">{self.email}</span>"</span>)
-        print(<span class="hljs-string">f"Username: <span class="hljs-subst">{self.username}</span>"</span>)
+    def describe_user(self):
+        print(f&quot;User Profile:&quot;)
+        print(f&quot;First Name: {self.first_name}&quot;)
+        print(f&quot;Last Name: {self.last_name}&quot;)
+        print(f&quot;Age: {self.age}&quot;)
+        print(f&quot;Email: {self.email}&quot;)
+        print(f&quot;Username: {self.username}&quot;)
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">greet_user</span><span class="hljs-params">(self)</span>:</span>
-        print(<span class="hljs-string">f"Hello, <span class="hljs-subst">{self.first_name}</span> <span class="hljs-subst">{self.last_name}</span>! Welcome back!"</span>)
+    def greet_user(self):
+        print(f&quot;Hello, {self.first_name} {self.last_name}! Welcome back!&quot;)
 
-<span class="hljs-comment"># Example usage</span>
-user1 = User(<span class="hljs-string">"John"</span>, <span class="hljs-string">"Doe"</span>, <span class="hljs-number">30</span>, <span class="hljs-string">"john.doe@example.com"</span>, <span class="hljs-string">"johndoe"</span>)
+# Example usage
+user1 = User(&quot;John&quot;, &quot;Doe&quot;, 30, &quot;john.doe@example.com&quot;, &quot;johndoe&quot;)
 user1.describe_user()
 user1.greet_user()
 
-</div></code></pre>
-<h2 id="inheritance-in-python">Inheritance in Python</h2>
+</code></pre>
+<h2>Inheritance in Python</h2>
 <p>Inheritance is a fundamental concept in object-oriented programming (OOP) that allows a class to inherit attributes and methods from another class. This promotes code reuse and establishes a relationship between classes. When one class inherits from another, it automatically takes
 on all the attributes and methods of the first class. The original class is
 called the parent class, and the new class is the child class. The child class
@@ -1023,38 +631,38 @@ inherits every attribute and method from its parent class but is also free to
 define new attributes and methods of its own.</p>
 <p>The name of the parent class must be included in parentheses in the definition of the child class. The <code>super()</code> function is a special function that helps Python make connections between the parent and child class. The name super comes from a convention of calling the parent class a superclass and the
 child class a subclass.</p>
-<h3 id="example-inheriting-from-the-particle-class">Example: Inheriting from the Particle Class</h3>
+<h3>Example: Inheriting from the Particle Class</h3>
 <p>Let extend our <code>Particle</code> class to create a new class called <code>ChargedParticle</code> that represents a particle with an electric charge.</p>
-<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Particle</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, position, velocity, mass)</span>:</span>
+<pre><code class="language-python">class Particle:
+    def __init__(self, position, velocity, mass):
         self.position = position
         self.velocity = velocity
         self.mass = mass
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">move</span><span class="hljs-params">(self, time)</span>:</span>
-        self.position[<span class="hljs-number">0</span>] += self.velocity[<span class="hljs-number">0</span>] * time
-        self.position[<span class="hljs-number">1</span>] += self.velocity[<span class="hljs-number">1</span>] * time
-        self.position[<span class="hljs-number">2</span>] += self.velocity[<span class="hljs-number">2</span>] * time
+    def move(self, time):
+        self.position[0] += self.velocity[0] * time
+        self.position[1] += self.velocity[1] * time
+        self.position[2] += self.velocity[2] * time
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">kinetic_energy</span><span class="hljs-params">(self)</span>:</span>
-        v_squared = sum(v**<span class="hljs-number">2</span> <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> self.velocity)
-        <span class="hljs-keyword">return</span> <span class="hljs-number">0.5</span> * self.mass * v_squared
+    def kinetic_energy(self):
+        v_squared = sum(v**2 for v in self.velocity)
+        return 0.5 * self.mass * v_squared
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ChargedParticle</span><span class="hljs-params">(Particle)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, position, velocity, mass, charge)</span>:</span>
+class ChargedParticle(Particle):
+    def __init__(self, position, velocity, mass, charge):
         super().__init__(position, velocity, mass)
         self.charge = charge
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">electric_force</span><span class="hljs-params">(self, electric_field)</span>:</span>
-        <span class="hljs-keyword">return</span> [self.charge * e <span class="hljs-keyword">for</span> e <span class="hljs-keyword">in</span> electric_field]
+    def electric_force(self, electric_field):
+        return [self.charge * e for e in electric_field]
 
-<span class="hljs-comment"># Example usage</span>
-charged_particle = ChargedParticle([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>], <span class="hljs-number">1.0</span>, <span class="hljs-number">1.6e-19</span>)
-print(<span class="hljs-string">f"Position: <span class="hljs-subst">{charged_particle.position}</span>"</span>)
-print(<span class="hljs-string">f"Kinetic Energy: <span class="hljs-subst">{charged_particle.kinetic_energy()}</span>"</span>)
-print(<span class="hljs-string">f"Electric Force: <span class="hljs-subst">{charged_particle.electric_force([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1e5</span>])}</span>"</span>)
-</div></code></pre>
-<h3 id="detailed-explanation">Detailed Explanation</h3>
+# Example usage
+charged_particle = ChargedParticle([0, 0, 0], [1, 1, 1], 1.0, 1.6e-19)
+print(f&quot;Position: {charged_particle.position}&quot;)
+print(f&quot;Kinetic Energy: {charged_particle.kinetic_energy()}&quot;)
+print(f&quot;Electric Force: {charged_particle.electric_force([0, 0, 1e5])}&quot;)
+</code></pre>
+<h3>Detailed Explanation</h3>
 <ol>
 <li>
 <p><strong>Base Class (<code>Particle</code>)</strong>:</p>
@@ -1071,56 +679,56 @@ print(<span class="hljs-string">f"Electric Force: <span class="hljs-subst">{char
 </ul>
 </li>
 </ol>
-<h3 id="benefits-of-inheritance">Benefits of Inheritance</h3>
+<h3>Benefits of Inheritance</h3>
 <ul>
 <li><strong>Code Reuse</strong>: Inheritance allows you to reuse existing code by creating new classes that build upon the functionality of existing ones.</li>
 <li><strong>Modularity</strong>: It promotes modularity by organizing related classes into a hierarchy.</li>
 <li><strong>Maintainability</strong>: Changes made to the base class are automatically reflected in derived classes, making the code easier to maintain.</li>
 </ul>
-<h3 id="benefits-of-inheritance">Benefits of Inheritance</h3>
+<h3>Benefits of Inheritance</h3>
 <ul>
 <li><strong>Code Reuse</strong>: Inheritance allows you to reuse existing code by creating new classes that build upon the functionality of existing ones.</li>
 <li><strong>Modularity</strong>: It promotes modularity by organizing related classes into a hierarchy.</li>
 <li><strong>Maintainability</strong>: Changes made to the base class are automatically reflected in derived classes, making the code easier to maintain.</li>
 </ul>
 <p>By understanding inheritance, you can create more complex and organized programs that leverage existing code and extend functionality in a structured manner.</p>
-<h2 id="polymorphism-in-python">Polymorphism in Python</h2>
+<h2>Polymorphism in Python</h2>
 <p>Polymorphism is a core concept in object-oriented programming (OOP) that allows objects of different classes to be treated as objects of a common superclass. This means that a single function or method can operate on objects of different types, as long as they share a common interface. Polymorphism promotes flexibility and reusability in code.</p>
-<h3 id="example-polymorphism-with-shapes-in-physics">Example: Polymorphism with Shapes in Physics</h3>
+<h3>Example: Polymorphism with Shapes in Physics</h3>
 <p>Consider a scenario where we want to model different shapes in physics, such as circles and rectangles, and calculate their areas. We can use polymorphism to achieve this.</p>
-<h4 id="base-class-shape">Base Class: Shape</h4>
+<h4>Base Class: Shape</h4>
 <p>First, we define a base class <code>Shape</code> with a method <code>area</code> that will be overridden by derived classes.</p>
-<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Shape</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">area</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-keyword">raise</span> NotImplementedError(<span class="hljs-string">"Subclasses must implement this method"</span>)
-</div></code></pre>
-<h4 id="derived-classes-circle-and-rectangle">Derived Classes: Circle and Rectangle</h4>
+<pre><code class="language-python">class Shape:
+    def area(self):
+        raise NotImplementedError(&quot;Subclasses must implement this method&quot;)
+</code></pre>
+<h4>Derived Classes: Circle and Rectangle</h4>
 <p>Next, we define two derived classes, <code>Circle</code> and <code>Rectangle</code>, that inherit from <code>Shape</code> and implement the <code>area</code> method.</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">import</span> math
+<pre><code class="language-python">import math
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Circle</span><span class="hljs-params">(Shape)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, radius)</span>:</span>
+class Circle(Shape):
+    def __init__(self, radius):
         self.radius = radius
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">area</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-keyword">return</span> math.pi * self.radius**<span class="hljs-number">2</span>
+    def area(self):
+        return math.pi * self.radius**2
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Rectangle</span><span class="hljs-params">(Shape)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, width, height)</span>:</span>
+class Rectangle(Shape):
+    def __init__(self, width, height):
         self.width = width
         self.height = height
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">area</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-keyword">return</span> self.width * self.height
-</div></code></pre>
-<h4 id="using-polymorphism">Using Polymorphism</h4>
+    def area(self):
+        return self.width * self.height
+</code></pre>
+<h4>Using Polymorphism</h4>
 <p>We can now create instances of <code>Circle</code> and <code>Rectangle</code> and use them interchangeably through the <code>Shape</code> interface.</p>
-<pre class="hljs"><code><div>shapes = [Circle(<span class="hljs-number">5</span>), Rectangle(<span class="hljs-number">4</span>, <span class="hljs-number">6</span>)]
+<pre><code class="language-python">shapes = [Circle(5), Rectangle(4, 6)]
 
-<span class="hljs-keyword">for</span> shape <span class="hljs-keyword">in</span> shapes:
-    print(<span class="hljs-string">f"The area is: <span class="hljs-subst">{shape.area()}</span>"</span>)
-</div></code></pre>
-<h3 id="detailed-explanation">Detailed Explanation</h3>
+for shape in shapes:
+    print(f&quot;The area is: {shape.area()}&quot;)
+</code></pre>
+<h3>Detailed Explanation</h3>
 <ol>
 <li>
 <p><strong>Base Class (<code>Shape</code>)</strong>:</p>
@@ -1143,118 +751,114 @@ print(<span class="hljs-string">f"Electric Force: <span class="hljs-subst">{char
 </ul>
 </li>
 </ol>
-<h3 id="benefits-for-physics-students">Benefits for Physics Students</h3>
-<p>Polymorphism allows physics students to:</p>
-<ul>
-<li><strong>Model Different Entities</strong>: Create flexible models for different physical entities that share common behaviors.</li>
-<li><strong>Reuse Code</strong>: Write reusable code that can operate on different types of objects.</li>
-<li><strong>Extend Functionality</strong>: Easily extend functionality by adding new classes that implement the common interface.</li>
-</ul>
+<h3>Benefits for Physics Students</h3>
+<p>Polymorphism allows physics students to:
+- <strong>Model Different Entities</strong>: Create flexible models for different physical entities that share common behaviors.
+- <strong>Reuse Code</strong>: Write reusable code that can operate on different types of objects.
+- <strong>Extend Functionality</strong>: Easily extend functionality by adding new classes that implement the common interface.</p>
 <p>By understanding and applying polymorphism, you can write more flexible and maintainable code for your physics simulations and models.</p>
-<h2 id="difference-between-inheritance-and-polymorphism">Difference Between Inheritance and Polymorphism</h2>
+<h2>Difference Between Inheritance and Polymorphism</h2>
 <p>Inheritance and polymorphism are two fundamental concepts in object-oriented programming (OOP) that are closely related but serve different purposes.</p>
-<h3 id="inheritance">Inheritance</h3>
+<h3>Inheritance</h3>
 <p>Inheritance is a mechanism that allows one class (the child class) to inherit attributes and methods from another class (the parent class). This promotes code reuse and establishes a hierarchical relationship between classes.</p>
-<h4 id="key-points">Key Points:</h4>
+<h4>Key Points:</h4>
 <ul>
 <li><strong>Code Reuse</strong>: Inheritance allows you to reuse existing code by creating new classes that build upon the functionality of existing ones.</li>
 <li><strong>Hierarchy</strong>: It establishes a parent-child relationship between classes, where the child class inherits the properties and behaviors of the parent class.</li>
 <li><strong>Extension</strong>: Child classes can extend or override the attributes and methods of the parent class to provide specific implementations.</li>
 </ul>
-<h4 id="example">Example:</h4>
-<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name)</span>:</span>
+<h4>Example:</h4>
+<pre><code class="language-python">class Animal:
+    def __init__(self, name):
         self.name = name
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-keyword">raise</span> NotImplementedError(<span class="hljs-string">"Subclasses must implement this method"</span>)
+    def speak(self):
+        raise NotImplementedError(&quot;Subclasses must implement this method&quot;)
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span><span class="hljs-params">(Animal)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-keyword">return</span> <span class="hljs-string">f"<span class="hljs-subst">{self.name}</span> says Woof!"</span>
+class Dog(Animal):
+    def speak(self):
+        return f&quot;{self.name} says Woof!&quot;
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span><span class="hljs-params">(Animal)</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span><span class="hljs-params">(self)</span>:</span>
-        <span class="hljs-keyword">return</span> <span class="hljs-string">f"<span class="hljs-subst">{self.name}</span> says Meow!"</span>
+class Cat(Animal):
+    def speak(self):
+        return f&quot;{self.name} says Meow!&quot;
 
-dog = Dog(<span class="hljs-string">"Buddy"</span>)
-cat = Cat(<span class="hljs-string">"Whiskers"</span>)
-print(dog.speak())  <span class="hljs-comment"># Output: Buddy says Woof!</span>
-print(cat.speak())  <span class="hljs-comment"># Output: Whiskers says Meow!</span>
-</div></code></pre>
-<h3 id="polymorphism">Polymorphism</h3>
+dog = Dog(&quot;Buddy&quot;)
+cat = Cat(&quot;Whiskers&quot;)
+print(dog.speak())  # Output: Buddy says Woof!
+print(cat.speak())  # Output: Whiskers says Meow!
+</code></pre>
+<h3>Polymorphism</h3>
 <p>Polymorphism allows objects of different classes to be treated as objects of a common superclass. It enables a single interface to represent different underlying forms (data types). Polymorphism promotes flexibility and reusability in code.</p>
-<h4 id="key-points">Key Points:</h4>
+<h4>Key Points:</h4>
 <ul>
 <li><strong>Common Interface</strong>: Polymorphism allows different classes to be used interchangeably through a common interface.</li>
 <li><strong>Method Overriding</strong>: It is often achieved through method overriding, where a child class provides a specific implementation of a method that is already defined in its parent class.</li>
 <li><strong>Flexibility</strong>: It allows functions and methods to operate on objects of different types, as long as they follow the same interface.</li>
 </ul>
-<h4 id="example">Example:</h4>
-<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">animal_sound</span><span class="hljs-params">(animal)</span>:</span>
+<h4>Example:</h4>
+<pre><code class="language-python">def animal_sound(animal):
     print(animal.speak())
 
-dog = Dog(<span class="hljs-string">"Buddy"</span>)
-cat = Cat(<span class="hljs-string">"Whiskers"</span>)
-animal_sound(dog)  <span class="hljs-comment"># Output: Buddy says Woof!</span>
-animal_sound(cat)  <span class="hljs-comment"># Output: Whiskers says Meow!</span>
-</div></code></pre>
-<h3 id="connection-between-inheritance-and-polymorphism">Connection Between Inheritance and Polymorphism</h3>
+dog = Dog(&quot;Buddy&quot;)
+cat = Cat(&quot;Whiskers&quot;)
+animal_sound(dog)  # Output: Buddy says Woof!
+animal_sound(cat)  # Output: Whiskers says Meow!
+</code></pre>
+<h3>Connection Between Inheritance and Polymorphism</h3>
 <ul>
 <li><strong>Inheritance</strong> provides the mechanism to create a hierarchical relationship between classes, allowing child classes to inherit attributes and methods from parent classes.</li>
 <li><strong>Polymorphism</strong> leverages this hierarchical relationship to allow objects of different classes to be treated as objects of a common superclass, enabling flexible and reusable code.</li>
 </ul>
 <p>By understanding the differences and connections between inheritance and polymorphism, you can effectively use these concepts to design and implement robust object-oriented programs.</p>
-<h2 id="importing-classes-in-python">Importing Classes in Python</h2>
+<h2>Importing Classes in Python</h2>
 <p>In Python, you can organize your code into multiple files and modules to keep it clean and manageable. This is especially useful when working on larger projects, such as simulations or models in physics. By importing classes from other files, you can reuse code and maintain a modular structure.</p>
-<h3 id="why-import-classes">Why Import Classes?</h3>
-<p>Importing classes allows you to:</p>
-<ul>
-<li><strong>Reuse Code</strong>: Avoid duplicating code by reusing classes across different files.</li>
-<li><strong>Organize Code</strong>: Keep your code organized by separating different functionalities into different files.</li>
-<li><strong>Maintain Code</strong>: Make your code easier to maintain and update.</li>
-</ul>
-<h3 id="example-importing-a-class-from-another-file">Example: Importing a Class from Another File</h3>
+<h3>Why Import Classes?</h3>
+<p>Importing classes allows you to:
+- <strong>Reuse Code</strong>: Avoid duplicating code by reusing classes across different files.
+- <strong>Organize Code</strong>: Keep your code organized by separating different functionalities into different files.
+- <strong>Maintain Code</strong>: Make your code easier to maintain and update.</p>
+<h3>Example: Importing a Class from Another File</h3>
 <p>Let's consider a simple example where we have a class <code>Particle</code> defined in one file, and we want to use it in another file.</p>
-<h4 id="step-1-define-the-class-in-a-separate-file">Step 1: Define the Class in a Separate File</h4>
+<h4>Step 1: Define the Class in a Separate File</h4>
 <p>Create a file named <code>particle.py</code> and define the <code>Particle</code> class in it.</p>
-<pre class="hljs"><code><div><span class="hljs-comment"># particle.py</span>
+<pre><code class="language-python"># particle.py
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Particle</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, position, velocity, mass)</span>:</span>
+class Particle:
+    def __init__(self, position, velocity, mass):
         self.position = position
         self.velocity = velocity
         self.mass = mass
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">move</span><span class="hljs-params">(self, time)</span>:</span>
-        self.position[<span class="hljs-number">0</span>] += self.velocity[<span class="hljs-number">0</span>] * time
-        self.position[<span class="hljs-number">1</span>] += self.velocity[<span class="hljs-number">1</span>] * time
-        self.position[<span class="hljs-number">2</span>] += self.velocity[<span class="hljs-number">2</span>] * time
+    def move(self, time):
+        self.position[0] += self.velocity[0] * time
+        self.position[1] += self.velocity[1] * time
+        self.position[2] += self.velocity[2] * time
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">kinetic_energy</span><span class="hljs-params">(self)</span>:</span>
-        v_squared = sum(v**<span class="hljs-number">2</span> <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> self.velocity)
-        <span class="hljs-keyword">return</span> <span class="hljs-number">0.5</span> * self.mass * v_squared
-</div></code></pre>
-<h4 id="step-2-import-and-use-the-class-in-another-file">Step 2: Import and Use the Class in Another File</h4>
+    def kinetic_energy(self):
+        v_squared = sum(v**2 for v in self.velocity)
+        return 0.5 * self.mass * v_squared
+</code></pre>
+<h4>Step 2: Import and Use the Class in Another File</h4>
 <p>Create another file named <code>main.py</code> where you will import and use the <code>Particle</code> class.</p>
-<pre class="hljs"><code><div><span class="hljs-comment"># main.py</span>
+<pre><code class="language-python"># main.py
 
-<span class="hljs-comment"># Import the Particle class from the particle module</span>
-<span class="hljs-keyword">from</span> particle <span class="hljs-keyword">import</span> Particle
+# Import the Particle class from the particle module
+from particle import Particle
 
-<span class="hljs-comment"># Create an instance of the Particle class</span>
-particle = Particle([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>], <span class="hljs-number">1.0</span>)
+# Create an instance of the Particle class
+particle = Particle([0, 0, 0], [1, 1, 1], 1.0)
 
-<span class="hljs-comment"># Print the initial position and kinetic energy</span>
-print(<span class="hljs-string">f"Initial Position: <span class="hljs-subst">{particle.position}</span>"</span>)
-print(<span class="hljs-string">f"Initial Kinetic Energy: <span class="hljs-subst">{particle.kinetic_energy()}</span>"</span>)
+# Print the initial position and kinetic energy
+print(f&quot;Initial Position: {particle.position}&quot;)
+print(f&quot;Initial Kinetic Energy: {particle.kinetic_energy()}&quot;)
 
-<span class="hljs-comment"># Move the particle and print the new position and kinetic energy</span>
-particle.move(<span class="hljs-number">2.0</span>)
-print(<span class="hljs-string">f"New Position: <span class="hljs-subst">{particle.position}</span>"</span>)
-print(<span class="hljs-string">f"New Kinetic Energy: <span class="hljs-subst">{particle.kinetic_energy()}</span>"</span>)
-</div></code></pre>
-<h3 id="detailed-explanation">Detailed Explanation</h3>
+# Move the particle and print the new position and kinetic energy
+particle.move(2.0)
+print(f&quot;New Position: {particle.position}&quot;)
+print(f&quot;New Kinetic Energy: {particle.kinetic_energy()}&quot;)
+</code></pre>
+<h3>Detailed Explanation</h3>
 <ol>
 <li>
 <p><strong>Defining the Class</strong>:</p>
@@ -1275,88 +879,88 @@ print(<span class="hljs-string">f"New Kinetic Energy: <span class="hljs-subst">{
 </ul>
 </li>
 </ol>
-<h3 id="benefits-for-physics-students">Benefits for Physics Students</h3>
-<p>For physics students, importing classes can be particularly useful when working on complex simulations or models. By organizing different components (e.g., particles, fields, forces) into separate files and importing them as needed, you can:</p>
-<ul>
-<li><strong>Focus on Physics Concepts</strong>: Spend more time understanding and implementing physics concepts rather than managing code complexity.</li>
-<li><strong>Collaborate Easily</strong>: Work on different parts of a project with classmates and combine them seamlessly.</li>
-<li><strong>Extend Functionality</strong>: Easily extend your models by adding new classes or modifying existing ones without affecting the entire codebase.</li>
-</ul>
+<h3>Benefits for Physics Students</h3>
+<p>For physics students, importing classes can be particularly useful when working on complex simulations or models. By organizing different components (e.g., particles, fields, forces) into separate files and importing them as needed, you can:
+- <strong>Focus on Physics Concepts</strong>: Spend more time understanding and implementing physics concepts rather than managing code complexity.
+- <strong>Collaborate Easily</strong>: Work on different parts of a project with classmates and combine them seamlessly.
+- <strong>Extend Functionality</strong>: Easily extend your models by adding new classes or modifying existing ones without affecting the entire codebase.</p>
 <p>By mastering the concept of importing classes, you can create more organized, reusable, and maintainable code for your physics projects.</p>
 <blockquote>
-<h3 id="frequently-asked-questions-about-classes-in-python">Frequently Asked Questions about Classes in Python</h3>
+<h3>Frequently Asked Questions about Classes in Python</h3>
+<ol>
+<li>
+<p><strong>What is a class in Python?</strong></p>
+<ul>
+<li>A class in Python is a blueprint for creating objects. It defines a set of attributes and methods that the objects created from the class will have. Classes allow for the encapsulation of data and behavior, making code more modular and reusable.</li>
+</ul>
+</li>
+<li>
+<p><strong>What is an object in Python?</strong></p>
+<ul>
+<li>An object is an instance of a class. It is a specific realization of the class with its own unique data. Objects are created from classes and can have their own attributes and methods.</li>
+</ul>
+</li>
+<li>
+<p><strong>What is the <code>__init__</code> method in a class?</strong></p>
+<ul>
+<li>The <code>__init__</code> method, also known as the constructor, is a special method that is automatically called when a new instance of a class is created. It initializes the attributes of the class with the values provided during the creation of the object.</li>
+</ul>
+</li>
+<li>
+<p><strong>How do you create an instance of a class?</strong></p>
+<ul>
+<li>To create an instance of a class, you call the class name followed by parentheses, optionally passing arguments to the <code>__init__</code> method. For example: <code>my_object = MyClass(arg1, arg2)</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>What is inheritance in Python?</strong></p>
+<ul>
+<li>Inheritance is a feature in Python that allows a class to inherit attributes and methods from another class. The class that inherits is called the child class, and the class being inherited from is called the parent class. Inheritance promotes code reuse and establishes a relationship between classes.</li>
+</ul>
+</li>
+<li>
+<p><strong>What is the difference between a class attribute and an instance attribute?</strong></p>
+<ul>
+<li>A class attribute is shared by all instances of the class, while an instance attribute is unique to each instance. Class attributes are defined within the class but outside any methods, whereas instance attributes are typically defined within the <code>__init__</code> method.</li>
+</ul>
+</li>
+<li>
+<p><strong>What is method overriding in Python?</strong></p>
+<ul>
+<li>Method overriding occurs when a child class provides a specific implementation of a method that is already defined in its parent class. The overridden method in the child class will be called instead of the one in the parent class when the method is invoked on an instance of the child class.</li>
+</ul>
+</li>
+<li>
+<p><strong>What is the purpose of the <code>self</code> parameter in class methods?</strong></p>
+<ul>
+<li>The <code>self</code> parameter in class methods refers to the instance of the class on which the method is being called. It allows access to the instance's attributes and other methods. The <code>self</code> parameter must be the first parameter in any instance method.</li>
+</ul>
+</li>
+<li>
+<p><strong>How do you define a method in a class?</strong></p>
+<ul>
+<li>A method in a class is defined using the <code>def</code> keyword, similar to defining a function. The first parameter of the method must be <code>self</code>, which refers to the instance of the class. For example:</li>
+</ul>
+</li>
+</ol>
 </blockquote>
+<pre><code class="language-python">class MyClass:
+      def my_method(self, arg1):
+           # Method body
+           pass
+</code></pre>
 <blockquote>
 <ol>
-<li><strong>What is a class in Python?</strong>
-- A class in Python is a blueprint for creating objects. It defines a set of attributes and methods that the objects created from the class will have. Classes allow for the encapsulation of data and behavior, making code more modular and reusable.</li>
+<li><strong>What is polymorphism in Python?</strong><ul>
+<li>Polymorphism is the ability of different classes to be treated as instances of the same class through a common interface. It allows methods to be used interchangeably, even if they belong to different classes, as long as they follow the same interface. This is often achieved through method overriding and inheritance.</li>
+</ul>
+</li>
 </ol>
-</blockquote>
-<blockquote>
-<ol start="2">
-<li><strong>What is an object in Python?</strong>
-- An object is an instance of a class. It is a specific realization of the class with its own unique data. Objects are created from classes and can have their own attributes and methods.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="3">
-<li><strong>What is the <code>__init__</code> method in a class?</strong>
-- The <code>__init__</code> method, also known as the constructor, is a special method that is automatically called when a new instance of a class is created. It initializes the attributes of the class with the values provided during the creation of the object.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="4">
-<li><strong>How do you create an instance of a class?</strong>
-- To create an instance of a class, you call the class name followed by parentheses, optionally passing arguments to the <code>__init__</code> method. For example: <code>my_object = MyClass(arg1, arg2)</code>.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="5">
-<li><strong>What is inheritance in Python?</strong>
-- Inheritance is a feature in Python that allows a class to inherit attributes and methods from another class. The class that inherits is called the child class, and the class being inherited from is called the parent class. Inheritance promotes code reuse and establishes a relationship between classes.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="6">
-<li><strong>What is the difference between a class attribute and an instance attribute?</strong>
-- A class attribute is shared by all instances of the class, while an instance attribute is unique to each instance. Class attributes are defined within the class but outside any methods, whereas instance attributes are typically defined within the <code>__init__</code> method.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="7">
-<li><strong>What is method overriding in Python?</strong>
-- Method overriding occurs when a child class provides a specific implementation of a method that is already defined in its parent class. The overridden method in the child class will be called instead of the one in the parent class when the method is invoked on an instance of the child class.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="8">
-<li><strong>What is the purpose of the <code>self</code> parameter in class methods?</strong>
-- The <code>self</code> parameter in class methods refers to the instance of the class on which the method is being called. It allows access to the instance's attributes and other methods. The <code>self</code> parameter must be the first parameter in any instance method.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="9">
-<li><strong>How do you define a method in a class?</strong>
-- A method in a class is defined using the <code>def</code> keyword, similar to defining a function. The first parameter of the method must be <code>self</code>, which refers to the instance of the class. For example:</li>
-</ol>
-</blockquote>
-<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span>:</span>
-      <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">my_method</span><span class="hljs-params">(self, arg1)</span>:</span>
-           <span class="hljs-comment"># Method body</span>
-           <span class="hljs-keyword">pass</span>
-</div></code></pre>
-<blockquote>
-<ol start="10">
-<li><strong>What is polymorphism in Python?</strong>
-- Polymorphism is the ability of different classes to be treated as instances of the same class through a common interface. It allows methods to be used interchangeably, even if they belong to different classes, as long as they follow the same interface. This is often achieved through method overriding and inheritance.</li>
-</ol>
-</blockquote>
-<blockquote>
 <p>By understanding these frequently asked questions and their answers, you can gain a deeper insight into the concepts and usage of classes in Python, enabling you to write more organized and efficient code.</p>
 </blockquote>
-<h2 id="summary-of-classes-in-python">Summary of Classes in Python</h2>
+<h2>Summary of Classes in Python</h2>
 <p>Classes in Python are a fundamental aspect of object-oriented programming (OOP). They serve as blueprints for creating objects, encapsulating data (attributes) and methods (functions) that operate on that data. This encapsulation promotes modularity and reusability in code.</p>
-<h3 id="key-concepts">Key Concepts:</h3>
+<h3>Key Concepts:</h3>
 <ol>
 <li><strong>Class Definition</strong>: A class is defined using the <code>class</code> keyword, followed by the class name and a colon. Inside the class, methods and attributes are defined.</li>
 <li><strong><code>__init__</code> Method</strong>: The <code>__init__</code> method, also known as the constructor, initializes the object's attributes when a new instance is created.</li>
@@ -1364,23 +968,23 @@ print(<span class="hljs-string">f"New Kinetic Energy: <span class="hljs-subst">{
 <li><strong>Inheritance</strong>: Inheritance allows a class to inherit attributes and methods from another class, promoting code reuse and establishing a hierarchical relationship.</li>
 <li><strong>Polymorphism</strong>: Polymorphism enables objects of different classes to be treated as objects of a common superclass, allowing for flexible and reusable code.</li>
 </ol>
-<h3 id="examples">Examples:</h3>
+<h3>Examples:</h3>
 <ul>
 <li><strong>Particle Class</strong>: Demonstrates basic class structure, initialization, and methods for moving a particle and calculating its kinetic energy.</li>
 <li><strong>Rectangle Class</strong>: Illustrates the use of the <code>__init__</code> method and instance methods to calculate the area of a rectangle.</li>
 <li><strong>Inheritance</strong>: The <code>ChargedParticle</code> class inherits from the <code>Particle</code> class, adding new attributes and methods specific to charged particles.</li>
 <li><strong>Polymorphism</strong>: Different shapes (e.g., <code>Circle</code> and <code>Rectangle</code>) implement a common interface for calculating area, demonstrating polymorphism.</li>
 </ul>
-<h3 id="practical-applications">Practical Applications:</h3>
+<h3>Practical Applications:</h3>
 <ul>
 <li><strong>Modeling Real-World Entities</strong>: Classes allow for the modeling of real-world entities and their interactions, making code more intuitive and organized.</li>
 <li><strong>Code Reuse and Maintainability</strong>: By using inheritance and polymorphism, code can be reused and maintained more efficiently.</li>
 <li><strong>Complex Simulations</strong>: Classes are essential for creating complex simulations and models, such as those in physics, by organizing different components into separate, reusable units.</li>
 </ul>
-<h3 id="additional-resources">Additional Resources:</h3>
+<h3>Additional Resources:</h3>
 <p>To further explore classes and OOP in Python, refer to official documentation, books, online courses, and tutorials provided in the additional resources section.</p>
 <p>By mastering classes and OOP principles, you can write more efficient, maintainable, and scalable code in Python.</p>
-<h3 id="additional-resources">Additional Resources</h3>
+<h3>Additional Resources</h3>
 <p>To further enhance your understanding of classes and object-oriented programming in Python, here are some additional resources:</p>
 <ol>
 <li>
@@ -1393,9 +997,9 @@ print(<span class="hljs-string">f"New Kinetic Energy: <span class="hljs-subst">{
 <li>
 <p><strong>Books</strong>:</p>
 <ul>
-<li>&quot;Python Crash Course&quot; by Eric Matthes</li>
-<li>&quot;Learning Python&quot; by Mark Lutz</li>
-<li>&quot;Fluent Python&quot; by Luciano Ramalho</li>
+<li>"Python Crash Course" by Eric Matthes</li>
+<li>"Learning Python" by Mark Lutz</li>
+<li>"Fluent Python" by Luciano Ramalho</li>
 </ul>
 </li>
 <li>
@@ -1415,6 +1019,6 @@ print(<span class="hljs-string">f"New Kinetic Energy: <span class="hljs-subst">{
 </li>
 </ol>
 <p>By exploring these resources, you can deepen your knowledge of classes and object-oriented programming in Python, and apply these concepts to create more efficient and maintainable code.</p>
-
-</body>
-</html>
+    </body>
+    </html>
+    
