@@ -53,7 +53,17 @@
 <p>A class is a blueprint for creating objects. An object is an instance of a class. Classes encapsulate data for the object and methods to manipulate that data. This allows for more modular and reusable code.</p>
 <h3 id="example-physics-concepts">Example: Physics Concepts</h3>
 <p>Let's consider a simple example from physics to illustrate the concept of classes. Suppose we want to model a <strong>Particle</strong> in physics. A particle has properties such as position, velocity, and mass. These properties can be represented as variables (attributes) within a class.</p>
-<pre><code class="language-python">class Particle:
+
+          <div class="code-block">
+            <pre><code class="language-python">
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Alice")
+            </code></pre>
+        </div>     
+        <div class="code-block">
+        <pre><code class="language-python">class Particle:
     def __init__(self, position, velocity, mass):
         self.position = position  # List to store x, y, z coordinates
         self.velocity = velocity  # List to store velocity components
@@ -70,6 +80,7 @@
         v_squared = sum(v**2 for v in self.velocity)
         return 0.5 * self.mass * v_squared
 </code></pre>
+                 </div>
 <h3 id="connecting-with-previous-topics">Connecting with Previous Topics</h3>
 <ul>
 <li><strong>Variables and Data Types</strong>: The attributes <code>position</code>, <code>velocity</code>, and <code>mass</code> are variables of different data types (list and float).</li>
@@ -433,7 +444,7 @@ where $k$ is the spring constant.</li>
 <h3 id="flowchart">Flowchart</h3>
 <p>Below is a flowchart that explains the flow of the solution:</p>
    <div class="flowchart">      
-<pre><code class="mermaid">flowchart TD
+<div class="mermaid">flowchart TD
         A[Start] --&gt; B[Create QuantumParticle instance]
         B --&gt; C[Initialize mass and position]
         C --&gt; D[Calculate initial potential energy]
@@ -443,18 +454,9 @@ where $k$ is the spring constant.</li>
         G --&gt; H[Recalculate potential energy]
         H --&gt; I[Print new position and potential energy]
         I --&gt; J[End]
-</code></pre>
+
             </div>
-                <div class="flowchart">
-            <div class="mermaid">
-                graph TD;
-                    A[Start] --> B{Decision?};
-                    B -- Yes --> C[Do something];
-                    B -- No --> D[Do something else];
-                    C --> E[End];
-                    D --> E;
-            </div>
-        </div>
+
         
 <p>By following this approach, we can model a quantum particle in a potential well and simulate its behavior using object-oriented programming in Python. This example demonstrates how classes can be used to encapsulate data and behavior, making the code more modular and reusable.</p>
 <blockquote>
