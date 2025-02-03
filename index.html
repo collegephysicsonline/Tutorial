@@ -5,24 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn Python for Physics</title>
-    <link rel="stylesheet" href="styles.css">
+    <!--link rel="stylesheet" href="styles.css"-->
+      <!-- Bootstrap CSS for responsiveness -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+    <!-- MathJax for mathematical equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- Mermaid.js for flowcharts -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <!-- Custom Python-themed CSS -->
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="./Macbook-Python/9-Classes/README/README_classes.html">Chapters</a></li>
-            <li><a href="lessons.html">Lessons</a></li>
-        </ul>
+   <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Python Course</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
+
     <main>
         <h1>Welcome to Learn Python for Physics</h1>
         <div id="content">
             <!-- Include the content from the specified HTML file -->
-            <object type="text/html" data="./Macbook-Python/9-Classes/README/README_classes.html" width="100%" height="600px"></object>
+            <object type="text/html" data="index.html" width="100%" height="600px"></object>
         </div>
     </main>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
 </body>
 
 </html>
@@ -40,50 +73,101 @@
         });
     });
 </script>
-<style>
-    /* CSS to style the home page */
-    
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-    }
-    
-    nav {
-        background-color: #333;
-        color: white;
-        padding: 10px 0;
-    }
-    
-    nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
-    
-    nav ul li {
-        margin: 0 15px;
-    }
-    
-    nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-    }
-    
-    main {
-        padding: 20px;
-        text-align: center;
-    }
-    
-    h1 {
-        color: #333;
-    }
-    
-    #content {
-        margin-top: 20px;
-    }
-</style>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #306998; /* Python blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid #FFD43B; /* Python yellow */
+            padding-bottom: 0.3em;
+        }
+        h3 {
+            font-size: 1.75rem;
+            color: #4B8BBE; /* Lighter Python blue */
+        }
+        p {
+            margin-bottom: 1.2em;
+        }
+        code {
+            background-color: #272822; /* Dark background for code */
+            color: #f8f8f2; /* Light text for code */
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', monospace;
+        }
+        pre {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 1em;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .code-block {
+            margin: 1.5em 0;
+        }
+        .math-equation {
+            font-size: 1.2em;
+            margin: 1.5em 0;
+            color: #4B8BBE; /* Python blue for equations */
+        }
+        .flowchart {
+            text-align: center;
+            margin: 1.5em 0;
+        }
+        .faq {
+            background-color: #e9ecef;
+            padding: 1em;
+            border-radius: 5px;
+            margin-bottom: 1.5em;
+        }
+        .faq h3 {
+            color: #306998; /* Python blue */
+        }
+        .navbar {
+            background-color: #306998; /* Python blue */
+        }
+        .navbar-brand {
+            color: #FFD43B !important; /* Python yellow */
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link {
+            color: #FFD43B !important; /* Python yellow */
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffffff !important; /* White on hover */
+        }
+        blockquote {
+            border-left: 4px solid #FFD43B; /* Python yellow */
+            padding-left: 1em;
+            margin: 1.5em 0;
+            color: #555;
+            font-style: italic;
+        }
+        a {
+            color: #306998; /* Python blue */
+            text-decoration: none;
+        }
+        a:hover {
+            color: #4B8BBE; /* Lighter Python blue */
+            text-decoration: underline;
+        }
+        ul, ol {
+            margin-bottom: 1.5em;
+        }
+        li {
+            margin-bottom: 0.5em;
+        }
+    </style>
