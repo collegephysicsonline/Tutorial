@@ -1,0 +1,139 @@
+/* General Styles */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #306998;
+    /* Python blue */
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid #FFD43B;
+    /* Python yellow */
+    padding-bottom: 0.3em;
+}
+
+h3 {
+    font-size: 1.75rem;
+    color: #4B8BBE;
+    /* Lighter Python blue */
+}
+
+p {
+    margin-bottom: 1.2em;
+}
+
+code {
+    background-color: #272822;
+    /* Dark background for code */
+    color: #f8f8f2;
+    /* Light text for code */
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+
+pre {
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.code-block {
+    margin: 1.5em 0;
+}
+
+.math-equation {
+    font-size: 1.2em;
+    margin: 1.5em 0;
+    color: #4B8BBE;
+    /* Python blue for equations */
+}
+
+.flowchart {
+    text-align: center;
+    margin: 1.5em 0;
+}
+
+.faq {
+    background-color: #e9ecef;
+    padding: 1em;
+    border-radius: 5px;
+    margin-bottom: 1.5em;
+}
+
+.faq h3 {
+    color: #306998;
+    /* Python blue */
+}
+
+.navbar {
+    background-color: #306998;
+    /* Python blue */
+}
+
+.navbar-brand {
+    color: #FFD43B !important;
+    /* Python yellow */
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #FFD43B !important;
+    /* Python yellow */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+    /* White on hover */
+}
+
+blockquote {
+    border-left: 4px solid #FFD43B;
+    /* Python yellow */
+    padding-left: 1em;
+    margin: 1.5em 0;
+    color: #555;
+    font-style: italic;
+}
+
+a {
+    color: #306998;
+    /* Python blue */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4B8BBE;
+    /* Lighter Python blue */
+    text-decoration: underline;
+}
+
+ul,
+ol {
+    margin-bottom: 1.5em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}

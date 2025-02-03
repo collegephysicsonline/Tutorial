@@ -10,3 +10,5 @@ astropy
 pint
 vpython
 PyOpenGL
+markdown2
+html2text
