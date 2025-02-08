@@ -135,3 +135,24 @@ ol {
 li {
     margin-bottom: 0.5em;
 }
+
+        .course-outline {
+            margin-top: 20px;
+        }
+        .course-outline h5 {
+            margin-top: 15px;
+        }
+        .course-outline ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .course-outline ul li {
+            margin-bottom: 5px;
+        }
+        .course-outline ul li a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .course-outline ul li a:hover {
+            text-decoration: underline;
+        }
