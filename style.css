@@ -120,6 +120,9 @@ li {
 .container {
     display: flex;
     flex-wrap: wrap;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .col-md-8 {
@@ -145,4 +148,31 @@ li {
     padding: 0.2em 0.4em;
     border-radius: 3px;
     font-weight: bold;
+}
+
+.course-outline {
+    margin-top: 20px;
+}
+.course-outline h5 {
+    margin-top: 15px;
+}
+.course-outline ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.course-outline ul li {
+    margin-bottom: 5px;
+}
+.course-outline ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+.course-outline ul li a:hover {
+    text-decoration: underline;
+}
+.navbar-nav {
+    flex-direction: column;
+}
+.navbar-nav .nav-item {
+    margin-bottom: 10px;
 }
