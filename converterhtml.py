@@ -2,6 +2,7 @@ import sys
 import os
 import markdown
 from bs4 import BeautifulSoup
+import re
 
 # Function to convert Markdown to HTML
 def convert_markdown_to_html(markdown_file):
@@ -16,16 +17,25 @@ def convert_markdown_to_html(markdown_file):
             "fenced_code",  # Support for code blocks
             "tables",       # Support for tables
             "toc",          # Table of contents
-            "pymdownx.arithmatex",  # Support for mathematical equations using LaTeX
         ],
     )
 
-    # Wrap LaTeX math formulas for compatibility with MathJax
-    mathjax_script = '<script type="text/javascript" async '
-    mathjax_script += 'src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>'
-    html_content = mathjax_script + html_content
+    # Ensure proper wrapping of math expressions for MathJax
+    #html_content = re.sub(r"(?<!\\)\$\$([^$]+?)\$\$", r"\\\[\1\\\]", html_content)  # Block math
+    #html_content = re.sub(r"(?<!\\)\$([^$]+?)\$", r"\\\(\1\\\)", html_content)  # Inline math
+    # Ensure proper escaping of backslashes for MathJax
+    html_content = re.sub(r"\$`([^`]+?)`\$", r"\\[\1\\]", html_content)  # Inline math with $` `$
+    #html_content = re.sub(r"(?<!\\)\\\[([^\\]+?)\\\]", r"\\\[\1\\\]", html_content)  # Block math with \[ \]
+    # Ensure MathJax script is included for LaTeX rendering
+    mathjax_script = '''<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
+    </script>'''
 
-    return html_content
+    # Wrap the content for better rendering
+    wrapper_div = f'<div class="arithmatex">{html_content}</div>'
+    final_content = mathjax_script + wrapper_div
+
+    return final_content
 
 # Function to inject HTML content into the template
 def inject_into_template(html_content, template_file, output_file):
