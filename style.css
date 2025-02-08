@@ -3,6 +3,7 @@ body {
     background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
+    font-size: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -139,6 +140,30 @@ li {
     .col-md-8, .col-md-4 {
         flex: 0 0 100%;
         max-width: 100%;
+    }
+
+    body {
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
     }
 }
 
