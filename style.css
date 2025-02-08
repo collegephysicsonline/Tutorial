@@ -156,3 +156,143 @@ li {
         .course-outline ul li a:hover {
             text-decoration: underline;
         }
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #306998;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid #FFD43B;
+    padding-bottom: 0.3em;
+}
+
+h3 {
+    font-size: 1.75rem;
+    color: #4B8BBE;
+}
+
+p {
+    margin-bottom: 1.2em;
+}
+
+code {
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+
+pre {
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.code-block {
+    margin: 1.5em 0;
+}
+
+.math-equation {
+    font-size: 1.2em;
+    margin: 1.5em 0;
+    color: #4B8BBE;
+}
+
+.flowchart {
+    text-align: center;
+    margin: 1.5em 0;
+}
+
+.faq {
+    background-color: #e9ecef;
+    padding: 1em;
+    border-radius: 5px;
+    margin-bottom: 1.5em;
+}
+
+.faq h3 {
+    color: #306998;
+}
+
+.navbar {
+    background-color: #306998;
+}
+
+.navbar-brand {
+    color: #FFD43B !important;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #FFD43B !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+}
+
+blockquote {
+    border-left: 4px solid #FFD43B;
+    padding-left: 1em;
+    margin: 1.5em 0;
+    color: #555;
+    font-style: italic;
+}
+
+a {
+    color: #306998;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4B8BBE;
+    text-decoration: underline;
+}
+
+ul, ol {
+    margin-bottom: 1.5em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-8 {
+    flex: 0 0 65%;
+    max-width: 65%;
+}
+
+.col-md-4 {
+    flex: 0 0 35%;
+    max-width: 35%;
+}
+
+@media (max-width: 768px) {
+    .col-md-8, .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
