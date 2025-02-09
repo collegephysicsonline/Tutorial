@@ -78,18 +78,19 @@ pre {
     color: #306998;
 }
 
+
 .navbar {
-    background-color: #f8f9fa; /* Same as footer bg-light */
+    background-color: #306998; /* Same as footer bg-light */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
-    color: #6c757d !important; /* Same as footer text-muted */
+    color: #FFD43B !important; /* Same as footer text-muted */
     font-weight: bold;
 }
 
 .navbar-nav .nav-link {
-    color: #6c757d !important; /* Same as footer text-muted */
+    color: #FFD$#B !important; /* Same as footer text-muted */
 }
 
 .navbar-nav .nav-link:hover {
