@@ -111,6 +111,10 @@ pre {
     color: #ffffff;
 }
 
+.custom-navbar {
+    background-color: #FFD43B; /* Replace with the actual footer background color */
+}
+
 blockquote {
     border-left: 4px solid #FFD43B;
     padding-left: 1em;
