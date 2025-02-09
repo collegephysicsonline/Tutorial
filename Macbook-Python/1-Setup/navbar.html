@@ -1,0 +1,103 @@
+<!-- Include the navbar HTML from a separate file -->
+<div id="navbar-placeholder"></div>
+
+<script>
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+</script>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">Python Tutorial</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Chapters
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Introduction to Python</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Set-up</a></li>
+                            <li><a class="dropdown-item" href="#">Hello World</a></li>
+                            <li><a class="dropdown-item" href="#">Homework Problems</a></li>
+                            <li><a class="dropdown-item" href="#">Homework Solutions</a></li>
+                            <li><a class="dropdown-item" href="#">Summary</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Variables</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Concept of variables</a></li>
+                            <li><a class="dropdown-item" href="#">Homework Problems of variables</a></li>
+                            <li><a class="dropdown-item" href="#">Homework Solutions of variables</a></li>
+                            <li><a class="dropdown-item" href="#">Summary of variables</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Lists</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Concept of Lists</a></li>
+                            <li><a class="dropdown-item" href="#">Homework Problems of Lists</a></li>
+                            <li><a class="dropdown-item" href="#">Homework Solutions of Lists</a></li>
+                            <li><a class="dropdown-item" href="#">Summary of Lists</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Forloop</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Concept of Forloop</a></li>
+                            <li><a class="dropdown-item" href="#">Homework Problems of Forloop</a></li>
+                            <li><a class="dropdown-item" href="#">Homework Solutions of Forloop</a></li>
+                            <li><a class="dropdown-item" href="#">Summary of Forloop</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Containers</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Concept of Containers</a></li>
+                            <li><a class="dropdown-item" href="#">Homework Problems of Containers</a></li>
+                            <li><a class="dropdown-item" href="#">Homework Solutions of Containers</a></li>
+                            <li><a class="dropdown-item" href="#">Summary of Containers</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Functions</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Concept of Functions</a></li>
+                            <li><a class="dropdown-item" href="#">Homework Problems of Functions</a></li>
+                            <li><a class="dropdown-item" href="#">Homework Solutions of Functions</a></li>
+                            <li><a class="dropdown-item" href="#">Summary of Functions</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Classes</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Concept of Classes</a></li>
+                            <li><a class="dropdown-item" href="#">Homework Problems of Classes</a></li>
+                            <li><a class="dropdown-item" href="#">Homework Solutions of Classes</a></li>
+                            <li><a class="dropdown-item" href="#">Summary of Classes</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Modules</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Concept of Modules</a></li>
+                            <li><a class="dropdown-item" href="#">Homework Problems of Modules</a></li>
+                            <li><a class="dropdown-item" href="#">Homework Solutions of Modules</a></li>
+                            <li><a class="dropdown-item" href="#">Summary of Modules</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
