@@ -79,7 +79,7 @@ pre {
 }
 
 .navbar {
-    background-color: #306998; /* Revert to original color */
+    background-color: #306998; /* Python blue */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -294,4 +294,12 @@ li {
 }
 .navbar-nav .nav-item {
     margin-bottom: 10px;
+}
+
+.footer {
+    background-color: #FFD43B; /* Python yellow */
+    color: #306998; /* Python blue */
+    font-size: 1rem;
+    padding: 1em;
+    text-align: center;
 }
