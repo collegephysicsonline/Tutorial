@@ -79,7 +79,7 @@ pre {
 }
 
 .navbar {
-    background-color: #306998;
+    background-color: #f8f9fa; /* Match the footer background color */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
