@@ -85,8 +85,8 @@ pre {
 }
 
 .navbar-brand {
-       background-color: #FFD43B; /* Python yellow */
-    color: #306998; /* Python blue */
+       background-color:#306998 ; /* Python yellow */
+    color: #FFD43B; /* Python blue */
    
     font-weight: bold;
 }
