@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html>
 
 <head>
@@ -171,6 +172,100 @@
     <p>Let's consider a simple example from physics to illustrate the concept of classes. Suppose we want to model a <strong>Particle</strong> in physics. A particle has properties such as position, velocity, and mass. These properties can be represented
         as variables (attributes) within a class.</p>
     <pre><code class="language-python">class Particle:
+=======
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming Course</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+    <!-- MathJax for mathematical equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- Mermaid.js for flowcharts -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .navbar {
+            background-color: #306998; /* Python blue */
+        }
+        .navbar-brand {
+            color: #FFD43B !important; /* Python yellow */
+            font-weight: bold;
+        }
+        .code-block {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .math-equation {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .flowchart {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .faq {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .faq h3 {
+            color: #306998;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Python Course</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <h1>Introduction to Classes in Python</h1>
+        <p>In previous lessons, we have explored various fundamental concepts in Python such as variables and data types, lists, tuples, dictionaries, sets, and control flow statements like <code>for</code>, <code>if</code>, <code>elif</code>, <code>else</code>, and <code>while</code> loops. Now, we will take a step further and introduce you to the concept of <strong>classes</strong> in Python, which is a cornerstone of object-oriented programming (OOP).</p>
+
+        <h2>What is a Class?</h2>
+        <p>A class is a blueprint for creating objects. An object is an instance of a class. Classes encapsulate data for the object and methods to manipulate that data. This allows for more modular and reusable code.</p>
+
+        <h3>Example: Physics Concepts</h3>
+        <p>Let's consider a simple example from physics to illustrate the concept of classes. Suppose we want to model a <strong>Particle</strong> in physics. A particle has properties such as position, velocity, and mass. These properties can be represented as variables (attributes) within a class.</p>
+        <div class="code-block">
+            <pre><code class="language-python">class Particle:
+>>>>>>> refs/remotes/origin/main
     def __init__(self, position, velocity, mass):
         self.position = position  # List to store x, y, z coordinates
         self.velocity = velocity  # List to store velocity components
@@ -185,6 +280,7 @@
     def kinetic_energy(self):
         # Calculate kinetic energy: (1/2) * mass * velocity^2
         v_squared = sum(v**2 for v in self.velocity)
+<<<<<<< HEAD
         return 0.5 * self.mass * v_squared
 </code></pre>
     <h3>Connecting with Previous Topics</h3>
@@ -798,6 +894,23 @@ user1.greet_user()
     <h3>Example: Inheriting from the Particle Class</h3>
     <p>Let extend our <code>Particle</code> class to create a new class called <code>ChargedParticle</code> that represents a particle with an electric charge.</p>
     <pre><code class="language-python">class Particle:
+=======
+        return 0.5 * self.mass * v_squared</code></pre>
+        </div>
+
+        <h3>Connecting with Previous Topics</h3>
+        <ul>
+            <li><strong>Variables and Data Types</strong>: The attributes <code>position</code>, <code>velocity</code>, and <code>mass</code> are variables of different data types (list and float).</li>
+            <li><strong>Lists</strong>: We use lists to store the position and velocity components.</li>
+            <li><strong>Control Flow</strong>: Methods within the class can use control flow statements to perform operations. For example, the <code>move</code> method updates the position based on the velocity and time.</li>
+            <li><strong>Functions</strong>: Methods in a class are essentially functions that operate on the object's data.</li>
+        </ul>
+
+        <h2>Detailed Explanation of Example 1</h2>
+        <p>Let's break down the <code>Particle</code> class example line by line to understand its structure and functionality.</p>
+        <div class="code-block">
+            <pre><code class="language-python">class Particle:
+>>>>>>> refs/remotes/origin/main
     def __init__(self, position, velocity, mass):
         self.position = position
         self.velocity = velocity
@@ -810,9 +923,53 @@ user1.greet_user()
 
     def kinetic_energy(self):
         v_squared = sum(v**2 for v in self.velocity)
-        return 0.5 * self.mass * v_squared
+        return 0.5 * self.mass * v_squared</code></pre>
+        </div>
 
-class ChargedParticle(Particle):
+        <h3>Instance of a Class</h3>
+        <p>An instance of a class is a specific object created from that class blueprint. When you create an instance, you are essentially creating a unique object with its own set of attributes and methods defined by the class. For example:</p>
+        <div class="code-block">
+            <pre><code class="language-python"># Creating two instances of the Particle class
+particle1 = Particle([0, 0, 0], [1, 1, 1], 1.0)
+particle2 = Particle([10, 10, 10], [0, -1, 0], 2.0)
+
+# Each instance has its own attributes
+print(particle1.position)  # Output: [0, 0, 0]
+print(particle2.position)  # Output: [10, 10, 10]</code></pre>
+        </div>
+
+        <h2>Functions vs Classes in Python</h2>
+        <p>In Python, both functions and classes are fundamental building blocks that help in organizing and structuring code. However, they serve different purposes and have distinct structures.</p>
+
+        <h3>Functions</h3>
+        <p>A function is a block of reusable code that performs a specific task. Functions help in breaking down complex problems into smaller, manageable pieces. They can take inputs (parameters), perform operations, and return outputs.</p>
+        <div class="code-block">
+            <pre><code class="language-python">def add(a, b):
+    return a + b
+
+result = add(3, 5)
+print(result)  # Output: 8</code></pre>
+        </div>
+
+        <h3>Classes</h3>
+        <p>A class is a blueprint for creating objects. It encapsulates data (attributes) and methods (functions) that operate on that data. Classes are the foundation of object-oriented programming (OOP) in Python.</p>
+        <div class="code-block">
+            <pre><code class="language-python">class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+rect = Rectangle(4, 5)
+print(rect.area())  # Output: 20</code></pre>
+        </div>
+
+        <h2>Inheritance in Python</h2>
+        <p>Inheritance is a fundamental concept in object-oriented programming (OOP) that allows a class to inherit attributes and methods from another class. This promotes code reuse and establishes a relationship between classes.</p>
+        <div class="code-block">
+            <pre><code class="language-python">class ChargedParticle(Particle):
     def __init__(self, position, velocity, mass, charge):
         super().__init__(position, velocity, mass)
         self.charge = charge
@@ -820,8 +977,8 @@ class ChargedParticle(Particle):
     def electric_force(self, electric_field):
         return [self.charge * e for e in electric_field]
 
-# Example usage
 charged_particle = ChargedParticle([0, 0, 0], [1, 1, 1], 1.0, 1.6e-19)
+<<<<<<< HEAD
 print(f&quot;Position: {charged_particle.position}&quot;)
 print(f&quot;Kinetic Energy: {charged_particle.kinetic_energy()}&quot;)
 print(f&quot;Electric Force: {charged_particle.electric_force([0, 0, 1e5])}&quot;)
@@ -871,8 +1028,15 @@ print(f&quot;Electric Force: {charged_particle.electric_force([0, 0, 1e5])}&quot
     <h4>Derived Classes: Circle and Rectangle</h4>
     <p>Next, we define two derived classes, <code>Circle</code> and <code>Rectangle</code>, that inherit from <code>Shape</code> and implement the <code>area</code> method.</p>
     <pre><code class="language-python">import math
+=======
+print(f"Electric Force: {charged_particle.electric_force([0, 0, 1e5])}")</code></pre>
+        </div>
+>>>>>>> refs/remotes/origin/main
 
-class Circle(Shape):
+        <h2>Polymorphism in Python</h2>
+        <p>Polymorphism is a core concept in object-oriented programming (OOP) that allows objects of different classes to be treated as objects of a common superclass. This means that a single function or method can operate on objects of different types, as long as they share a common interface.</p>
+        <div class="code-block">
+            <pre><code class="language-python">class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
 
@@ -886,12 +1050,17 @@ class Rectangle(Shape):
 
     def area(self):
         return self.width * self.height
+<<<<<<< HEAD
 </code></pre>
     <h4>Using Polymorphism</h4>
     <p>We can now create instances of <code>Circle</code> and <code>Rectangle</code> and use them interchangeably through the <code>Shape</code> interface.</p>
     <pre><code class="language-python">shapes = [Circle(5), Rectangle(4, 6)]
+=======
+>>>>>>> refs/remotes/origin/main
 
+shapes = [Circle(5), Rectangle(4, 6)]
 for shape in shapes:
+<<<<<<< HEAD
     print(f&quot;The area is: {shape.area()}&quot;)
 </code></pre>
     <h3>Detailed Explanation</h3>
@@ -935,14 +1104,29 @@ for shape in shapes:
     <pre><code class="language-python">class Animal:
     def __init__(self, name):
         self.name = name
+=======
+    print(f"The area is: {shape.area()}")</code></pre>
+        </div>
+>>>>>>> refs/remotes/origin/main
 
-    def speak(self):
-        raise NotImplementedError(&quot;Subclasses must implement this method&quot;)
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <h3>What is a class in Python?</h3>
+            <p>A class in Python is a blueprint for creating objects. It defines a set of attributes and methods that the objects created from the class will have.</p>
+        </div>
+        <div class="faq">
+            <h3>What is the difference between a class and an object?</h3>
+            <p>A class is a blueprint, while an object is an instance of a class. For example, if <code>Car</code> is a class, then <code>my_car = Car()</code> creates an object <code>my_car</code> of the class <code>Car</code>.</p>
+        </div>
 
-class Dog(Animal):
-    def speak(self):
-        return f&quot;{self.name} says Woof!&quot;
+        <h2>Additional Resources</h2>
+        <ul>
+            <li><a href="https://docs.python.org/3/tutorial/classes.html">Python Official Documentation on Classes</a></li>
+            <li><a href="https://realpython.com/python3-object-oriented-programming/">Real Python: Object-Oriented Programming in Python</a></li>
+        </ul>
+    </div>
 
+<<<<<<< HEAD
 class Cat(Animal):
     def speak(self):
         return f&quot;{self.name} says Meow!&quot;
@@ -1190,6 +1374,8 @@ print(f&quot;New Kinetic Energy: {particle.kinetic_energy()}&quot;)
         </li>
     </ol>
     <p>By exploring these resources, you can deepen your knowledge of classes and object-oriented programming in Python, and apply these concepts to create more efficient and maintainable code.</p>
+=======
+>>>>>>> refs/remotes/origin/main
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
@@ -1197,5 +1383,9 @@ print(f&quot;New Kinetic Energy: {particle.kinetic_energy()}&quot;)
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
 </body>
+<<<<<<< HEAD
 
 </html>
+=======
+</html>
+>>>>>>> refs/remotes/origin/main

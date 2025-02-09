@@ -1,10 +1,14 @@
+<<<<<<< HEAD
 /* General Styles */
 
+=======
+>>>>>>> refs/remotes/origin/main
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
+<<<<<<< HEAD
 }
 
 h1,
@@ -15,6 +19,15 @@ h5,
 h6 {
     color: #306998;
     /* Python blue */
+=======
+    font-size: 1rem;
+    word-wrap: break-word;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #306998;
+>>>>>>> refs/remotes/origin/main
     margin-top: 1.5em;
     margin-bottom: 0.5em;
 }
@@ -27,14 +40,20 @@ h1 {
 h2 {
     font-size: 2rem;
     border-bottom: 2px solid #FFD43B;
+<<<<<<< HEAD
     /* Python yellow */
+=======
+>>>>>>> refs/remotes/origin/main
     padding-bottom: 0.3em;
 }
 
 h3 {
     font-size: 1.75rem;
     color: #4B8BBE;
+<<<<<<< HEAD
     /* Lighter Python blue */
+=======
+>>>>>>> refs/remotes/origin/main
 }
 
 p {
@@ -43,9 +62,13 @@ p {
 
 code {
     background-color: #272822;
+<<<<<<< HEAD
     /* Dark background for code */
     color: #f8f8f2;
     /* Light text for code */
+=======
+    color: #FFD700; /* Highlight color */
+>>>>>>> refs/remotes/origin/main
     padding: 0.2em 0.4em;
     border-radius: 3px;
     font-family: 'Consolas', 'Monaco', monospace;
@@ -57,6 +80,11 @@ pre {
     padding: 1em;
     border-radius: 5px;
     overflow-x: auto;
+<<<<<<< HEAD
+=======
+    white-space: pre-wrap;
+    word-wrap: break-word;
+>>>>>>> refs/remotes/origin/main
 }
 
 .code-block {
@@ -67,7 +95,10 @@ pre {
     font-size: 1.2em;
     margin: 1.5em 0;
     color: #4B8BBE;
+<<<<<<< HEAD
     /* Python blue for equations */
+=======
+>>>>>>> refs/remotes/origin/main
 }
 
 .flowchart {
@@ -84,6 +115,7 @@ pre {
 
 .faq h3 {
     color: #306998;
+<<<<<<< HEAD
     /* Python blue */
 }
 
@@ -95,22 +127,63 @@ pre {
 .navbar-brand {
     color: #FFD43B !important;
     /* Python yellow */
+=======
+}
+
+
+.navbar {
+    background-color: #306998; /* Same as footer bg-light */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: #FFD43B !important; /* Same as footer text-muted */
+>>>>>>> refs/remotes/origin/main
     font-weight: bold;
 }
 
 .navbar-nav .nav-link {
+<<<<<<< HEAD
     color: #FFD43B !important;
     /* Python yellow */
+=======
+    color: #FFD$#B !important; /* Same as footer text-muted */
+>>>>>>> refs/remotes/origin/main
 }
 
 .navbar-nav .nav-link:hover {
     color: #ffffff !important;
+<<<<<<< HEAD
     /* White on hover */
+=======
+}
+
+.navbar-nav .dropdown-menu {
+    background-color: #306998;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .dropdown-item {
+    color: #FFD43B;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: #4B8BBE;
+    color: #ffffff;
+}
+
+.custom-navbar {
+    background-color: #FFD43B; /* Replace with the actual footer background color */
+>>>>>>> refs/remotes/origin/main
 }
 
 blockquote {
     border-left: 4px solid #FFD43B;
+<<<<<<< HEAD
     /* Python yellow */
+=======
+>>>>>>> refs/remotes/origin/main
     padding-left: 1em;
     margin: 1.5em 0;
     color: #555;
@@ -119,21 +192,219 @@ blockquote {
 
 a {
     color: #306998;
+<<<<<<< HEAD
     /* Python blue */
+=======
+>>>>>>> refs/remotes/origin/main
     text-decoration: none;
 }
 
 a:hover {
     color: #4B8BBE;
+<<<<<<< HEAD
     /* Lighter Python blue */
     text-decoration: underline;
 }
 
 ul,
 ol {
+=======
+    text-decoration: underline;
+}
+
+ul, ol {
+>>>>>>> refs/remotes/origin/main
     margin-bottom: 1.5em;
 }
 
 li {
     margin-bottom: 0.5em;
+<<<<<<< HEAD
 }
+=======
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.col-md-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* Remove the .col-md-4 styles */
+/* .col-md-4 {
+    flex: 0 0 35%;
+    max-width: 35%;
+} */
+
+@media (max-width: 768px) {
+    .col-md-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Remove the .col-md-4 styles */
+    /* .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    } */
+
+    body {
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .code-block {
+        overflow-x: auto;
+    }
+
+    .navbar {
+        font-size: 1rem;
+    }
+
+    .footer {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive styles for tablets and laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 1.875rem;
+    }
+
+    h3 {
+        font-size: 1.625rem;
+    }
+
+    .navbar {
+        font-size: 1rem;
+    }
+
+    .footer {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive styles for desktops */
+@media (min-width: 1025px) {
+    body {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    .navbar {
+        font-size: 1rem;
+    }
+
+    .footer {
+        font-size: 1rem;
+    }
+}
+
+.highlight {
+    background-color: #FFD43B;
+    color: #306998;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.course-outline {
+    margin-top: 20px;
+}
+.course-outline h5 {
+    margin-top: 15px;
+}
+.course-outline ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.course-outline ul li {
+    margin-bottom: 5px;
+}
+.course-outline ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+.course-outline ul li a:hover {
+    text-decoration: underline;
+}
+.navbar-nav {
+    flex-direction: column;
+}
+.navbar-nav .nav-item {
+    margin-bottom: 10px;
+}
+
+.footer {
+    background-color: #FFD43B; /* Python yellow */
+    color: #306998; /* Python blue */
+    font-size: 1rem;
+    padding: 1em;
+    text-align: center;
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+}
+.dropdown-submenu:hover > .dropdown-menu,
+.dropdown-menu.show {
+    display: flex;
+}
+.dropdown-submenu {
+    position: relative;
+}
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+>>>>>>> refs/remotes/origin/main
