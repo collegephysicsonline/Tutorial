@@ -9,7 +9,7 @@
     <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-        <div id="navbar">
+    <div id="navbar">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Python Tutorial</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,6 +25,53 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="courseOutlineDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Course Outline
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="courseOutlineDropdown">
+                            <a class="dropdown-item" href="#setup">Set-up</a>
+                            <a class="dropdown-item" href="#hello-world">Hello World</a>
+                            <a class="dropdown-item" href="#homework-problems">Homework Problems</a>
+                            <a class="dropdown-item" href="#homework-solutions">Homework Solutions</a>
+                            <a class="dropdown-item" href="#summary">Summary</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#variables-concept">Concept of Variables</a>
+                            <a class="dropdown-item" href="#variables-homework-problems">Homework Problems of Variables</a>
+                            <a class="dropdown-item" href="#variables-homework-solutions">Homework Solutions of Variables</a>
+                            <a class="dropdown-item" href="#variables-summary">Summary of Variables</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#lists-concept">Concept of Lists</a>
+                            <a class="dropdown-item" href="#lists-homework-problems">Homework Problems of Lists</a>
+                            <a class="dropdown-item" href="#lists-homework-solutions">Homework Solutions of Lists</a>
+                            <a class="dropdown-item" href="#lists-summary">Summary of Lists</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#for-loop-concept">Concept of For Loop</a>
+                            <a class="dropdown-item" href="#for-loop-homework-problems">Homework Problems of For Loop</a>
+                            <a class="dropdown-item" href="#for-loop-homework-solutions">Homework Solutions of For Loop</a>
+                            <a class="dropdown-item" href="#for-loop-summary">Summary of For Loop</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#containers-concept">Concept of Containers</a>
+                            <a class="dropdown-item" href="#containers-homework-problems">Homework Problems of Containers</a>
+                            <a class="dropdown-item" href="#containers-homework-solutions">Homework Solutions of Containers</a>
+                            <a class="dropdown-item" href="#containers-summary">Summary of Containers</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#functions-concept">Concept of Functions</a>
+                            <a class="dropdown-item" href="#functions-homework-problems">Homework Problems of Functions</a>
+                            <a class="dropdown-item" href="#functions-homework-solutions">Homework Solutions of Functions</a>
+                            <a class="dropdown-item" href="#functions-summary">Summary of Functions</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#classes-concept">Concept of Classes</a>
+                            <a class="dropdown-item" href="#classes-homework-problems">Homework Problems of Classes</a>
+                            <a class="dropdown-item" href="#classes-homework-solutions">Homework Solutions of Classes</a>
+                            <a class="dropdown-item" href="#classes-summary">Summary of Classes</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#modules-concept">Concept of Modules</a>
+                            <a class="dropdown-item" href="#modules-homework-problems">Homework Problems of Modules</a>
+                            <a class="dropdown-item" href="#modules-homework-solutions">Homework Solutions of Modules</a>
+                            <a class="dropdown-item" href="#modules-summary">Summary of Modules</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -80,76 +127,206 @@
                     <li><a href="https://www.kaggle.com/learn/python">Kaggle Learn Python</a>: Python tutorials focused on data science and machine learning.</li>
                 </ul>
 
-         
-            </div>
-            <div class="col-md-4 order-md-2">
-                <div class="card">
-                    <div class="card-header bg-primary text-white">
-                        <h4>Course Outline</h4>
-                    </div>
-                    <div class="card-body course-outline">
-                        <h5>Introduction to Python</h5>
+                <h2>Why Python?</h2>
+                <p>Now, let's discuss why one should learn the Python programming language. While it may seem like a basic question, it's entirely valid and often arises when starting to learn something new. Understanding the reasons behind learning Python can provide motivation and context for your studies.</p>
+                <p>Python is a versatile and powerful programming language that is widely used in various fields such as web development, data science, artificial intelligence, scientific computing, and more. Here are some reasons why you should learn and know Python:</p>
+                <ol>
+                    <li><strong>Easy to Learn and Use</strong>: Python has a simple and readable syntax, making it an excellent choice for beginners. Its straightforward structure allows new programmers to pick up the language quickly and start writing functional code in no time.</li>
+                    <li><strong>Versatility</strong>: Python can be used for a wide range of applications, from web development and automation to data analysis and machine learning. This versatility makes it a valuable skill for any programmer.</li>
+                    <li><strong>Large Community and Support</strong>: Python has a vast and active community of developers who contribute to a rich ecosystem of libraries and frameworks. This means you can find support, tutorials, and resources for almost any problem you encounter.</li>
+                    <li><strong>High Demand in the Job Market</strong>: Python is one of the most sought-after programming languages in the job market. Many industries, including tech, finance, healthcare, and academia, require Python skills, making it a valuable asset for your career.</li>
+                    <li><strong>Integration and Compatibility</strong>: Python can easily integrate with other languages and technologies. It works well with C/C++, Java, and .NET, and can be used to script applications or automate tasks in various environments.</li>
+                    <li><strong>Strong Support for Data Science and AI</strong>: Python is the go-to language for data science and artificial intelligence. Libraries like NumPy, pandas, TensorFlow, and scikit-learn provide powerful tools for data manipulation, analysis, and machine learning.</li>
+                    <li><strong>Extensive Libraries and Frameworks</strong>: Python's extensive standard library and third-party modules allow you to accomplish a wide range of tasks without reinventing the wheel. Frameworks like Django and Flask make web development more efficient, while libraries like Matplotlib and Seaborn simplify data visualization.</li>
+                    <li><strong>Cross-Platform Compatibility</strong>: Python is a cross-platform language, meaning you can run Python code on various operating systems such as Windows, macOS, and Linux without modification.</li>
+                </ol>
+                <p>Learning Python opens up numerous opportunities and provides a solid foundation for your programming journey. Whether you're a beginner or an experienced developer, Python's simplicity, versatility, and powerful capabilities make it an essential language to know.</p>
+
+                <h2>Simple Python Code Example</h2>
+                <p>Let's start with a simple Python program that prints "Hello, World!" to the console and performs a few basic operations.</p>
+                <pre><code class="language-python"># This is a comment. Comments are ignored by the Python interpreter.
+                # They are used to explain the code and make it more readable.
+
+                # Print function
+                print("Hello, World!")  # This line prints the string "Hello, World!" to the console.
+
+                # Variables and Data Types
+                x = 5  # Integer
+                y = 3.14  # Float
+                name = "Alice"  # String
+                is_student = True  # Boolean
+
+                # Basic Arithmetic Operations
+                sum_result = x + y  # Addition
+                diff_result = x - y  # Subtraction
+                prod_result = x * y  # Multiplication
+                quot_result = x / y  # Division
+
+                # Print the results of arithmetic operations
+                print("Sum:", sum_result)
+                print("Difference:", diff_result)
+                print("Product:", prod_result)
+                print("Quotient:", quot_result)
+
+                # Lists
+                fruits = ["apple", "banana", "cherry"]  # List of strings
+                print("Fruits:", fruits)
+
+                # Accessing list elements
+                print("First fruit:", fruits[0])  # Lists are zero-indexed
+
+                # Adding an element to the list
+                fruits.append("orange")
+                print("Updated fruits:", fruits)
+
+                # Loops
+                # For loop
+                for fruit in fruits:
+                    print("Fruit:", fruit)
+
+                # While loop
+                count = 0
+                while count < 5:
+                    print("Count:", count)
+                    count += 1  # Increment count by 1
+
+                # Functions
+                def greet(name):
+                    """This function greets the person with the given name."""
+                    return f"Hello, {name}!"
+
+                # Calling the function
+                greeting = greet("Alice")
+                print(greeting)
+
+                # Conditional Statements
+                age = 20
+                if age >= 18:
+                    print("You are an adult.")
+                else:
+                    print("You are a minor.")
+                </code></pre>
+
+                <h3>Explanation of Basic Concepts</h3>
+                <ol>
+                    <li><strong>Comments</strong>: Lines starting with `#` are comments. They are not executed by the interpreter and are used to explain the code.</li>
+                    <li><strong>Print Function</strong>: `print()` is used to output text to the console.</li>
+                    <li><strong>Variables and Data Types</strong>:
                         <ul>
-                            <li><a href="setup.html">Set-up</a></li>
-                            <li><a href="#hello-world">Hello World</a></li>
-                            <li><a href="#homework-problems">Homework Problems</a></li>
-                            <li><a href="#homework-solutions">Homework Solutions</a></li>
-                            <li><a href="#summary">Summary</a></li>
+                            <li>`x = 5`: An integer variable.</li>
+                            <li>`y = 3.14`: A float variable.</li>
+                            <li>`name = "Alice"`: A string variable.</li>
+                            <li>`is_student = True`: A boolean variable.</li>
                         </ul>
-                        <h5>Variables</h5>
+                    </li>
+                    <li><strong>Basic Arithmetic Operations</strong>:
                         <ul>
-                            <li><a href="#variables-concept">Concept of variables</li>
-                            <li><a href="#variables-homework-problems">Homework Problems of variables</a></li>
-                            <li><a href="#variables-homework-solutions">Homework Solutions of variables</a></li>
-                            <li><a href="#variables-summary">Summary of variables</a></li>
+                            <li>`+` for addition.</li>
+                            <li>`-` for subtraction.</li>
+                            <li>`*` for multiplication.</li>
+                            <li>`/` for division.</li>
                         </ul>
-                        <h5>Lists</h5>
+                    </li>
+                    <li><strong>Lists</strong>: A list is a collection of items.
                         <ul>
-                            <li><a href="#lists-concept">Concept of Lists</a></li>
-                            <li><a href="#lists-homework-problems">Homework Problems of Lists</a></li>
-                            <li><a href="#lists-homework-solutions">Homework Solutions of Lists</a></li>
-                            <li><a href="#lists-summary">Summary of Lists</a></li>
+                            <li>`fruits = ["apple", "banana", "cherry"]`: A list of strings.</li>
+                            <li>`fruits[0]`: Accessing the first element of the list.</li>
+                            <li>`fruits.append("orange")`: Adding an element to the list.</li>
                         </ul>
-                        <h5>For Loop</h5>
+                    </li>
+                    <li><strong>Loops</strong>:
                         <ul>
-                            <li><a href="#for-loop-concept">Concept of For Loop</a></li>
-                            <li><a href="#for-loop-homework-problems">Homework Problems of For Loop</a></li>
-                            <li><a href="#for-loop-homework-solutions">Homework Solutions of For Loop</a></li>
-                            <li><a href="#for-loop-summary">Summary of For Loop</a></li>
+                            <li>`for` loop: Iterates over a sequence (like a list).</li>
+                            <li>`while` loop: Repeats as long as a condition is true.</li>
                         </ul>
-                        <h5>Containers</h5>
+                    </li>
+                    <li><strong>Functions</strong>:
                         <ul>
-                            <li><a href="#containers-concept">Concept of Containers</a></li>
-                            <li><a href="#containers-homework-problems">Homework Problems of Containers</a></li>
-                            <li><a href="#containers-homework-solutions">Homework Solutions of Containers</a></li>
-                            <li><a href="#containers-summary">Summary of Containers</a></li>
+                            <li>Defined using `def` keyword.</li>
+                            <li>`greet(name)`: A function that takes a parameter and returns a greeting.</li>
                         </ul>
-                        <h5>Functions</h5>
+                    </li>
+                    <li><strong>Conditional Statements</strong>:
                         <ul>
-                            <li><a href="#functions-concept">Concept of Functions</a></li>
-                            <li><a href="#functions-homework-problems">Homework Problems of Functions</a></li>
-                            <li><a href="#functions-homework-solutions">Homework Solutions of Functions</a></li>
-                            <li><a href="#functions-summary">Summary of Functions</a></li>
+                            <li>`if` statement: Executes code based on a condition.</li>
+                            <li>`else` statement: Executes code if the condition in `if` is not met.</li>
                         </ul>
-                        <h5>Classes</h5>
-                        <ul>
-                            <li><a href="#classes-concept">Concept of Classes</a></li>
-                            <li><a href="#classes-homework-problems">Homework Problems of Classes</a></li>
-                            <li><a href="#classes-homework-solutions">Homework Solutions of Classes</a></li>
-                            <li><a href="#classes-summary">Summary of Classes</a></li>
-                        </ul>
-                        <h5>Modules</h5>
-                        <ul>
-                            <li><a href="#modules-concept">Concept of Modules</a></li>
-                            <li><a href="#modules-homework-problems">Homework Problems of Modules</a></li>
-                            <li><a href="#modules-homework-solutions">Homework Solutions of Modules</a></li>
-                            <li><a href="#modules-summary">Summary of Modules</a></li>
-                        </ul>
-                    </div>
-                </div>
+                    </li>
+                </ol>
+                <p>This simple program covers the basic concepts of Python programming, including variables, data types, arithmetic operations, lists, loops, functions, and conditional statements.</p>
+
+                <h2>Getting Started</h2>
+                <ol>
+                <li>
+                <p><strong>Create a Folder for the Tutorial</strong>
+                    Open your terminal and create a new folder for the tutorial:
+                    <code>bash
+                    mkdir ~/Tutorial/Macbook-Python
+                    cd ~/Tutorial/Macbook-Python</code></p>
+                <ol>
+                <li>
+                <p><strong>Install Python</strong>
+                    If you don't have Python installed, download and install it from the official website:</p>
+                <ul>
+                <li><a href="https://www.python.org/downloads/">Download Python</a>
+                <code>bash
+                brew install python</code></li>
+                </ul>
+                </li>
+                <li>
+                <p><strong>Install Visual Studio Code</strong>
+                    Download and install Visual Studio Code (VS Code) for a powerful and lightweight code editor:</p>
+                <ul>
+                <li><a href="https://code.visualstudio.com/Download">Download VS Code</a>
+                <code>bash
+                brew install --cask visual-studio-code</code></li>
+                </ul>
+                <p>After installing, you can open VS Code from the terminal:
+                <code>bash
+                code .</code></p>
+                </li>
+                </ol>
+                </li>
+                <li>
+                <p><strong>Set Up a Virtual Environment</strong>
+                    Create a virtual environment to manage your project dependencies:
+                    <code>bash
+                    python3 -m venv venv
+                    source venv/bin/activate</code></p>
+                </li>
+                <li>
+                <p><strong>Install Required Packages</strong>
+                    Install any necessary packages using pip:
+                    <code>bash
+                    pip install &lt;package-name&gt;</code></p>
+                </li>
+                <li>
+                <p><strong>Start Coding</strong>
+                    Create a new Python file and start coding:
+                    <code>bash
+                    touch main.py
+                    open main.py</code></p>
+                </li>
+                </ol>
+                <h2>Resources</h2>
+                <ul>
+                <li><a href="https://docs.python.org/3/">Python Official Documentation</a></li>
+                <li><a href="https://docs.python.org/3/tutorial/venv.html">Virtual Environments Guide</a></li>
+                </ul>
+                <p>Happy coding!</p>
+                <h2>Troubleshooting</h2>
+                <h3>Python Installation Issues</h3>
+                <ol>
+                <li>
+                <p><strong>Python Command Not Found</strong>
+                    If you receive a "command not found" error when trying to run Python:</p>
+                <ul>
+                <li>Ensure Python is installed correctly by running:
+                    <code>bash
+                    python3 --version</code></li>
+                <li>If not installed, reinstall Python
             </div>
         </div>
-       
     </div>
     <div id="footer">
         <footer class="footer mt-auto py-3 bg-light">
@@ -162,5 +339,12 @@
     <script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script src="style.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
 </body>
 </html>
