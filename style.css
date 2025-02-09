@@ -96,6 +96,21 @@ pre {
     color: #ffffff !important;
 }
 
+.navbar-nav .dropdown-menu {
+    background-color: #306998;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .dropdown-item {
+    color: #FFD43B;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: #4B8BBE;
+    color: #ffffff;
+}
+
 blockquote {
     border-left: 4px solid #FFD43B;
     padding-left: 1em;
@@ -174,6 +189,14 @@ li {
 
     .code-block {
         overflow-x: auto;
+    }
+
+    .navbar {
+        font-size: 1rem;
+    }
+
+    .footer {
+        font-size: 1rem;
     }
 }
 
