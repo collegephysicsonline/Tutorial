@@ -85,7 +85,9 @@ pre {
 }
 
 .navbar-brand {
-    color: #FFD43B !important;
+       background-color: #FFD43B; /* Python yellow */
+    color: #306998; /* Python blue */
+   
     font-weight: bold;
 }
 
@@ -113,7 +115,8 @@ pre {
 }
 
 .custom-navbar {
-    background-color: #FFD43B; /* Replace with the actual footer background color */
+      background-color: #FFD43B; /* Python yellow */
+    color: #306998; /* Python blue */ /* Replace with the actual footer background color */
 }
 
 blockquote {
