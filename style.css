@@ -78,22 +78,23 @@ pre {
     color: #306998;
 }
 
-      .navbar {
-            background-color: #306998;
-        }
+.navbar {
+    background-color: #306998; /* Python blue */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        .navbar-brand {
-            color: #FFD43B !important;
-            font-weight: bold;
-        }
+.navbar-brand {
+    color: #FFD43B !important;
+    font-weight: bold;
+}
 
-        .navbar-nav .nav-link {
-            color: #FFD43B !important;
-        }
+.navbar-nav .nav-link {
+    color: #FFD43B !important;
+}
 
-        .navbar-nav .nav-link:hover {
-            color: #ffffff !important;
-        }
+.navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+}
 
 .navbar-nav .dropdown-menu {
     background-color: #306998;
@@ -110,7 +111,9 @@ pre {
     color: #ffffff;
 }
 
-
+.custom-navbar {
+    background-color: #FFD43B; /* Replace with the actual footer background color */
+}
 
 blockquote {
     border-left: 4px solid #FFD43B;
