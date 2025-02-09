@@ -79,19 +79,17 @@ pre {
 }
 
 .navbar {
-       background-color: #FFD43B; /* Python yellow */
-    color: #306998; /* Python blue */
-
+    background-color: #f8f9fa; /* Same as footer bg-light */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
-    color: #FFD43B !important;
+    color: #6c757d !important; /* Same as footer text-muted */
     font-weight: bold;
 }
 
 .navbar-nav .nav-link {
-    color: #FFD43B !important;
+    color: #6c757d !important; /* Same as footer text-muted */
 }
 
 .navbar-nav .nav-link:hover {
@@ -114,11 +112,7 @@ pre {
 }
 
 .custom-navbar {
-        background-color: #FFD43B; /* Python yellow */
-    color: #306998; /* Python blue */
-    font-size: 1rem;
-    padding: 1em;
-    text-align: center;
+    background-color: #FFD43B; /* Replace with the actual footer background color */
 }
 
 blockquote {
@@ -312,4 +306,21 @@ li {
     font-size: 1rem;
     padding: 1em;
     text-align: center;
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+}
+.dropdown-submenu:hover > .dropdown-menu,
+.dropdown-menu.show {
+    display: flex;
+}
+.dropdown-submenu {
+    position: relative;
+}
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
 }
