@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     fetch("navbar.html")
         .then(response => response.text())
         .then(data => {
-            document.getElementById("navbar").innerHTML = data;
+            document.getElementById("navbar-placeholder").innerHTML = data;
         });
 
     fetch("footer.html")
@@ -26,10 +26,3 @@ $(document).ready(function() {
         e.preventDefault();
     });
 });
-
-// Load the navbar.html content into the placeholder
-fetch('navbar.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('navbar-placeholder').innerHTML = data;
-    });

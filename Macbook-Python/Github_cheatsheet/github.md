@@ -46,6 +46,18 @@ Go to GitHub:
 
 ## Uploading Code from Terminal
 
+### Example to update github repository
+```bash
+echo "# PyFizik" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/collegephysicsonline/PyFizik.git
+git push -u origin main
+
+```
+
 ### Step 1: Install Git
 Ensure Git is installed on your system. You can download it from [git-scm.com](https://git-scm.com/).
 

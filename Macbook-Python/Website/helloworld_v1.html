@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hello World</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>First Python Program: Hello World</h1>
+                <div class="text-wrap">
+                    <p class="text-wrap">Welcome to the Python Tutorial. This guide will help you get started with Python programming language.</p>
+                    <p class="text-wrap">Before we dive into writing our first Python program, let's take a moment to understand what Python is and why it's such a popular choice among programmers. If you haven't already, check out our <a href="introduction.html">Introduction to Python</a> to learn more about its features and benefits. Additionally, if you're wondering why you should choose Python for your programming journey, our <a href="setup.html">Why Python</a> page provides compelling reasons.</p>
+                    <p class="text-wrap">Now that you have a good understanding of Python and its advantages, let's move on to setting up your development environment. We've covered the steps to install Python and set up Visual Studio Code in our <a href="setup.html">Setup Guide</a>. Make sure you have everything ready before proceeding.</p>
+                    <p class="text-wrap">With your environment set up, you're ready to write your first Python program. Let's get started!</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 order-md-1">
+               
+                <div class="text-wrap">
+                    <h2>Simple Python Code Example</h2>
+                    <p class="text-wrap">Let's start with a simple Python program that prints <span style="color:blue">Hello, World!</span> to the console and performs a few basic operations.</p>
+                    <pre><code class="language-python"># This is a comment. Comments are ignored by the Python interpreter.
+                    # They are used to explain the code and make it more readable.
+
+                    # Print function
+                    print(<span style="color:blue">"Hello, World!"</span>)  # This line prints the string <span style="color:blue">"Hello, World!"</span> to the console.
+
+                    # Variables and Data Types
+                    x = <span style="color:blue">5</span>  # Integer
+                    y = <span style="color:blue">3.14</span>  # Float
+                    name = <span style="color:blue">"Alice"</span>  # String
+                    is_student = <span style="color:blue">True</span>  # Boolean
+
+                    # Basic Arithmetic Operations
+                    sum_result = x + y  # Addition
+                    diff_result = x - y  # Subtraction
+                    prod_result = x * y  # Multiplication
+                    quot_result = x / y  # Division
+
+                    # Print the results of arithmetic operations
+                    print(<span style="color:blue">"Sum:"</span>, sum_result)
+                    print(<span style="color:blue">"Difference:"</span>, diff_result)
+                    print(<span style="color:blue">"Product:"</span>, prod_result)
+                    print(<span style="color:blue">"Quotient:"</span>, quot_result)
+
+                    # Lists
+                    fruits = [<span style="color:blue">"apple"</span>, <span style="color:blue">"banana"</span>, <span style="color:blue">"cherry"</span>]  # List of strings
+                    print(<span style="color:blue">"Fruits:"</span>, fruits)
+
+                    # Accessing list elements
+                    print(<span style="color:blue">"First fruit:"</span>, fruits[0])  # Lists are zero-indexed
+
+                    # Adding an element to the list
+                    fruits.append(<span style="color:blue">"orange"</span>)
+                    print(<span style="color:blue">"Updated fruits:"</span>, fruits)
+
+                    # Loops
+                    # For loop
+                    for fruit in fruits:
+                        print(<span style="color:blue">"Fruit:"</span>, fruit)
+
+                    # While loop
+                    count = <span style="color:blue">0</span>
+                    while count < <span style="color:blue">5</span>:
+                        print(<span style="color:blue">"Count:"</span>, count)
+                        count += <span style="color:blue">1</span>  # Increment count by 1
+
+                    # Functions
+                    def greet(name):
+                        """This function greets the person with the given name."""
+                        return f<span style="color:blue">"Hello, {name}!"</span>
+
+                    # Calling the function
+                    greeting = greet(<span style="color:blue">"Alice"</span>)
+                    print(greeting)
+
+                    # Conditional Statements
+                    age = <span style="color:blue">20</span>
+                    if age >= <span style="color:blue">18</span>:
+                        print(<span style="color:blue">"You are an adult."</span>)
+                    else:
+                        print(<span style="color:blue">"You are a minor."</span>)
+                    </code></pre>
+                </div>
+                <div class="text-wrap">
+                    <h3>Explanation of Basic Concepts</h3>
+                    <ol>
+                        <li><strong>Comments</strong>: Lines starting with <span style="color:blue">#</span> are comments. They are not executed by the interpreter and are used to explain the code.</li>
+                        <li><strong>Print Function</strong>: <span style="color:blue">print()</span> is used to output text to the console.</li>
+                        <li><strong>Variables and Data Types</strong>:
+                            <ul>
+                                <li><span style="color:blue">x = 5</span>: An integer variable.</li>
+                                <li><span style="color:blue">y = 3.14</span>: A float variable.</li>
+                                <li><span style="color:blue">name = "Alice"</span>: A string variable.</li>
+                                <li><span style="color:blue">is_student = True</span>: A boolean variable.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Basic Arithmetic Operations</strong>:
+                            <ul>
+                                <li><span style="color:blue">+</span> for addition.</li>
+                                <li><span style="color:blue">-</span> for subtraction.</li>
+                                <li><span style="color:blue">*</span> for multiplication.</li>
+                                <li><span style="color:blue">/</span> for division.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Lists</strong>: A list is a collection of items.
+                            <ul>
+                                <li><span style="color:blue">fruits = ["apple", "banana", "cherry"]</span>: A list of strings.</li>
+                                <li><span style="color:blue">fruits[0]</span>: Accessing the first element of the list.</li>
+                                <li><span style="color:blue">fruits.append("orange")</span>: Adding an element to the list.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Loops</strong>:
+                            <ul>
+                                <li><span style="color:blue">for</span> loop: Iterates over a sequence (like a list).</li>
+                                <li><span style="color:blue">while</span> loop: Repeats as long as a condition is true.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Functions</strong>:
+                            <ul>
+                                <li>Defined using <span style="color:blue">def</span> keyword.</li>
+                                <li><span style="color:blue">greet(name)</span>: A function that takes a parameter and returns a greeting.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Conditional Statements</strong>:
+                            <ul>
+                                <li><span style="color:blue">if</span> statement: Executes code based on a condition.</li>
+                                <li><span style="color:blue">else</span> statement: Executes code if the condition in <span style="color:blue">if</span> is not met.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p class="text-wrap">This simple program covers the basic concepts of Python programming, including variables, data types, arithmetic operations, lists, loops, functions, and conditional statements.</p>
+                </div>
+                <div class="text-wrap">
+                    <h3>Variables and Input in Python</h3>
+                    <p>In Python, variables are used to store data that can be used and manipulated throughout your program. You can think of variables as containers that hold information. The <code>input()</code> function is used to take input from the user. Let's look at some examples to understand how variables and the <code>input()</code> function work.</p>
+                    
+                    <h4>Example 1: Using Variables</h4>
+                    <pre><code class="language-python"># Assigning values to variables
+name = "Alice"
+age = 25
+
+# Printing the values of variables
+print("Name:", name)
+print("Age:", age)</code></pre>
+                    <p>In this example, we assign the string "Alice" to the variable <code>name</code> and the integer 25 to the variable <code>age</code>. We then use the <code>print()</code> function to display the values of these variables.</p>
+                    
+                    <h4>Example 2: Using the <code>input()</code> Function</h4>
+                    <pre><code class="language-python"># Taking input from the user
+name = input("Enter your name: ")
+age = input("Enter your age: ")
+
+# Printing the user input
+print("Name:", name)
+print("Age:", age)</code></pre>
+                    <p>In this example, we use the <code>input()</code> function to take input from the user. The <code>input()</code> function displays a prompt and waits for the user to enter a value. The entered value is then stored in the variable. We use the <code>print()</code> function to display the user input.</p>
+                    
+                    <h4>Example 3: Converting Input to Integer</h4>
+                    <pre><code class="language-python"># Taking numerical input from the user
+age = input("Enter your age: ")
+
+# Converting the input to an integer
+age = int(age)
+
+# Printing the age after conversion
+print("Your age is:", age)</code></pre>
+                    <p>By default, the <code>input()</code> function returns a string. If you need to perform numerical operations on the input, you must convert it to an integer using the <code>int()</code> function. In this example, we take the user's age as input, convert it to an integer, and then print it.</p>
+                </div>
+                <div class="text-wrap">
+                    <h3>Summary</h3>
+                    <p class="text-wrap">In this section, we introduced you to writing your first Python program. We discussed the importance of understanding what Python is and why it's a popular choice among programmers. We also guided you through setting up your development environment, ensuring you have Python and Visual Studio Code installed. Finally, we walked you through a simple Python program that prints "Hello, World!" and performs basic operations, covering essential concepts such as variables, data types, arithmetic operations, lists, loops, functions, and conditional statements. With this foundation, you are now ready to explore more advanced topics in Python programming.</p>
+                </div>
+                <div class="text-wrap">
+                    <h3>Interactive Quiz</h3>
+                    <p class="text-wrap">To reinforce your learning, we have prepared an interactive quiz based on the concepts covered in this section. Click the button below to start the quiz and test your knowledge. Have fun and happy coding!</p>
+                    <div class="d-grid gap-2 col-6 mx-auto mb-4">
+                        <a href="homework_helloworld.html" class="btn btn-success">Start Quiz</a>
+                    </div>
+                </div>
+                <div class="text-wrap d-flex justify-content-between">
+                    <a href="introduction.html" class="btn btn-primary">Previous: Introduction</a>
+                    <a href="variable.html" class="btn btn-primary">Next: Variables</a>
+                </div>
+                <div class="mb-5"></div> <!-- Add space between navigation buttons and footer -->
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer"></div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="style.js"></script>
+</body>
+</html>

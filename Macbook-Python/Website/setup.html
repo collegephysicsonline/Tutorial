@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Python Tutorial</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Get set ready </h1>
+                <div class="text-wrap">
+                    <p class="text-wrap">Welcome to the Python Tutorial. This guide will help you get started with Python programming language.</p>
+                    <p class="text-wrap">Before diving into Python programming, you need to set up your development environment. This involves installing Python, creating a Python environment, and installing a text editor or IDE to write your code. Follow the steps below to get everything ready:</p>
+                    <ol>
+                        <li><strong>Install Python</strong>: Download and install Python from the official website or use a package manager like Homebrew.</li>
+                        <li><strong>Create a Python Environment</strong>: Use virtual environments to manage dependencies and isolate your projects.</li>
+                        <li><strong>Install a Text Editor or IDE</strong>: Choose a code editor like Visual Studio Code, which provides a powerful and lightweight environment for writing Python code.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 order-md-1">
+               
+                <div class="text-wrap">
+                    <h2>Why Python?</h2>
+                    <p class="text-wrap">Now, let's discuss why one should learn the Python programming language. While it may seem like a basic question, it's entirely valid and often arises when starting to learn something new. Understanding the reasons behind learning Python can provide motivation and context for your studies.</p>
+                    <p class="text-wrap">Python is a versatile and powerful programming language that is widely used in various fields such as web development, data science, artificial intelligence, scientific computing, and more. Here are some reasons why you should learn and know Python:</p>
+                    <ol>
+                        <li><strong>Easy to Learn and Use</strong>: Python has a simple and readable syntax, making it an excellent choice for beginners. Its straightforward structure allows new programmers to pick up the language quickly and start writing functional code in no time.</li>
+                        <li><strong>Versatility</strong>: Python can be used for a wide range of applications, from web development and automation to data analysis and machine learning. This versatility makes it a valuable skill for any programmer.</li>
+                        <li><strong>Large Community and Support</strong>: Python has a vast and active community of developers who contribute to a rich ecosystem of libraries and frameworks. This means you can find support, tutorials, and resources for almost any problem you encounter.</li>
+                        <li><strong>High Demand in the Job Market</strong>: Python is one of the most sought-after programming languages in the job market. Many industries, including tech, finance, healthcare, and academia, require Python skills, making it a valuable asset for your career.</li>
+                        <li><strong>Integration and Compatibility</strong>: Python can easily integrate with other languages and technologies. It works well with C/C++, Java, and .NET, and can be used to script applications or automate tasks in various environments.</li>
+                        <li><strong>Strong Support for Data Science and AI</strong>: Python is the go-to language for data science and artificial intelligence. Libraries like NumPy, pandas, TensorFlow, and scikit-learn provide powerful tools for data manipulation, analysis, and machine learning.</li>
+                        <li><strong>Extensive Libraries and Frameworks</strong>: Python's extensive standard library and third-party modules allow you to accomplish a wide range of tasks without reinventing the wheel. Frameworks like Django and Flask make web development more efficient, while libraries like Matplotlib and Seaborn simplify data visualization.</li>
+                        <li><strong>Cross-Platform Compatibility</strong>: Python is a cross-platform language, meaning you can run Python code on various operating systems such as Windows, macOS, and Linux without modification.</li>
+                    </ol>
+                    <p class="text-wrap">Learning Python opens up numerous opportunities and provides a solid foundation for your programming journey. Whether you're a beginner or an experienced developer, Python's simplicity, versatility, and powerful capabilities make it an essential language to know.</p>
+                </div>
+               
+                <div class="text-wrap">
+                    <h2>Getting Started</h2>
+                    <ol>
+                        <li>
+                            <p><strong>Create a Folder for the Tutorial</strong></p>
+                            <p>Open your terminal and create a new folder for the tutorial:</p>
+                            <pre><code>mkdir ~/Tutorial/Macbook-Python
+cd ~/Tutorial/Macbook-Python</code></pre>
+                        </li>
+                        <li>
+                            <p><strong>Install Python</strong></p>
+                            <p>If you don't have Python installed, download and install it from the official website:</p>
+                            <ul>
+                                <li><a href="https://www.python.org/downloads/">Download Python</a></li>
+                            </ul>
+                            <p>Or install it using Homebrew:</p>
+                            <pre><code>brew install python</code></pre>
+                        </li>
+                        <li>
+                            <p><strong>Install Visual Studio Code</strong></p>
+                            <p>Download and install Visual Studio Code (VS Code) for a powerful and lightweight code editor:</p>
+                            <ul>
+                                <li><a href="https://code.visualstudio.com/Download">Download VS Code</a></li>
+                            </ul>
+                            <p>Or install it using Homebrew:</p>
+                            <pre><code>brew install --cask visual-studio-code</code></pre>
+                            <p>After installing, you can open VS Code from the terminal:</p>
+                            <pre><code>code .</code></pre>
+                        </li>
+                        <li>
+                            <p><strong>Set Up a Virtual Environment</strong></p>
+                            <p>Create a virtual environment to manage your project dependencies:</p>
+                            <pre><code>python3 -m venv venv
+source venv/bin/activate</code></pre>
+                        </li>
+                        <li>
+                            <p><strong>Install Required Packages</strong></p>
+                            <p>Install any necessary packages using pip:</p>
+                            <pre><code>pip install &lt;package-name&gt;</code></pre>
+                        </li>
+                        <li>
+                            <p><strong>Start Coding</strong></p>
+                            <p>Create a new Python file and start coding:</p>
+                            <pre><code>touch main.py && open main.py</code></pre>
+                        </li>
+                    </ol>
+                    <h2>Resources</h2>
+                    <ul>
+                    <li><a href="https://docs.python.org/3/">Python Official Documentation</a></li>
+                    <li><a href="https://docs.python.org/3/tutorial/venv.html">Virtual Environments Guide</a></li>
+                    </ul>
+                    <p>Happy coding!</p>
+                    <h2>Troubleshooting</h2>
+                    <h3>Python Installation Issues</h3>
+                    <ol>
+                    <li>
+                    <p><strong>Python Command Not Found</strong>
+                        If you receive a "command not found" error when trying to run Python:</p>
+                    <ul>
+                    <li>Ensure Python is installed correctly by running:
+                        <span style="color:blue">python3 --version</span></li>
+                    <li>If not installed, reinstall Python
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer"></div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="style.js"></script>
+</body>
+</html>
